@@ -1,0 +1,88 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "repository_commit": "ce58c8db7d7fc2b39e8bb7c07429a7920ed14fe8",
+    "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
+    "version": "1.0.0"
+  },
+  "collection_configuration": {
+    "decoding": {
+      "max_output_tokens": 128,
+      "reasoning_enabled": false,
+      "temperature": 0
+    },
+    "endpoint_host": "openrouter.ai",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "requested": {
+      "model": "mistralai/ministral-3b-2512",
+      "provider": "mistral",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "resolved": {
+      "model": "mistralai/ministral-3b-2512",
+      "provider": "mistral",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "retry_policy": {
+      "http_429_delays_seconds": [
+        2,
+        4,
+        8
+      ],
+      "malformed_output_attempts": 2
+    },
+    "timeout_seconds": 60.0
+  },
+  "evidence": {
+    "manifest_sha256": "41116a1eb3faf108e311a742dbee2aaa6294aedb4b7971608643b8a61c593758"
+  },
+  "kind": "adventure-bench-derived-summary",
+  "models": [
+    {
+      "evidence": {
+        "manifest_sha256": "41116a1eb3faf108e311a742dbee2aaa6294aedb4b7971608643b8a61c593758",
+        "recorded_cost_usd": 0.0140089,
+        "records": 732,
+        "responses_sha256": "e5a394de146c1e692d42c0d214341d3969e4b38a68f471f64b1b94b5bc0a10cf"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "mistralai-ministral-3b-2512",
+      "overall": {
+        "passed": 617,
+        "score": 0.842896174863,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T01:52:26.241444Z",
+          "started_at": "2026-09-02T01:43:36.135622Z"
+        },
+        "requested": {
+          "model": "mistralai/ministral-3b-2512",
+          "provider": "mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "mistralai/ministral-3b-2512",
+          "provider": "Mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "validity": {
+        "invalid_reasons": [],
+        "valid": true
+      }
+    }
+  ],
+  "run_id": "20260901-plicara-v1-full-mistralai-ministral-3b-2512",
+  "schema_version": "1.0",
+  "validity": {
+    "invalid_reasons": [],
+    "valid": true
+  }
+}

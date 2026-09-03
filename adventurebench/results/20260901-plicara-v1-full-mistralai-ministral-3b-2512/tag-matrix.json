@@ -1,0 +1,218 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "manifest_sha256": "41116a1eb3faf108e311a742dbee2aaa6294aedb4b7971608643b8a61c593758"
+  },
+  "kind": "adventure-bench-derived-tag-matrix",
+  "run_id": "20260901-plicara-v1-full-mistralai-ministral-3b-2512",
+  "schema_version": "1.0",
+  "tags": {
+    "abbreviation": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 13,
+        "score": 0.433333333333,
+        "total": 30
+      }
+    },
+    "absent-object": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "adverb": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      }
+    },
+    "ambiguity": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      }
+    },
+    "classic-command": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 44,
+        "score": 0.916666666667,
+        "total": 48
+      }
+    },
+    "compound": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 22,
+        "score": 0.814814814815,
+        "total": 27
+      }
+    },
+    "direction-as-place": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      }
+    },
+    "exact-verb": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "flavor-noun": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 0.428571428571,
+        "total": 42
+      }
+    },
+    "frustration": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "full-sentence": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      }
+    },
+    "go-to-place": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "greeting": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "guess-the-noun": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "help-seeking": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "meta": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      }
+    },
+    "missing-preposition": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      }
+    },
+    "multi-object": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 13,
+        "score": 0.866666666667,
+        "total": 15
+      }
+    },
+    "nonsense": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 10,
+        "score": 0.833333333333,
+        "total": 12
+      }
+    },
+    "out-of-vocab": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 98,
+        "score": 0.777777777778,
+        "total": 126
+      }
+    },
+    "paraphrase": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 44,
+        "score": 0.862745098039,
+        "total": 51
+      }
+    },
+    "politeness": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      }
+    },
+    "pronoun": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      }
+    },
+    "question": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      }
+    },
+    "relative-direction": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      }
+    },
+    "story-mode": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "synonym": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      }
+    },
+    "typo": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 31,
+        "score": 0.861111111111,
+        "total": 36
+      }
+    },
+    "verb-alias": {
+      "mistralai-ministral-3b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    }
+  }
+}

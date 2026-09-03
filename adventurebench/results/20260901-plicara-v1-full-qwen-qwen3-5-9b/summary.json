@@ -1,0 +1,88 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "repository_commit": "ce58c8db7d7fc2b39e8bb7c07429a7920ed14fe8",
+    "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
+    "version": "1.0.0"
+  },
+  "collection_configuration": {
+    "decoding": {
+      "max_output_tokens": 128,
+      "reasoning_enabled": false,
+      "temperature": 0
+    },
+    "endpoint_host": "openrouter.ai",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "requested": {
+      "model": "qwen/qwen3.5-9b",
+      "provider": "deepinfra",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "resolved": {
+      "model": "qwen/qwen3.5-9b",
+      "provider": "deepinfra",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "retry_policy": {
+      "http_429_delays_seconds": [
+        2,
+        4,
+        8
+      ],
+      "malformed_output_attempts": 2
+    },
+    "timeout_seconds": 60.0
+  },
+  "evidence": {
+    "manifest_sha256": "50b05771dbdbf3885113cb951b9620fad69ebfdd3d7362c908e8075073d27df5"
+  },
+  "kind": "adventure-bench-derived-summary",
+  "models": [
+    {
+      "evidence": {
+        "manifest_sha256": "50b05771dbdbf3885113cb951b9620fad69ebfdd3d7362c908e8075073d27df5",
+        "recorded_cost_usd": 0.0392304,
+        "records": 732,
+        "responses_sha256": "a22085e726daa7c785ef787b8420b0a9c7ba70bb3697a6d1808b525d06b33e16"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "qwen-qwen3-5-9b",
+      "overall": {
+        "passed": 605,
+        "score": 0.82650273224,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T23:49:32.638661Z",
+          "started_at": "2026-09-02T01:44:25.484572Z"
+        },
+        "requested": {
+          "model": "qwen/qwen3.5-9b",
+          "provider": "deepinfra",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "qwen/qwen3.5-9b",
+          "provider": "DeepInfra",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "validity": {
+        "invalid_reasons": [],
+        "valid": true
+      }
+    }
+  ],
+  "run_id": "20260901-plicara-v1-full-qwen-qwen3-5-9b",
+  "schema_version": "1.0",
+  "validity": {
+    "invalid_reasons": [],
+    "valid": true
+  }
+}

@@ -1,0 +1,9624 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "repository_commit": "ce58c8db7d7fc2b39e8bb7c07429a7920ed14fe8",
+    "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
+    "version": "1.0.0"
+  },
+  "by_tag": {
+    "abbreviation": {
+      "passed": 30,
+      "score": 1.0,
+      "total": 30
+    },
+    "absent-object": {
+      "passed": 27,
+      "score": 0.9,
+      "total": 30
+    },
+    "adverb": {
+      "passed": 21,
+      "score": 1.0,
+      "total": 21
+    },
+    "ambiguity": {
+      "passed": 12,
+      "score": 0.4,
+      "total": 30
+    },
+    "classic-command": {
+      "passed": 21,
+      "score": 0.4375,
+      "total": 48
+    },
+    "compound": {
+      "passed": 18,
+      "score": 0.666666666667,
+      "total": 27
+    },
+    "direction-as-place": {
+      "passed": 42,
+      "score": 0.933333333333,
+      "total": 45
+    },
+    "exact-verb": {
+      "passed": 36,
+      "score": 1.0,
+      "total": 36
+    },
+    "flavor-noun": {
+      "passed": 3,
+      "score": 0.071428571429,
+      "total": 42
+    },
+    "frustration": {
+      "passed": 12,
+      "score": 1.0,
+      "total": 12
+    },
+    "full-sentence": {
+      "passed": 21,
+      "score": 0.875,
+      "total": 24
+    },
+    "go-to-place": {
+      "passed": 9,
+      "score": 0.75,
+      "total": 12
+    },
+    "greeting": {
+      "passed": 9,
+      "score": 1.0,
+      "total": 9
+    },
+    "guess-the-noun": {
+      "passed": 12,
+      "score": 1.0,
+      "total": 12
+    },
+    "help-seeking": {
+      "passed": 9,
+      "score": 0.6,
+      "total": 15
+    },
+    "meta": {
+      "passed": 27,
+      "score": 0.9,
+      "total": 30
+    },
+    "missing-preposition": {
+      "passed": 27,
+      "score": 1.0,
+      "total": 27
+    },
+    "multi-object": {
+      "passed": 3,
+      "score": 0.2,
+      "total": 15
+    },
+    "nonsense": {
+      "passed": 9,
+      "score": 0.75,
+      "total": 12
+    },
+    "out-of-vocab": {
+      "passed": 45,
+      "score": 0.357142857143,
+      "total": 126
+    },
+    "paraphrase": {
+      "passed": 48,
+      "score": 0.941176470588,
+      "total": 51
+    },
+    "politeness": {
+      "passed": 18,
+      "score": 1.0,
+      "total": 18
+    },
+    "pronoun": {
+      "passed": 15,
+      "score": 0.555555555556,
+      "total": 27
+    },
+    "question": {
+      "passed": 45,
+      "score": 1.0,
+      "total": 45
+    },
+    "relative-direction": {
+      "passed": 3,
+      "score": 0.25,
+      "total": 12
+    },
+    "story-mode": {
+      "passed": 9,
+      "score": 1.0,
+      "total": 9
+    },
+    "synonym": {
+      "passed": 63,
+      "score": 1.0,
+      "total": 63
+    },
+    "typo": {
+      "passed": 33,
+      "score": 0.916666666667,
+      "total": 36
+    },
+    "verb-alias": {
+      "passed": 15,
+      "score": 1.0,
+      "total": 15
+    }
+  },
+  "case_results": [
+    {
+      "case_id": "attic.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "attic.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "attic.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "attic.absent.lamp",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "attic.absent.lamp",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "attic.absent.lamp",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "attic.adv.carefully",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "attic.adv.carefully",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "attic.adv.carefully",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "attic.classic.pray",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.classic.pray",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.classic.pray",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.comp.down-and-look",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "attic.comp.down-and-look",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "attic.comp.down-and-look",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "attic.exact.examine-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "attic.exact.examine-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "attic.exact.examine-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "attic.flavor.window",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "attic.flavor.window",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "attic.flavor.window",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "attic.goto.window",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun",
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "attic.goto.window",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun",
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "attic.goto.window",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun",
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "attic.help.help",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "attic.help.help",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "attic.help.help",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "attic.meta.undo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.meta.undo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.meta.undo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.noprep.look-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "attic.noprep.look-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "attic.noprep.look-chest",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "attic.oov.break-chain",
+      "outcome": {
+        "action": "use",
+        "target": "chain"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.oov.break-chain",
+      "outcome": {
+        "action": "use",
+        "target": "chain"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.oov.break-chain",
+      "outcome": {
+        "action": "use",
+        "target": "chain"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.oov.open-chest",
+      "outcome": {
+        "action": "use",
+        "target": "sea_chest"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.oov.open-chest",
+      "outcome": {
+        "action": "use",
+        "target": "sea_chest"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.oov.open-chest",
+      "outcome": {
+        "action": "use",
+        "target": "sea_chest"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "attic.para.whats-inside",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "attic.para.whats-inside",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "attic.para.whats-inside",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "attic.place.ladder",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "attic.place.ladder",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "attic.place.ladder",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "attic.polite.please-look",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "attic.polite.please-look",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "attic.polite.please-look",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "attic.pron.examine-it",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "attic.pron.examine-it",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "attic.pron.examine-it",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "attic.q.carrying",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "attic.q.carrying",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "attic.q.carrying",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "attic.rel.back",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "attic.rel.back",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "attic.rel.back",
+      "outcome": {
+        "action": "move",
+        "target": "down"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "attic.syn.checkout",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "attic.syn.checkout",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "attic.syn.checkout",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "attic.typo.lok",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "attic.typo.lok",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "attic.typo.lok",
+      "outcome": {
+        "action": "examine",
+        "target": "sea_chest"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "bedroom.absent.glasses",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "bedroom.absent.glasses",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "bedroom.absent.glasses",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "bedroom.exact.drop-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "bedroom.exact.drop-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "bedroom.exact.drop-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "bedroom.flavor.bulldozer",
+      "outcome": {
+        "action": "examine",
+        "target": "bulldozer"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "bedroom.flavor.bulldozer",
+      "outcome": {
+        "action": "examine",
+        "target": "bulldozer"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "bedroom.flavor.bulldozer",
+      "outcome": {
+        "action": "examine",
+        "target": "bulldozer"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "bedroom.fullsent.try-looking",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "bedroom.fullsent.try-looking",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "bedroom.fullsent.try-looking",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.get-out",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.get-out",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.get-out",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.through-door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.through-door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "bedroom.move.through-door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "bedroom.noprep.look-gown",
+      "outcome": {
+        "action": "examine",
+        "target": "dressing_gown"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.noprep.look-gown",
+      "outcome": {
+        "action": "examine",
+        "target": "dressing_gown"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.noprep.look-gown",
+      "outcome": {
+        "action": "examine",
+        "target": "dressing_gown"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.hang-gown",
+      "outcome": {
+        "action": "use",
+        "target": "hook"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.hang-gown",
+      "outcome": {
+        "action": "use",
+        "target": "hook"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.hang-gown",
+      "outcome": {
+        "action": "use",
+        "target": "hook"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.wear-gown",
+      "outcome": {
+        "action": "use",
+        "target": "dressing_gown"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.wear-gown",
+      "outcome": {
+        "action": "use",
+        "target": "dressing_gown"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.oov.wear-gown",
+      "outcome": {
+        "action": "use",
+        "target": "dressing_gown"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bedroom.para.pockets",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.para.pockets",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.para.pockets",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "bedroom.question.holding",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "bedroom.question.holding",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "bedroom.question.holding",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.discard-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.discard-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.discard-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.pickup-phone",
+      "outcome": {
+        "action": "take",
+        "target": "telephone"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.pickup-phone",
+      "outcome": {
+        "action": "take",
+        "target": "telephone"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.pickup-phone",
+      "outcome": {
+        "action": "take",
+        "target": "telephone"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.putdown-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.putdown-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bedroom.synonym.putdown-towel",
+      "outcome": {
+        "action": "drop",
+        "target": "towel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.blue-one",
+      "outcome": {
+        "action": "examine",
+        "target": "blue_bottle"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.blue-one",
+      "outcome": {
+        "action": "examine",
+        "target": "blue_bottle"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.blue-one",
+      "outcome": {
+        "action": "examine",
+        "target": "blue_bottle"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.green",
+      "outcome": {
+        "action": "take",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.green",
+      "outcome": {
+        "action": "take",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.green",
+      "outcome": {
+        "action": "take",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.the-bottle",
+      "outcome": {
+        "action": "take",
+        "target": "blue_bottle"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.the-bottle",
+      "outcome": {
+        "action": "take",
+        "target": "blue_bottle"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.ambig.the-bottle",
+      "outcome": {
+        "action": "take",
+        "target": "blue_bottle"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "bottles.classic.drink",
+      "outcome": {
+        "action": "use",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bottles.classic.drink",
+      "outcome": {
+        "action": "use",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bottles.classic.drink",
+      "outcome": {
+        "action": "use",
+        "target": "green_bottle"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "bottles.nonsense.harmonize",
+      "outcome": {
+        "action": "use",
+        "target": "wax"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "bottles.nonsense.harmonize",
+      "outcome": {
+        "action": "use",
+        "target": "wax"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "bottles.nonsense.harmonize",
+      "outcome": {
+        "action": "use",
+        "target": "wax"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "bottles.story.alchemist",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "bottles.story.alchemist",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "bottles.story.alchemist",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "camp.abbrev.z",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.abbrev.z",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.abbrev.z",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.absent.wand",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "camp.absent.wand",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "camp.absent.wand",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "camp.classic.gnusto",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.classic.gnusto",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.classic.gnusto",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.comp.read-both",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "camp.comp.read-both",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "camp.comp.read-both",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "camp.exact.go-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "camp.exact.go-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "camp.exact.go-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "camp.flavor.campfire",
+      "outcome": {
+        "action": "use",
+        "target": "campfire"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "camp.flavor.campfire",
+      "outcome": {
+        "action": "use",
+        "target": "campfire"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "camp.flavor.campfire",
+      "outcome": {
+        "action": "use",
+        "target": "campfire"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "camp.fullsent.want",
+      "outcome": {
+        "action": "use",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "camp.fullsent.want",
+      "outcome": {
+        "action": "use",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "camp.fullsent.want",
+      "outcome": {
+        "action": "use",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "camp.meta.score",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.meta.score",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.meta.score",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.noprep.look-scroll",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "camp.noprep.look-scroll",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "camp.noprep.look-scroll",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "camp.oov.burn-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.oov.burn-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.oov.burn-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.oov.learn-spell",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.oov.learn-spell",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.oov.learn-spell",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "camp.para.read-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "camp.para.read-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "camp.para.read-scroll",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "camp.place.forest",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "camp.place.forest",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "camp.place.forest",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "camp.place.road",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "camp.place.road",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "camp.place.road",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "camp.pron.grab-it",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "camp.pron.grab-it",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "camp.pron.grab-it",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "camp.q.what-is",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "camp.q.what-is",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "camp.q.what-is",
+      "outcome": {
+        "action": "examine",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "camp.story.dragon",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "camp.story.dragon",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "camp.story.dragon",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "camp.syn.peruse",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "camp.syn.peruse",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "camp.syn.peruse",
+      "outcome": {
+        "action": "examine",
+        "target": "spellbook"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "camp.typo.raed",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "camp.typo.raed",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "camp.typo.raed",
+      "outcome": {
+        "action": "use",
+        "target": "scroll"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "debris.adverb.quietly-look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "debris.adverb.quietly-look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "debris.adverb.quietly-look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "debris.classic.xyzzy",
+      "outcome": {
+        "action": "use",
+        "target": "black_rod"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "debris.classic.xyzzy",
+      "outcome": {
+        "action": "use",
+        "target": "black_rod"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "debris.classic.xyzzy",
+      "outcome": {
+        "action": "use",
+        "target": "black_rod"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "debris.flavor.read-note",
+      "outcome": {
+        "action": "examine",
+        "target": "note"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "debris.flavor.read-note",
+      "outcome": {
+        "action": "examine",
+        "target": "note on the wall"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "debris.flavor.read-note",
+      "outcome": {
+        "action": "examine",
+        "target": "note on the wall"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "debris.fullsent.ill-look",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "debris.fullsent.ill-look",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "debris.fullsent.ill-look",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "debris.noprep.look-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "debris.noprep.look-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "debris.noprep.look-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "debris.synonym.checkout-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "debris.synonym.checkout-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "debris.synonym.checkout-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "debris.trust.story-mode",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "debris.trust.story-mode",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "debris.trust.story-mode",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "story-mode"
+      ]
+    },
+    {
+      "case_id": "debris.typo.exmine-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "debris.typo.exmine-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "debris.typo.exmine-rod",
+      "outcome": {
+        "action": "examine",
+        "target": "black_rod"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "dock.abbrev.g",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.abbrev.g",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.abbrev.g",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.absent.ship",
+      "outcome": {
+        "action": "move",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "dock.absent.ship",
+      "outcome": {
+        "action": "move",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "dock.absent.ship",
+      "outcome": {
+        "action": "move",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "dock.adv.quickly",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "dock.adv.quickly",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "dock.adv.quickly",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "dock.alias.head-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "dock.alias.head-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "dock.alias.head-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "dock.classic.launch",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.classic.launch",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.classic.launch",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.flavor.water",
+      "outcome": {
+        "action": "examine",
+        "target": "water"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "dock.flavor.water",
+      "outcome": {
+        "action": "examine",
+        "target": "water"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "dock.flavor.water",
+      "outcome": {
+        "action": "examine",
+        "target": "water"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "dock.fullsent.lets",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "dock.fullsent.lets",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "dock.fullsent.lets",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "dock.guess.paddle",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "dock.guess.paddle",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "dock.guess.paddle",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "dock.help.hint",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "dock.help.hint",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "dock.help.hint",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "help-seeking"
+      ]
+    },
+    {
+      "case_id": "dock.multi.everything",
+      "outcome": {
+        "action": "take",
+        "target": "canoe,oar"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "dock.multi.everything",
+      "outcome": {
+        "action": "take",
+        "target": "canoe,oar"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "dock.multi.everything",
+      "outcome": {
+        "action": "take",
+        "target": "canoe,oar"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "dock.nonsense.photo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "dock.nonsense.photo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "dock.nonsense.photo",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "dock.oov.get-in-canoe",
+      "outcome": {
+        "action": "take",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.oov.get-in-canoe",
+      "outcome": {
+        "action": "take",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.oov.get-in-canoe",
+      "outcome": {
+        "action": "take",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.oov.untie-canoe",
+      "outcome": {
+        "action": "use",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.oov.untie-canoe",
+      "outcome": {
+        "action": "use",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.oov.untie-canoe",
+      "outcome": {
+        "action": "use",
+        "target": "canoe"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dock.para.bearings",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "dock.para.bearings",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "dock.para.bearings",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "dock.place.trail",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "dock.place.trail",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "dock.place.trail",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "dock.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "dock.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "dock.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "dock.q.which-way",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "dock.q.which-way",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "dock.q.which-way",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "dock.syn.gaze",
+      "outcome": {
+        "action": "examine",
+        "target": "canoe"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "dock.syn.gaze",
+      "outcome": {
+        "action": "examine",
+        "target": "canoe"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "dock.syn.gaze",
+      "outcome": {
+        "action": "examine",
+        "target": "canoe"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "dock.typo.gte",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "dock.typo.gte",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "dock.typo.gte",
+      "outcome": {
+        "action": "take",
+        "target": "oar"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-flask",
+      "outcome": {
+        "action": "take",
+        "target": "flask"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-flask",
+      "outcome": {
+        "action": "take",
+        "target": "flask"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-flask",
+      "outcome": {
+        "action": "take",
+        "target": "flask"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-scroll",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-scroll",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.classic.ye-scroll",
+      "outcome": {
+        "action": "take",
+        "target": "scroll"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command"
+      ]
+    },
+    {
+      "case_id": "dungeon.oov.talk-dennis",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dungeon.oov.talk-dennis",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "dungeon.oov.talk-dennis",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "garden.flavor.tree",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "garden.flavor.tree",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "garden.flavor.tree",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "garden.fullsent.think-take",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "garden.fullsent.think-take",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "garden.fullsent.think-take",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "garden.guessnoun.rock",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "garden.guessnoun.rock",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "garden.guessnoun.rock",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "garden.para.scoop-nut",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "garden.para.scoop-nut",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "garden.para.scoop-nut",
+      "outcome": {
+        "action": "take",
+        "target": "walnut"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "gate.oov.ask-ford",
+      "outcome": {
+        "action": "use",
+        "target": "ford"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.ask-ford",
+      "outcome": {
+        "action": "use",
+        "target": "ford"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.ask-ford",
+      "outcome": {
+        "action": "use",
+        "target": "ford"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.give-sandwich",
+      "outcome": {
+        "action": "use",
+        "target": "sandwich"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.give-sandwich",
+      "outcome": {
+        "action": "use",
+        "target": "sandwich"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.give-sandwich",
+      "outcome": {
+        "action": "use",
+        "target": "sandwich"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.kill-troll",
+      "outcome": {
+        "action": "use",
+        "target": "elvish_sword"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.kill-troll",
+      "outcome": {
+        "action": "use",
+        "target": "elvish_sword"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.oov.kill-troll",
+      "outcome": {
+        "action": "use",
+        "target": "elvish_sword"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "gate.trust.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "gate.trust.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "gate.trust.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "medbay.abbrev.x-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "medbay.abbrev.x-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "medbay.abbrev.x-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "medbay.absent.blaster",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "medbay.absent.blaster",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "medbay.absent.blaster",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "medbay.classic.diagnose",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.classic.diagnose",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.classic.diagnose",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.exact.look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "medbay.exact.look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "medbay.exact.look",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "medbay.flavor.card-slot",
+      "outcome": {
+        "action": "examine",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "medbay.flavor.card-slot",
+      "outcome": {
+        "action": "examine",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "medbay.flavor.card-slot",
+      "outcome": {
+        "action": "examine",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "medbay.fullsent.think",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "medbay.fullsent.think",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "medbay.fullsent.think",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "medbay.greet.hi-robot",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "medbay.greet.hi-robot",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "medbay.greet.hi-robot",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "medbay.meta.restart",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.meta.restart",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.meta.restart",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.multi.take-all",
+      "outcome": {
+        "action": "take",
+        "target": "medkit"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "medbay.multi.take-all",
+      "outcome": {
+        "action": "take",
+        "target": "medkit"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "medbay.multi.take-all",
+      "outcome": {
+        "action": "take",
+        "target": "medkit"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "medbay.noprep.look-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "medbay.noprep.look-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "medbay.noprep.look-robot",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.insert-card",
+      "outcome": {
+        "action": "use",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.insert-card",
+      "outcome": {
+        "action": "use",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.insert-card",
+      "outcome": {
+        "action": "use",
+        "target": "card slot"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.turn-on-robot",
+      "outcome": {
+        "action": "use",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.turn-on-robot",
+      "outcome": {
+        "action": "use",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.oov.turn-on-robot",
+      "outcome": {
+        "action": "use",
+        "target": "robot"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "medbay.para.blinking",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "medbay.para.blinking",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "medbay.para.blinking",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "medbay.place.corridor",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "medbay.place.corridor",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "medbay.place.corridor",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "medbay.q.where",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "medbay.q.where",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "medbay.q.where",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "medbay.rel.forward",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "medbay.rel.forward",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "medbay.rel.forward",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "medbay.syn.scrutinize",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "medbay.syn.scrutinize",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "medbay.syn.scrutinize",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "medbay.typo.examien",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "medbay.typo.examien",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "medbay.typo.examien",
+      "outcome": {
+        "action": "examine",
+        "target": "robot"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "orig.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "orig.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "orig.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "orig.compound.unlock",
+      "outcome": {
+        "action": "use",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "orig.compound.unlock",
+      "outcome": {
+        "action": "use",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "orig.compound.unlock",
+      "outcome": {
+        "action": "use",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "orig.exact.drop",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.exact.drop",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.exact.drop",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_key"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.exact.examine",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.exact.examine",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.exact.examine",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "orig.examine.paraphrase",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "orig.examine.paraphrase",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "orig.examine.paraphrase",
+      "outcome": {
+        "action": "examine",
+        "target": "rug"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "orig.examine.synonym",
+      "outcome": {
+        "action": "examine",
+        "target": "portraits"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.examine.synonym",
+      "outcome": {
+        "action": "examine",
+        "target": "portraits"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.examine.synonym",
+      "outcome": {
+        "action": "examine",
+        "target": "portraits"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.flavor.journal",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "orig.flavor.journal",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "orig.flavor.journal",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "orig.inventory.question",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "question"
+      ]
+    },
+    {
+      "case_id": "orig.inventory.question",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "question"
+      ]
+    },
+    {
+      "case_id": "orig.inventory.question",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "question"
+      ]
+    },
+    {
+      "case_id": "orig.look.alias",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.look.alias",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.look.alias",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.move.alias",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.move.alias",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.move.alias",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "orig.move.place",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "orig.move.place",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "orig.move.place",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "orig.move.polite",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase",
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "orig.move.polite",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase",
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "orig.move.polite",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase",
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "orig.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "orig.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "orig.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "orig.take.synonym",
+      "outcome": {
+        "action": "take",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.take.synonym",
+      "outcome": {
+        "action": "take",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.take.synonym",
+      "outcome": {
+        "action": "take",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.use.synonym",
+      "outcome": {
+        "action": "use",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.use.synonym",
+      "outcome": {
+        "action": "use",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "orig.use.synonym",
+      "outcome": {
+        "action": "use",
+        "target": "lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "pantry.absent.cheese",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "pantry.absent.cheese",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "pantry.absent.cheese",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "pantry.compound.put-and-take",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.compound.put-and-take",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.compound.put-and-take",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.drink-water",
+      "outcome": {
+        "action": "use",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.drink-water",
+      "outcome": {
+        "action": "use",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.drink-water",
+      "outcome": {
+        "action": "use",
+        "target": "bottle"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.eat-bread",
+      "outcome": {
+        "action": "use",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.eat-bread",
+      "outcome": {
+        "action": "use",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.eat-bread",
+      "outcome": {
+        "action": "use",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.put-bread",
+      "outcome": {
+        "action": "take",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.put-bread",
+      "outcome": {
+        "action": "take",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.oov.put-bread",
+      "outcome": {
+        "action": "take",
+        "target": "bread"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "pantry.pronoun.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "pantry.pronoun.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "pantry.pronoun.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "bottle"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "pantry.synonym.lookat-bread",
+      "outcome": {
+        "action": "examine",
+        "target": "bread"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "pantry.synonym.lookat-bread",
+      "outcome": {
+        "action": "examine",
+        "target": "bread"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "pantry.synonym.lookat-bread",
+      "outcome": {
+        "action": "examine",
+        "target": "bread"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "river.polite.could-you-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "river.polite.could-you-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "river.polite.could-you-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.pick-it-up",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.pick-it-up",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.pick-it-up",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.pronoun.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "river.synonym.steal-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "river.synonym.steal-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "river.synonym.steal-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "river.typo.garb-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "river.typo.garb-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "river.typo.garb-gem",
+      "outcome": {
+        "action": "take",
+        "target": "red_gem"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.l",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.n",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.n",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.abbrev.n",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "round.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "round.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "round.absent.sword",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "round.adverb.quickly-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "round.adverb.quickly-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "round.adverb.quickly-north",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "round.ambig.take-lantern",
+      "outcome": {
+        "action": "take",
+        "target": "broken_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "round.ambig.take-lantern",
+      "outcome": {
+        "action": "take",
+        "target": "broken_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "round.ambig.take-lantern",
+      "outcome": {
+        "action": "take",
+        "target": "broken_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "ambiguity"
+      ]
+    },
+    {
+      "case_id": "round.compound.north-then-take",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "round.compound.north-then-take",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "round.compound.north-then-take",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "round.move.go-left",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "round.move.go-left",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "round.move.go-left",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "round.oov.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "round.oov.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "round.oov.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "round.para.set-down-lamp",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "round.para.set-down-lamp",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "round.para.set-down-lamp",
+      "outcome": {
+        "action": "drop",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "round.question.north-tentative",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.question.north-tentative",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.question.north-tentative",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.question.where-am-i",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.question.where-am-i",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.question.where-am-i",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "round.trust.wtf",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "round.trust.wtf",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "round.trust.wtf",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "round.typo.norht",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "round.typo.norht",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "round.typo.norht",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "shed.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "shed.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "shed.abbrev.i",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "shed.alias.walk-east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "shed.alias.walk-east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "shed.alias.walk-east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "shed.classic.dig",
+      "outcome": {
+        "action": "use",
+        "target": "shovel"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.classic.dig",
+      "outcome": {
+        "action": "use",
+        "target": "shovel"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.classic.dig",
+      "outcome": {
+        "action": "use",
+        "target": "shovel"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.comp.shovel-and-seeds",
+      "outcome": {
+        "action": "take",
+        "target": "shovel,seeds"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "shed.comp.shovel-and-seeds",
+      "outcome": {
+        "action": "take",
+        "target": "shovel,seeds"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "shed.comp.shovel-and-seeds",
+      "outcome": {
+        "action": "take",
+        "target": "shovel,seeds"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "shed.exact.get-shovel",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "shed.exact.get-shovel",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "shed.exact.get-shovel",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "shed.flavor.workbench",
+      "outcome": {
+        "action": "examine",
+        "target": "workbench"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "shed.flavor.workbench",
+      "outcome": {
+        "action": "examine",
+        "target": "workbench"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "shed.flavor.workbench",
+      "outcome": {
+        "action": "examine",
+        "target": "workbench"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "shed.frust.stupid",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "shed.frust.stupid",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "shed.frust.stupid",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "shed.fullsent.maybe",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "shed.fullsent.maybe",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "shed.fullsent.maybe",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "shed.guess.spade",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "shed.guess.spade",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "shed.guess.spade",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "shed.noprep.leave-shed",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "shed.noprep.leave-shed",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "shed.noprep.leave-shed",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "shed.oov.plant-seeds",
+      "outcome": {
+        "action": "use",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.oov.plant-seeds",
+      "outcome": {
+        "action": "use",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.oov.plant-seeds",
+      "outcome": {
+        "action": "use",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "shed.para.help-myself",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "shed.para.help-myself",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "shed.para.help-myself",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "shed.place.garden",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "shed.place.garden",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "shed.place.garden",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "shed.pron.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "shed.pron.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "shed.pron.take-them",
+      "outcome": {
+        "action": "take",
+        "target": "seeds"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "ambiguity",
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "shed.q.east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "shed.q.east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "shed.q.east",
+      "outcome": {
+        "action": "move",
+        "target": "east"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "shed.syn.fetch",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "shed.syn.fetch",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "shed.syn.fetch",
+      "outcome": {
+        "action": "take",
+        "target": "shovel"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "shed.typo.invntory",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "shed.typo.invntory",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "shed.typo.invntory",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "trading.absent.gold",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "trading.absent.gold",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "trading.absent.gold",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object"
+      ]
+    },
+    {
+      "case_id": "trading.adv.slowly",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "trading.adv.slowly",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "trading.adv.slowly",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "trading.comp.rope-then-south",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "trading.comp.rope-then-south",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "trading.comp.rope-then-south",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "trading.exact.drop-coin",
+      "outcome": {
+        "action": "drop",
+        "target": "coin"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.exact.drop-coin",
+      "outcome": {
+        "action": "drop",
+        "target": "coin"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.exact.drop-coin",
+      "outcome": {
+        "action": "drop",
+        "target": "coin"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.exact.take-rope",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.exact.take-rope",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.exact.take-rope",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "trading.flavor.counter",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "trading.flavor.counter",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "trading.flavor.counter",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "trading.goto.door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "trading.goto.door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "trading.goto.door",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "trading.greet.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "trading.greet.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "trading.greet.hello",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "case_id": "trading.meta.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.meta.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.meta.save",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.noprep.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "trading.noprep.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "trading.noprep.leave",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place",
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "trading.oov.ask-about",
+      "outcome": {
+        "action": "use",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.ask-about",
+      "outcome": {
+        "action": "use",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.ask-about",
+      "outcome": {
+        "action": "use",
+        "target": "map"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.give-coin",
+      "outcome": {
+        "action": "use",
+        "target": "coin"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.give-coin",
+      "outcome": {
+        "action": "use",
+        "target": "coin"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.give-coin",
+      "outcome": {
+        "action": "use",
+        "target": "coin"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.talk-to",
+      "outcome": {
+        "action": "use",
+        "target": "shopkeeper"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.talk-to",
+      "outcome": {
+        "action": "use",
+        "target": "shopkeeper"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.oov.talk-to",
+      "outcome": {
+        "action": "use",
+        "target": "shopkeeper"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "trading.para.map-shows",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase",
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.para.map-shows",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase",
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.para.map-shows",
+      "outcome": {
+        "action": "examine",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase",
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.para.stock",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "trading.para.stock",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "trading.para.stock",
+      "outcome": {
+        "action": "inventory",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "trading.place.outside",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "trading.place.outside",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "trading.place.outside",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "trading.polite.kindly",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "trading.polite.kindly",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "trading.polite.kindly",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "trading.q.can-take",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.q.can-take",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.q.can-take",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "trading.syn.pocket",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.syn.pocket",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.syn.pocket",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.syn.snatch-map",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.syn.snatch-map",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.syn.snatch-map",
+      "outcome": {
+        "action": "take",
+        "target": "map"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "trading.typo.tkae",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "trading.typo.tkae",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "trading.typo.tkae",
+      "outcome": {
+        "action": "take",
+        "target": "rope"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "west.classic.open-mailbox",
+      "outcome": {
+        "action": "use",
+        "target": "mailbox"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.classic.open-mailbox",
+      "outcome": {
+        "action": "use",
+        "target": "mailbox"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.classic.open-mailbox",
+      "outcome": {
+        "action": "use",
+        "target": "mailbox"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.flavor.white-house",
+      "outcome": {
+        "action": "examine",
+        "target": "white house"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "west.flavor.white-house",
+      "outcome": {
+        "action": "examine",
+        "target": "white house"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "west.flavor.white-house",
+      "outcome": {
+        "action": "examine",
+        "target": "white house"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "west.goto.house",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "west.goto.house",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "west.goto.house",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "go-to-place"
+      ]
+    },
+    {
+      "case_id": "west.move.follow-path",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "west.move.follow-path",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "west.move.follow-path",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "west.oov.wait",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.oov.wait",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.oov.wait",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "meta",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "west.para.look-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.para.look-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.para.look-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.para.mail",
+      "outcome": {
+        "action": "examine",
+        "target": "mailbox"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.para.mail",
+      "outcome": {
+        "action": "examine",
+        "target": "mailbox"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.para.mail",
+      "outcome": {
+        "action": "examine",
+        "target": "mailbox"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "west.question.what-do-i-do",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.question.what-do-i-do",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.question.what-do-i-do",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.question.whose-cat",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "absent-object",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.question.whose-cat",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "absent-object",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.question.whose-cat",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "absent-object",
+        "question"
+      ]
+    },
+    {
+      "case_id": "west.trust.confused",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "west.trust.confused",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "west.trust.confused",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "west.typo.lok-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "west.typo.lok-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "west.typo.lok-around",
+      "outcome": {
+        "action": "look",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "y2.abbrev.u",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "y2.abbrev.u",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "y2.abbrev.u",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "y2.adv.quietly",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "y2.adv.quietly",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "y2.adv.quietly",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "y2.alias.climb-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "y2.alias.climb-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "y2.alias.climb-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "verb-alias"
+      ]
+    },
+    {
+      "case_id": "y2.classic.plugh",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.classic.plugh",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.classic.plugh",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "y2.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "y2.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "y2.flavor.scratched-word",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "y2.flavor.scratched-word",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "y2.flavor.scratched-word",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "flavor-noun"
+      ]
+    },
+    {
+      "case_id": "y2.frust.qqq",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "y2.frust.qqq",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "y2.frust.qqq",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "frustration"
+      ]
+    },
+    {
+      "case_id": "y2.guess.stone-icicle",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "y2.guess.stone-icicle",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "y2.guess.stone-icicle",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "guess-the-noun"
+      ]
+    },
+    {
+      "case_id": "y2.help.what-now",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "y2.help.what-now",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "y2.help.what-now",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "help-seeking",
+        "question"
+      ]
+    },
+    {
+      "case_id": "y2.oov.push-stalagmite",
+      "outcome": {
+        "action": "use",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.oov.push-stalagmite",
+      "outcome": {
+        "action": "use",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.oov.push-stalagmite",
+      "outcome": {
+        "action": "use",
+        "target": "stalagmite"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "y2.para.study-formation",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "y2.para.study-formation",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "y2.para.study-formation",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "y2.polite.could-we",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "y2.polite.could-we",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "y2.polite.could-we",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "y2.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "y2.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "y2.pron.take-it",
+      "outcome": {
+        "action": "take",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "pronoun"
+      ]
+    },
+    {
+      "case_id": "y2.rel.left",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "y2.rel.left",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "y2.rel.left",
+      "outcome": {
+        "action": "move",
+        "target": "south"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "relative-direction"
+      ]
+    },
+    {
+      "case_id": "y2.syn.inspect",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "y2.syn.inspect",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "y2.syn.inspect",
+      "outcome": {
+        "action": "examine",
+        "target": "stalagmite"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "y2.typo.nroth",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "y2.typo.nroth",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "y2.typo.nroth",
+      "outcome": {
+        "action": "move",
+        "target": "north"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "zork.abbrev.x-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "zork.abbrev.x-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "zork.abbrev.x-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "abbreviation"
+      ]
+    },
+    {
+      "case_id": "zork.adverb.carefully-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "zork.adverb.carefully-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "zork.adverb.carefully-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "adverb"
+      ]
+    },
+    {
+      "case_id": "zork.classic.move-rug",
+      "outcome": {
+        "action": "take",
+        "target": "oriental_rug"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.classic.move-rug",
+      "outcome": {
+        "action": "take",
+        "target": "oriental_rug"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.classic.move-rug",
+      "outcome": {
+        "action": "take",
+        "target": "oriental_rug"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "classic-command",
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.compound.lamp-and-sword",
+      "outcome": {
+        "action": "take",
+        "target": "brass lantern,elvish sword"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "zork.compound.lamp-and-sword",
+      "outcome": {
+        "action": "take",
+        "target": "brass lantern,elvish sword"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "zork.compound.lamp-and-sword",
+      "outcome": {
+        "action": "take",
+        "target": "brass lantern,elvish sword"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "compound",
+        "multi-object"
+      ]
+    },
+    {
+      "case_id": "zork.compound.take-and-go",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "zork.compound.take-and-go",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "zork.compound.take-and-go",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "compound"
+      ]
+    },
+    {
+      "case_id": "zork.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.exact.go-up",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.exact.take-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.exact.take-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.exact.take-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "exact-verb"
+      ]
+    },
+    {
+      "case_id": "zork.fullsent.want-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "zork.fullsent.want-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "zork.fullsent.want-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "full-sentence"
+      ]
+    },
+    {
+      "case_id": "zork.move.climb-stairs",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.move.climb-stairs",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.move.climb-stairs",
+      "outcome": {
+        "action": "move",
+        "target": "up"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.move.gothic-door",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.move.gothic-door",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.move.gothic-door",
+      "outcome": {
+        "action": "move",
+        "target": "west"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "direction-as-place"
+      ]
+    },
+    {
+      "case_id": "zork.noprep.look-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "zork.noprep.look-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "zork.noprep.look-sword",
+      "outcome": {
+        "action": "examine",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "missing-preposition"
+      ]
+    },
+    {
+      "case_id": "zork.oov.open-case",
+      "outcome": {
+        "action": "use",
+        "target": "trophy_case"
+      },
+      "passed": false,
+      "repetition": 1,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.oov.open-case",
+      "outcome": {
+        "action": "use",
+        "target": "trophy_case"
+      },
+      "passed": false,
+      "repetition": 2,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.oov.open-case",
+      "outcome": {
+        "action": "use",
+        "target": "trophy_case"
+      },
+      "passed": false,
+      "repetition": 3,
+      "tags": [
+        "out-of-vocab"
+      ]
+    },
+    {
+      "case_id": "zork.para.under-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "zork.para.under-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "zork.para.under-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "case_id": "zork.polite.take-sword-sir",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "zork.polite.take-sword-sir",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "zork.polite.take-sword-sir",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "politeness"
+      ]
+    },
+    {
+      "case_id": "zork.question.can-i-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "zork.question.can-i-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "zork.question.can-i-take",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.grab-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.grab-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.grab-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.inspect-case",
+      "outcome": {
+        "action": "examine",
+        "target": "trophy_case"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.inspect-case",
+      "outcome": {
+        "action": "examine",
+        "target": "trophy_case"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.inspect-case",
+      "outcome": {
+        "action": "examine",
+        "target": "trophy_case"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.seize-sword",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.seize-sword",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.seize-sword",
+      "outcome": {
+        "action": "take",
+        "target": "elvish_sword"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.view-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.view-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.synonym.view-rug",
+      "outcome": {
+        "action": "examine",
+        "target": "oriental_rug"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "synonym"
+      ]
+    },
+    {
+      "case_id": "zork.trust.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "zork.trust.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "zork.trust.nonsense",
+      "outcome": {
+        "action": "unclear",
+        "target": null
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "nonsense"
+      ]
+    },
+    {
+      "case_id": "zork.typo.tkae-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 1,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "zork.typo.tkae-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 2,
+      "tags": [
+        "typo"
+      ]
+    },
+    {
+      "case_id": "zork.typo.tkae-lamp",
+      "outcome": {
+        "action": "take",
+        "target": "brass_lantern"
+      },
+      "passed": true,
+      "repetition": 3,
+      "tags": [
+        "typo"
+      ]
+    }
+  ],
+  "collection_configuration": {
+    "decoding": {
+      "max_output_tokens": 128,
+      "reasoning_enabled": false,
+      "temperature": 0
+    },
+    "endpoint_host": "openrouter.ai",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "requested": {
+      "model": "ibm-granite/granite-4.1-8b",
+      "provider": "coreweave",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "resolved": {
+      "model": "ibm-granite/granite-4.1-8b",
+      "provider": "coreweave",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "retry_policy": {
+      "http_429_delays_seconds": [
+        2,
+        4,
+        8
+      ],
+      "malformed_output_attempts": 2
+    },
+    "timeout_seconds": 60.0
+  },
+  "evidence": {
+    "manifest_sha256": "d35412b49f1aeed4426469bf4e6223d563918499e3e24726f7aef6bd929ec621",
+    "recorded_cost_usd": 0.0195273,
+    "records": 732,
+    "responses_sha256": "dd55139ef44d388890d42ff9dcf9dd30df4b314d51e49c1bcaedd5b98aa4e74f"
+  },
+  "failures": {
+    "parsing": 0,
+    "transport": 0
+  },
+  "kind": "adventure-bench-derived-result",
+  "model_slug": "ibm-granite-granite-4-1-8b",
+  "overall": {
+    "passed": 555,
+    "score": 0.758196721311,
+    "total": 732
+  },
+  "provenance": {
+    "collection_window": {
+      "completed_at": "2026-09-02T01:56:58.438283Z",
+      "started_at": "2026-09-02T01:50:12.886821Z"
+    },
+    "requested": {
+      "model": "ibm-granite/granite-4.1-8b",
+      "provider": "coreweave",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "resolved": {
+      "model": "ibm-granite/granite-4.1-8b",
+      "provider": "CoreWeave",
+      "runtime": "openrouter:chat-completions-v1"
+    }
+  },
+  "repetitions": [
+    {
+      "by_tag": {
+        "abbreviation": {
+          "passed": 10,
+          "score": 1.0,
+          "total": 10
+        },
+        "absent-object": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "adverb": {
+          "passed": 7,
+          "score": 1.0,
+          "total": 7
+        },
+        "ambiguity": {
+          "passed": 4,
+          "score": 0.4,
+          "total": 10
+        },
+        "classic-command": {
+          "passed": 7,
+          "score": 0.4375,
+          "total": 16
+        },
+        "compound": {
+          "passed": 6,
+          "score": 0.666666666667,
+          "total": 9
+        },
+        "direction-as-place": {
+          "passed": 14,
+          "score": 0.933333333333,
+          "total": 15
+        },
+        "exact-verb": {
+          "passed": 12,
+          "score": 1.0,
+          "total": 12
+        },
+        "flavor-noun": {
+          "passed": 1,
+          "score": 0.071428571429,
+          "total": 14
+        },
+        "frustration": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "full-sentence": {
+          "passed": 7,
+          "score": 0.875,
+          "total": 8
+        },
+        "go-to-place": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "greeting": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "guess-the-noun": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "help-seeking": {
+          "passed": 3,
+          "score": 0.6,
+          "total": 5
+        },
+        "meta": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "missing-preposition": {
+          "passed": 9,
+          "score": 1.0,
+          "total": 9
+        },
+        "multi-object": {
+          "passed": 1,
+          "score": 0.2,
+          "total": 5
+        },
+        "nonsense": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "out-of-vocab": {
+          "passed": 15,
+          "score": 0.357142857143,
+          "total": 42
+        },
+        "paraphrase": {
+          "passed": 16,
+          "score": 0.941176470588,
+          "total": 17
+        },
+        "politeness": {
+          "passed": 6,
+          "score": 1.0,
+          "total": 6
+        },
+        "pronoun": {
+          "passed": 5,
+          "score": 0.555555555556,
+          "total": 9
+        },
+        "question": {
+          "passed": 15,
+          "score": 1.0,
+          "total": 15
+        },
+        "relative-direction": {
+          "passed": 1,
+          "score": 0.25,
+          "total": 4
+        },
+        "story-mode": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "synonym": {
+          "passed": 21,
+          "score": 1.0,
+          "total": 21
+        },
+        "typo": {
+          "passed": 11,
+          "score": 0.916666666667,
+          "total": 12
+        },
+        "verb-alias": {
+          "passed": 5,
+          "score": 1.0,
+          "total": 5
+        }
+      },
+      "parsing_failures": 0,
+      "passed": 185,
+      "repetition": 1,
+      "score": 0.758196721311,
+      "total": 244,
+      "transport_failures": 0
+    },
+    {
+      "by_tag": {
+        "abbreviation": {
+          "passed": 10,
+          "score": 1.0,
+          "total": 10
+        },
+        "absent-object": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "adverb": {
+          "passed": 7,
+          "score": 1.0,
+          "total": 7
+        },
+        "ambiguity": {
+          "passed": 4,
+          "score": 0.4,
+          "total": 10
+        },
+        "classic-command": {
+          "passed": 7,
+          "score": 0.4375,
+          "total": 16
+        },
+        "compound": {
+          "passed": 6,
+          "score": 0.666666666667,
+          "total": 9
+        },
+        "direction-as-place": {
+          "passed": 14,
+          "score": 0.933333333333,
+          "total": 15
+        },
+        "exact-verb": {
+          "passed": 12,
+          "score": 1.0,
+          "total": 12
+        },
+        "flavor-noun": {
+          "passed": 1,
+          "score": 0.071428571429,
+          "total": 14
+        },
+        "frustration": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "full-sentence": {
+          "passed": 7,
+          "score": 0.875,
+          "total": 8
+        },
+        "go-to-place": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "greeting": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "guess-the-noun": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "help-seeking": {
+          "passed": 3,
+          "score": 0.6,
+          "total": 5
+        },
+        "meta": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "missing-preposition": {
+          "passed": 9,
+          "score": 1.0,
+          "total": 9
+        },
+        "multi-object": {
+          "passed": 1,
+          "score": 0.2,
+          "total": 5
+        },
+        "nonsense": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "out-of-vocab": {
+          "passed": 15,
+          "score": 0.357142857143,
+          "total": 42
+        },
+        "paraphrase": {
+          "passed": 16,
+          "score": 0.941176470588,
+          "total": 17
+        },
+        "politeness": {
+          "passed": 6,
+          "score": 1.0,
+          "total": 6
+        },
+        "pronoun": {
+          "passed": 5,
+          "score": 0.555555555556,
+          "total": 9
+        },
+        "question": {
+          "passed": 15,
+          "score": 1.0,
+          "total": 15
+        },
+        "relative-direction": {
+          "passed": 1,
+          "score": 0.25,
+          "total": 4
+        },
+        "story-mode": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "synonym": {
+          "passed": 21,
+          "score": 1.0,
+          "total": 21
+        },
+        "typo": {
+          "passed": 11,
+          "score": 0.916666666667,
+          "total": 12
+        },
+        "verb-alias": {
+          "passed": 5,
+          "score": 1.0,
+          "total": 5
+        }
+      },
+      "parsing_failures": 0,
+      "passed": 185,
+      "repetition": 2,
+      "score": 0.758196721311,
+      "total": 244,
+      "transport_failures": 0
+    },
+    {
+      "by_tag": {
+        "abbreviation": {
+          "passed": 10,
+          "score": 1.0,
+          "total": 10
+        },
+        "absent-object": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "adverb": {
+          "passed": 7,
+          "score": 1.0,
+          "total": 7
+        },
+        "ambiguity": {
+          "passed": 4,
+          "score": 0.4,
+          "total": 10
+        },
+        "classic-command": {
+          "passed": 7,
+          "score": 0.4375,
+          "total": 16
+        },
+        "compound": {
+          "passed": 6,
+          "score": 0.666666666667,
+          "total": 9
+        },
+        "direction-as-place": {
+          "passed": 14,
+          "score": 0.933333333333,
+          "total": 15
+        },
+        "exact-verb": {
+          "passed": 12,
+          "score": 1.0,
+          "total": 12
+        },
+        "flavor-noun": {
+          "passed": 1,
+          "score": 0.071428571429,
+          "total": 14
+        },
+        "frustration": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "full-sentence": {
+          "passed": 7,
+          "score": 0.875,
+          "total": 8
+        },
+        "go-to-place": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "greeting": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "guess-the-noun": {
+          "passed": 4,
+          "score": 1.0,
+          "total": 4
+        },
+        "help-seeking": {
+          "passed": 3,
+          "score": 0.6,
+          "total": 5
+        },
+        "meta": {
+          "passed": 9,
+          "score": 0.9,
+          "total": 10
+        },
+        "missing-preposition": {
+          "passed": 9,
+          "score": 1.0,
+          "total": 9
+        },
+        "multi-object": {
+          "passed": 1,
+          "score": 0.2,
+          "total": 5
+        },
+        "nonsense": {
+          "passed": 3,
+          "score": 0.75,
+          "total": 4
+        },
+        "out-of-vocab": {
+          "passed": 15,
+          "score": 0.357142857143,
+          "total": 42
+        },
+        "paraphrase": {
+          "passed": 16,
+          "score": 0.941176470588,
+          "total": 17
+        },
+        "politeness": {
+          "passed": 6,
+          "score": 1.0,
+          "total": 6
+        },
+        "pronoun": {
+          "passed": 5,
+          "score": 0.555555555556,
+          "total": 9
+        },
+        "question": {
+          "passed": 15,
+          "score": 1.0,
+          "total": 15
+        },
+        "relative-direction": {
+          "passed": 1,
+          "score": 0.25,
+          "total": 4
+        },
+        "story-mode": {
+          "passed": 3,
+          "score": 1.0,
+          "total": 3
+        },
+        "synonym": {
+          "passed": 21,
+          "score": 1.0,
+          "total": 21
+        },
+        "typo": {
+          "passed": 11,
+          "score": 0.916666666667,
+          "total": 12
+        },
+        "verb-alias": {
+          "passed": 5,
+          "score": 1.0,
+          "total": 5
+        }
+      },
+      "parsing_failures": 0,
+      "passed": 185,
+      "repetition": 3,
+      "score": 0.758196721311,
+      "total": 244,
+      "transport_failures": 0
+    }
+  ],
+  "run_id": "20260901-plicara-v1-full-ibm-granite-granite-4-1-8b",
+  "schema_version": "1.0",
+  "validity": {
+    "invalid_reasons": [],
+    "valid": true
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "manifest_sha256": "7a759a6ce42cfa09dcedb7ec96e0cfbfe3b0824c1dfa03431845ccb742b5e995"
+  },
+  "kind": "adventure-bench-derived-tag-matrix",
+  "run_id": "20260901-plicara-v1-full-ibm-granite-granite-4-0-h-micro",
+  "schema_version": "1.0",
+  "tags": {
+    "abbreviation": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      }
+    },
+    "absent-object": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      }
+    },
+    "adverb": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      }
+    },
+    "ambiguity": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      }
+    },
+    "classic-command": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 0.5625,
+        "total": 48
+      }
+    },
+    "compound": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      }
+    },
+    "direction-as-place": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      }
+    },
+    "exact-verb": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "flavor-noun": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.214285714286,
+        "total": 42
+      }
+    },
+    "frustration": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "full-sentence": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      }
+    },
+    "go-to-place": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "greeting": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "guess-the-noun": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "help-seeking": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.8,
+        "total": 15
+      }
+    },
+    "meta": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      }
+    },
+    "missing-preposition": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      }
+    },
+    "multi-object": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "nonsense": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "out-of-vocab": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 42,
+        "score": 0.333333333333,
+        "total": 126
+      }
+    },
+    "paraphrase": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 51,
+        "score": 1.0,
+        "total": 51
+      }
+    },
+    "politeness": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      }
+    },
+    "pronoun": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 0.555555555556,
+        "total": 27
+      }
+    },
+    "question": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 0.8,
+        "total": 45
+      }
+    },
+    "relative-direction": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      }
+    },
+    "story-mode": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 9
+      }
+    },
+    "synonym": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      }
+    },
+    "typo": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "verb-alias": {
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    }
+  }
+}

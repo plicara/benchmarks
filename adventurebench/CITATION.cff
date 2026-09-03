@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use Adventure Bench, please cite it as below."
+title: "Adventure Bench: grounded instruction-following from five decades of text-adventure play"
+version: 1.0.0
+date-released: 2026-07-12
+authors:
+  - family-names: "Tame Jacobo"
+    given-names: "Adrian"
+repository-code: "https://github.com/plicara/benchmarks/tree/main/adventurebench"
+keywords:
+  - benchmark
+  - instruction-following
+  - interactive-fiction
+  - calibration
+  - large-language-models

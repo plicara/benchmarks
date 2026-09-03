@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plicara.ai/schemas/adventurebench/evidence-1.0.json",
+  "title": "Adventure Bench v1 collection evidence",
+  "oneOf": [
+    { "$ref": "#/$defs/manifest" },
+    { "$ref": "#/$defs/responseRecord" }
+  ],
+  "$defs": {
+    "identity": {
+      "type": "object",
+      "required": ["model", "provider", "runtime"],
+      "properties": {
+        "model": { "type": ["string", "null"] },
+        "provider": { "type": ["string", "null"] },
+        "runtime": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["action", "target"],
+      "properties": {
+        "action": { "type": "string" },
+        "target": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "error": {
+      "type": "object",
+      "required": ["kind", "type", "message"],
+      "properties": {
+        "kind": { "enum": ["transport", "client", "parsing"] },
+        "type": { "type": "string" },
+        "message": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "attempt": {
+      "type": "object",
+      "required": ["number", "started_at", "latency_ms", "raw_completion", "parsed", "error"],
+      "properties": {
+        "number": { "type": "integer", "minimum": 1 },
+        "started_at": { "type": "string", "format": "date-time" },
+        "latency_ms": { "type": "number", "minimum": 0 },
+        "raw_completion": { "type": ["string", "null"] },
+        "parsed": { "oneOf": [{ "$ref": "#/$defs/outcome" }, { "type": "null" }] },
+        "error": { "oneOf": [{ "$ref": "#/$defs/error" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    },
+    "responseRecord": {
+      "type": "object",
+      "required": ["schema_version", "case_id", "repetition", "started_at", "request", "attempts", "outcome", "expected_outcomes", "passed", "transport_error", "error", "latency_ms", "usage", "cost", "resolved"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "case_id": { "type": "string" },
+        "repetition": { "type": "integer", "minimum": 1 },
+        "started_at": { "type": "string", "format": "date-time" },
+        "request": { "type": "object" },
+        "attempts": { "type": "array", "minItems": 1, "maxItems": 2, "items": { "$ref": "#/$defs/attempt" } },
+        "outcome": { "$ref": "#/$defs/outcome" },
+        "expected_outcomes": { "type": "array", "minItems": 1, "items": { "type": "array", "minItems": 2, "maxItems": 2 } },
+        "passed": { "type": "boolean" },
+        "transport_error": { "type": "boolean" },
+        "error": { "oneOf": [{ "$ref": "#/$defs/error" }, { "type": "null" }] },
+        "latency_ms": { "type": "number", "minimum": 0 },
+        "usage": { "type": ["object", "null"] },
+        "cost": { "type": ["number", "null"] },
+        "resolved": { "$ref": "#/$defs/identity" }
+      },
+      "additionalProperties": false
+    },
+    "manifest": {
+      "type": "object",
+      "required": ["schema_version", "benchmark", "run_id", "started_at", "completed_at", "runner", "case_count", "selected_case_ids_sha256", "repetitions", "configuration", "models", "validity"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "benchmark": { "type": "object" },
+        "run_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$" },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": ["string", "null"], "format": "date-time" },
+        "runner": { "type": "object", "required": ["name", "version", "command"] },
+        "case_count": { "type": "integer", "minimum": 1 },
+        "selected_case_ids_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "repetitions": { "type": "integer", "minimum": 1 },
+        "configuration": { "type": "object" },
+        "models": { "type": "object" },
+        "validity": { "type": "object", "required": ["valid", "invalid_reasons"] }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plicara.ai/schemas/adventurebench/results-1.0.json",
+  "title": "Adventure Bench v1 deterministic derived results",
+  "oneOf": [
+    { "$ref": "#/$defs/modelResult" },
+    { "$ref": "#/$defs/summary" },
+    { "$ref": "#/$defs/tagMatrix" }
+  ],
+  "$defs": {
+    "score": {
+      "type": "object",
+      "required": ["passed", "total", "score"],
+      "properties": {
+        "passed": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 0 },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "validity": {
+      "type": "object",
+      "required": ["valid", "invalid_reasons"],
+      "properties": {
+        "valid": { "type": "boolean" },
+        "invalid_reasons": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["manifest_sha256"],
+      "properties": {
+        "manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "responses_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "records": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "modelResult": {
+      "type": "object",
+      "required": ["schema_version", "kind", "run_id", "model_slug", "benchmark", "evidence", "collection_configuration", "provenance", "validity", "overall", "repetitions", "by_tag", "case_results", "failures"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "kind": { "const": "adventure-bench-derived-result" },
+        "run_id": { "type": "string" },
+        "model_slug": { "type": "string" },
+        "benchmark": { "type": "object" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "collection_configuration": { "type": "object" },
+        "provenance": { "type": "object" },
+        "validity": { "$ref": "#/$defs/validity" },
+        "overall": { "$ref": "#/$defs/score" },
+        "repetitions": { "type": "array" },
+        "by_tag": { "type": "object", "additionalProperties": { "$ref": "#/$defs/score" } },
+        "case_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["case_id", "repetition", "tags", "outcome", "passed"],
+            "properties": {
+              "case_id": { "type": "string" },
+              "repetition": { "type": "integer", "minimum": 1 },
+              "tags": { "type": "array", "items": { "type": "string" } },
+              "outcome": {
+                "type": "object",
+                "required": ["action", "target"],
+                "properties": { "action": { "type": "string" }, "target": { "type": ["string", "null"] } },
+                "additionalProperties": false
+              },
+              "passed": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "failures": {
+          "type": "object",
+          "required": ["transport", "parsing"],
+          "properties": {
+            "transport": { "type": "integer", "minimum": 0 },
+            "parsing": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["schema_version", "kind", "run_id", "benchmark", "evidence", "collection_configuration", "validity", "models"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "kind": { "const": "adventure-bench-derived-summary" },
+        "run_id": { "type": "string" },
+        "benchmark": { "type": "object" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "collection_configuration": { "type": "object" },
+        "validity": { "$ref": "#/$defs/validity" },
+        "models": { "type": "array" }
+      },
+      "additionalProperties": false
+    },
+    "tagMatrix": {
+      "type": "object",
+      "required": ["schema_version", "kind", "run_id", "benchmark", "evidence", "tags"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "kind": { "const": "adventure-bench-derived-tag-matrix" },
+        "run_id": { "type": "string" },
+        "benchmark": { "type": "object" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "tags": { "type": "object", "additionalProperties": { "type": "object", "additionalProperties": { "$ref": "#/$defs/score" } } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

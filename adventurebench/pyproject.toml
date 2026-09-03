@@ -1,0 +1,27 @@
+[project]
+name = "adventure-bench"
+version = "1.0.0"
+description = "Adventure Bench: grounded instruction-following benchmark built from five decades of text-adventure player input"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/plicara/benchmarks/tree/main/adventurebench"
+Documentation = "https://github.com/plicara/benchmarks/tree/main/adventurebench/docs"
+Issues = "https://github.com/plicara/benchmarks/issues"
+
+[project.scripts]
+adventure-bench = "adventure_bench.runner:main"
+adventure-bench-collect = "adventure_bench.collect:main"
+adventure-bench-rescore = "adventure_bench.rescore:main"
+adventure-bench-aggregate = "adventure_bench.aggregate:main"
+adventure-bench-audit = "adventure_bench.audit:main"
+adventure-bench-render-site = "adventure_bench.render_site:main"
+adventure-bench-run-plan = "adventure_bench.run_spec:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["adventure_bench"]

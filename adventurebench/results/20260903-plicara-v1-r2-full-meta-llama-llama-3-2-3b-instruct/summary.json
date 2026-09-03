@@ -1,0 +1,88 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "repository_commit": "1d602977a4afa6f33b6d33a1e8f752fcf7ec9dda",
+    "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
+    "version": "1.0.0"
+  },
+  "collection_configuration": {
+    "decoding": {
+      "max_output_tokens": 128,
+      "reasoning_enabled": false,
+      "temperature": 0
+    },
+    "endpoint_host": "openrouter.ai",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "requested": {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "provider": "parasail",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "resolved": {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "provider": "parasail",
+      "runtime": "openrouter:chat-completions-v1"
+    },
+    "retry_policy": {
+      "http_429_delays_seconds": [
+        2,
+        4,
+        8
+      ],
+      "malformed_output_attempts": 2
+    },
+    "timeout_seconds": 60.0
+  },
+  "evidence": {
+    "manifest_sha256": "cb1666d4ecc52c2b70b65bcca6f84c0aa790e4a7d881bfff771cce8051e72f19"
+  },
+  "kind": "adventure-bench-derived-summary",
+  "models": [
+    {
+      "evidence": {
+        "manifest_sha256": "cb1666d4ecc52c2b70b65bcca6f84c0aa790e4a7d881bfff771cce8051e72f19",
+        "recorded_cost_usd": 0.02266395,
+        "records": 732,
+        "responses_sha256": "abea1b43abe9e81f5910009397d58c198825a20cf6eb0c39d1a757bbd4a56057"
+      },
+      "failures": {
+        "parsing": 72,
+        "transport": 0
+      },
+      "model_slug": "meta-llama-llama-3-2-3b-instruct",
+      "overall": {
+        "passed": 504,
+        "score": 0.688524590164,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:29:48.880165Z",
+          "started_at": "2026-09-03T14:21:09.398435Z"
+        },
+        "requested": {
+          "model": "meta-llama/llama-3.2-3b-instruct",
+          "provider": "parasail",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "meta-llama/llama-3.2-3b-instruct",
+          "provider": "Parasail",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "validity": {
+        "invalid_reasons": [],
+        "valid": true
+      }
+    }
+  ],
+  "run_id": "20260903-plicara-v1-r2-full-meta-llama-llama-3-2-3b-instruct",
+  "schema_version": "1.0",
+  "validity": {
+    "invalid_reasons": [],
+    "valid": true
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "manifest_sha256": "5e64052e9d11660a6eb8517b72edc48734c273d9aa5ea8fb3dbb6c290aae7b85"
+  },
+  "kind": "adventure-bench-derived-tag-matrix",
+  "run_id": "20260901-plicara-v1-full-z-ai-glm-5-2",
+  "schema_version": "1.0",
+  "tags": {
+    "abbreviation": {
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      }
+    },
+    "absent-object": {
+      "z-ai-glm-5-2": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "adverb": {
+      "z-ai-glm-5-2": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      }
+    },
+    "ambiguity": {
+      "z-ai-glm-5-2": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "classic-command": {
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 0.9375,
+        "total": 48
+      }
+    },
+    "compound": {
+      "z-ai-glm-5-2": {
+        "passed": 26,
+        "score": 0.962962962963,
+        "total": 27
+      }
+    },
+    "direction-as-place": {
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      }
+    },
+    "exact-verb": {
+      "z-ai-glm-5-2": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "flavor-noun": {
+      "z-ai-glm-5-2": {
+        "passed": 14,
+        "score": 0.333333333333,
+        "total": 42
+      }
+    },
+    "frustration": {
+      "z-ai-glm-5-2": {
+        "passed": 10,
+        "score": 0.833333333333,
+        "total": 12
+      }
+    },
+    "full-sentence": {
+      "z-ai-glm-5-2": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      }
+    },
+    "go-to-place": {
+      "z-ai-glm-5-2": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "greeting": {
+      "z-ai-glm-5-2": {
+        "passed": 8,
+        "score": 0.888888888889,
+        "total": 9
+      }
+    },
+    "guess-the-noun": {
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "help-seeking": {
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "meta": {
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      }
+    },
+    "missing-preposition": {
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      }
+    },
+    "multi-object": {
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "nonsense": {
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "out-of-vocab": {
+      "z-ai-glm-5-2": {
+        "passed": 97,
+        "score": 0.769841269841,
+        "total": 126
+      }
+    },
+    "paraphrase": {
+      "z-ai-glm-5-2": {
+        "passed": 51,
+        "score": 1.0,
+        "total": 51
+      }
+    },
+    "politeness": {
+      "z-ai-glm-5-2": {
+        "passed": 16,
+        "score": 0.888888888889,
+        "total": 18
+      }
+    },
+    "pronoun": {
+      "z-ai-glm-5-2": {
+        "passed": 25,
+        "score": 0.925925925926,
+        "total": 27
+      }
+    },
+    "question": {
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      }
+    },
+    "relative-direction": {
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "story-mode": {
+      "z-ai-glm-5-2": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "synonym": {
+      "z-ai-glm-5-2": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      }
+    },
+    "typo": {
+      "z-ai-glm-5-2": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "verb-alias": {
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    }
+  }
+}

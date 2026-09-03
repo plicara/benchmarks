@@ -1,0 +1,2961 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "a5b12544f69942f57f4e8e81c21071b5bbb219436570ff63aa36e7b82994e786",
+    "version": "1.0.0"
+  },
+  "bootstrap": {
+    "algorithm": "xorshift32 rejection-sampled cluster-by-case bootstrap with replacement; 10000 replicates; nearest-rank two-sided 95% percentile intervals",
+    "cluster_unit": "case_id",
+    "confidence_level": 0.95,
+    "paired_score_difference_intervals": [
+      {
+        "estimate": 0.079234972678,
+        "interval": [
+          0.039617486339,
+          0.120218579235
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "qwen-qwen3-5-9b"
+      },
+      {
+        "estimate": 0.062841530055,
+        "interval": [
+          0.021857923498,
+          0.105191256831
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "mistralai-ministral-3b-2512"
+      },
+      {
+        "estimate": 0.172131147541,
+        "interval": [
+          0.121584699454,
+          0.224043715847
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "ibm-granite-granite-4-0-h-micro"
+      },
+      {
+        "estimate": 0.147540983607,
+        "interval": [
+          0.098360655738,
+          0.198087431694
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "ibm-granite-granite-4-1-8b"
+      },
+      {
+        "estimate": 0.061475409836,
+        "interval": [
+          0.021857923498,
+          0.102459016394
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.180327868852,
+        "interval": [
+          0.131147540983,
+          0.233606557377
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": 0.110655737705,
+        "interval": [
+          0.068306010929,
+          0.155737704918
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.217213114754,
+        "interval": [
+          0.161202185792,
+          0.275956284153
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": 0.040983606557,
+        "interval": [
+          0.004098360656,
+          0.079234972678
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": 0.061475409836,
+        "interval": [
+          0.021857923498,
+          0.102459016394
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.169398907104,
+        "interval": [
+          0.121584699453,
+          0.22131147541
+        ],
+        "model_a": "z-ai-glm-5-2",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": -0.016393442623,
+        "interval": [
+          -0.061475409836,
+          0.030054644808
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "mistralai-ministral-3b-2512"
+      },
+      {
+        "estimate": 0.092896174863,
+        "interval": [
+          0.043715846995,
+          0.143442622951
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "ibm-granite-granite-4-0-h-micro"
+      },
+      {
+        "estimate": 0.068306010929,
+        "interval": [
+          0.024590163934,
+          0.113387978142
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "ibm-granite-granite-4-1-8b"
+      },
+      {
+        "estimate": -0.017759562842,
+        "interval": [
+          -0.056010928962,
+          0.021857923497
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.101092896174,
+        "interval": [
+          0.04781420765,
+          0.155737704918
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": 0.031420765027,
+        "interval": [
+          -0.013661202186,
+          0.077868852459
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.137978142076,
+        "interval": [
+          0.07650273224,
+          0.20218579235
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.038251366121,
+        "interval": [
+          -0.081967213115,
+          0.004098360656
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.017759562842,
+        "interval": [
+          -0.062841530055,
+          0.02868852459
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.090163934426,
+        "interval": [
+          0.040983606557,
+          0.142076502733
+        ],
+        "model_a": "qwen-qwen3-5-9b",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": 0.109289617486,
+        "interval": [
+          0.054644808743,
+          0.16393442623
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "ibm-granite-granite-4-0-h-micro"
+      },
+      {
+        "estimate": 0.084699453552,
+        "interval": [
+          0.028688524591,
+          0.139344262295
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "ibm-granite-granite-4-1-8b"
+      },
+      {
+        "estimate": -0.001366120219,
+        "interval": [
+          -0.043715846994,
+          0.039617486339
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.117486338797,
+        "interval": [
+          0.062841530054,
+          0.174863387978
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": 0.04781420765,
+        "interval": [
+          -0.002732240437,
+          0.098360655738
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.154371584699,
+        "interval": [
+          0.095628415301,
+          0.214480874317
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.021857923498,
+        "interval": [
+          -0.069672131148,
+          0.027322404371
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.001366120219,
+        "interval": [
+          -0.045081967214,
+          0.043715846995
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.106557377049,
+        "interval": [
+          0.051912568306,
+          0.161202185793
+        ],
+        "model_a": "mistralai-ministral-3b-2512",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": -0.024590163934,
+        "interval": [
+          -0.073770491803,
+          0.024590163934
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "ibm-granite-granite-4-1-8b"
+      },
+      {
+        "estimate": -0.110655737705,
+        "interval": [
+          -0.159836065573,
+          -0.062841530055
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.008196721311,
+        "interval": [
+          -0.045081967213,
+          0.061475409836
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": -0.061475409836,
+        "interval": [
+          -0.110655737705,
+          -0.012295081967
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.045081967213,
+        "interval": [
+          -0.012295081967,
+          0.102459016394
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.131147540984,
+        "interval": [
+          -0.189890710382,
+          -0.073770491803
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.110655737705,
+        "interval": [
+          -0.168032786885,
+          -0.051912568306
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": -0.002732240437,
+        "interval": [
+          -0.051912568306,
+          0.049180327868
+        ],
+        "model_a": "ibm-granite-granite-4-0-h-micro",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": -0.086065573771,
+        "interval": [
+          -0.129781420765,
+          -0.042349726776
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.032786885245,
+        "interval": [
+          -0.016393442623,
+          0.08606557377
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": -0.036885245902,
+        "interval": [
+          -0.08606557377,
+          0.012295081967
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.069672131147,
+        "interval": [
+          0.008196721312,
+          0.131147540984
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.10655737705,
+        "interval": [
+          -0.161202185792,
+          -0.053278688524
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.086065573771,
+        "interval": [
+          -0.143442622951,
+          -0.02868852459
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.021857923497,
+        "interval": [
+          -0.023224043716,
+          0.066939890711
+        ],
+        "model_a": "ibm-granite-granite-4-1-8b",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": 0.118852459016,
+        "interval": [
+          0.066939890711,
+          0.172131147541
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": 0.049180327869,
+        "interval": [
+          0.006830601093,
+          0.091530054644
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.155737704918,
+        "interval": [
+          0.096994535519,
+          0.215846994535
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.020491803279,
+        "interval": [
+          -0.061475409836,
+          0.020491803278
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": 0.0,
+        "interval": [
+          -0.045081967213,
+          0.045081967214
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.107923497268,
+        "interval": [
+          0.061475409836,
+          0.157103825137
+        ],
+        "model_a": "mistralai-ministral-8b-2512",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": -0.069672131147,
+        "interval": [
+          -0.122950819672,
+          -0.020491803279
+        ],
+        "model_a": "google-gemma-3-4b-it",
+        "model_b": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.036885245902,
+        "interval": [
+          -0.016393442623,
+          0.090163934427
+        ],
+        "model_a": "google-gemma-3-4b-it",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.139344262295,
+        "interval": [
+          -0.199453551913,
+          -0.079234972678
+        ],
+        "model_a": "google-gemma-3-4b-it",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.118852459016,
+        "interval": [
+          -0.172131147541,
+          -0.065573770492
+        ],
+        "model_a": "google-gemma-3-4b-it",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": -0.010928961748,
+        "interval": [
+          -0.064207650273,
+          0.040983606558
+        ],
+        "model_a": "google-gemma-3-4b-it",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": 0.106557377049,
+        "interval": [
+          0.053278688524,
+          0.163934426229
+        ],
+        "model_a": "ibm-granite-granite-4-2-8b-20260831",
+        "model_b": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": -0.069672131148,
+        "interval": [
+          -0.122950819672,
+          -0.016393442623
+        ],
+        "model_a": "ibm-granite-granite-4-2-8b-20260831",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.049180327869,
+        "interval": [
+          -0.098360655737,
+          0.0
+        ],
+        "model_a": "ibm-granite-granite-4-2-8b-20260831",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.058743169399,
+        "interval": [
+          0.016393442623,
+          0.102459016394
+        ],
+        "model_a": "ibm-granite-granite-4-2-8b-20260831",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": -0.176229508197,
+        "interval": [
+          -0.243169398907,
+          -0.110655737705
+        ],
+        "model_a": "meta-llama-llama-3-2-3b-instruct",
+        "model_b": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": -0.155737704918,
+        "interval": [
+          -0.214480874317,
+          -0.098360655738
+        ],
+        "model_a": "meta-llama-llama-3-2-3b-instruct",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": -0.04781420765,
+        "interval": [
+          -0.099726775957,
+          0.002732240437
+        ],
+        "model_a": "meta-llama-llama-3-2-3b-instruct",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": 0.020491803279,
+        "interval": [
+          -0.02868852459,
+          0.069672131148
+        ],
+        "model_a": "mistralai-ministral-14b-2512",
+        "model_b": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.128415300547,
+        "interval": [
+          0.073770491803,
+          0.184426229508
+        ],
+        "model_a": "mistralai-ministral-14b-2512",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      },
+      {
+        "estimate": 0.107923497268,
+        "interval": [
+          0.051912568306,
+          0.165300546448
+        ],
+        "model_a": "nvidia-nemotron-3-5-lightning",
+        "model_b": "meta-llama-llama-3-1-8b-instruct"
+      }
+    ],
+    "replicates": 10000,
+    "score_intervals": [
+      {
+        "estimate": 0.905737704918,
+        "interval": [
+          0.870218579235,
+          0.938524590164
+        ],
+        "model_slug": "z-ai-glm-5-2"
+      },
+      {
+        "estimate": 0.82650273224,
+        "interval": [
+          0.777322404372,
+          0.872950819672
+        ],
+        "model_slug": "qwen-qwen3-5-9b"
+      },
+      {
+        "estimate": 0.842896174863,
+        "interval": [
+          0.79781420765,
+          0.885245901639
+        ],
+        "model_slug": "mistralai-ministral-3b-2512"
+      },
+      {
+        "estimate": 0.733606557377,
+        "interval": [
+          0.676229508197,
+          0.786885245902
+        ],
+        "model_slug": "ibm-granite-granite-4-0-h-micro"
+      },
+      {
+        "estimate": 0.758196721311,
+        "interval": [
+          0.700819672131,
+          0.811475409836
+        ],
+        "model_slug": "ibm-granite-granite-4-1-8b"
+      },
+      {
+        "estimate": 0.844262295082,
+        "interval": [
+          0.79781420765,
+          0.887978142077
+        ],
+        "model_slug": "mistralai-ministral-8b-2512"
+      },
+      {
+        "estimate": 0.725409836066,
+        "interval": [
+          0.668032786885,
+          0.77868852459
+        ],
+        "model_slug": "google-gemma-3-4b-it"
+      },
+      {
+        "estimate": 0.795081967213,
+        "interval": [
+          0.741803278689,
+          0.844262295082
+        ],
+        "model_slug": "ibm-granite-granite-4-2-8b-20260831"
+      },
+      {
+        "estimate": 0.688524590164,
+        "interval": [
+          0.627049180328,
+          0.745901639344
+        ],
+        "model_slug": "meta-llama-llama-3-2-3b-instruct"
+      },
+      {
+        "estimate": 0.864754098361,
+        "interval": [
+          0.821038251366,
+          0.905737704918
+        ],
+        "model_slug": "mistralai-ministral-14b-2512"
+      },
+      {
+        "estimate": 0.844262295082,
+        "interval": [
+          0.796448087432,
+          0.887978142077
+        ],
+        "model_slug": "nvidia-nemotron-3-5-lightning"
+      },
+      {
+        "estimate": 0.736338797814,
+        "interval": [
+          0.680327868852,
+          0.789617486339
+        ],
+        "model_slug": "meta-llama-llama-3-1-8b-instruct"
+      }
+    ],
+    "seed": 20260901
+  },
+  "collection_window": {
+    "completed_at": "2026-09-03T14:42:54.877103Z",
+    "started_at": "2026-09-02T00:56:34.994555Z"
+  },
+  "coverage": {
+    "case_count": 244,
+    "case_repetitions": 732,
+    "repetitions": [
+      1,
+      2,
+      3
+    ]
+  },
+  "kind": "adventure-bench-release-set",
+  "models": [
+    {
+      "evidence": {
+        "manifest_sha256": "5e64052e9d11660a6eb8517b72edc48734c273d9aa5ea8fb3dbb6c290aae7b85",
+        "recorded_cost_usd": 0.1194433305,
+        "records": 732,
+        "responses_sha256": "ec9c4e5bbf6992c07fd4464b84a51000e84aa14960c32bd1953b156908f93f7b"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "z-ai-glm-5-2",
+      "overall": {
+        "passed": 663,
+        "score": 0.905737704918,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T01:32:33.880952Z",
+          "started_at": "2026-09-02T00:56:34.994555Z"
+        },
+        "requested": {
+          "model": "z-ai/glm-5.2",
+          "provider": "deepinfra",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "z-ai/glm-5.2",
+          "provider": "DeepInfra",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-z-ai-glm-5-2"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "50b05771dbdbf3885113cb951b9620fad69ebfdd3d7362c908e8075073d27df5",
+        "recorded_cost_usd": 0.0392304,
+        "records": 732,
+        "responses_sha256": "a22085e726daa7c785ef787b8420b0a9c7ba70bb3697a6d1808b525d06b33e16"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "qwen-qwen3-5-9b",
+      "overall": {
+        "passed": 605,
+        "score": 0.82650273224,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T23:49:32.638661Z",
+          "started_at": "2026-09-02T01:44:25.484572Z"
+        },
+        "requested": {
+          "model": "qwen/qwen3.5-9b",
+          "provider": "deepinfra",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "qwen/qwen3.5-9b",
+          "provider": "DeepInfra",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-qwen-qwen3-5-9b"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "41116a1eb3faf108e311a742dbee2aaa6294aedb4b7971608643b8a61c593758",
+        "recorded_cost_usd": 0.0140089,
+        "records": 732,
+        "responses_sha256": "e5a394de146c1e692d42c0d214341d3969e4b38a68f471f64b1b94b5bc0a10cf"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "mistralai-ministral-3b-2512",
+      "overall": {
+        "passed": 617,
+        "score": 0.842896174863,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T01:52:26.241444Z",
+          "started_at": "2026-09-02T01:43:36.135622Z"
+        },
+        "requested": {
+          "model": "mistralai/ministral-3b-2512",
+          "provider": "mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "mistralai/ministral-3b-2512",
+          "provider": "Mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-mistralai-ministral-3b-2512"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "7a759a6ce42cfa09dcedb7ec96e0cfbfe3b0824c1dfa03431845ccb742b5e995",
+        "recorded_cost_usd": 0.008375085,
+        "records": 732,
+        "responses_sha256": "55ee01583993c9917175b3d80bdc39187ce969499a79156763e76b6c050226b0"
+      },
+      "failures": {
+        "parsing": 3,
+        "transport": 0
+      },
+      "model_slug": "ibm-granite-granite-4-0-h-micro",
+      "overall": {
+        "passed": 537,
+        "score": 0.733606557377,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T23:39:53.183639Z",
+          "started_at": "2026-09-02T01:43:24.342929Z"
+        },
+        "requested": {
+          "model": "ibm-granite/granite-4.0-h-micro",
+          "provider": "cloudflare",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "ibm-granite/granite-4.0-h-micro",
+          "provider": "Cloudflare",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-ibm-granite-granite-4-0-h-micro"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "d35412b49f1aeed4426469bf4e6223d563918499e3e24726f7aef6bd929ec621",
+        "recorded_cost_usd": 0.0195273,
+        "records": 732,
+        "responses_sha256": "dd55139ef44d388890d42ff9dcf9dd30df4b314d51e49c1bcaedd5b98aa4e74f"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "ibm-granite-granite-4-1-8b",
+      "overall": {
+        "passed": 555,
+        "score": 0.758196721311,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T01:56:58.438283Z",
+          "started_at": "2026-09-02T01:50:12.886821Z"
+        },
+        "requested": {
+          "model": "ibm-granite/granite-4.1-8b",
+          "provider": "coreweave",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "ibm-granite/granite-4.1-8b",
+          "provider": "CoreWeave",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-ibm-granite-granite-4-1-8b"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "cba40171ca5453d8391bb136db983d7370109f008a149d0ed5c43a37803b2a84",
+        "recorded_cost_usd": 0.02185995,
+        "records": 732,
+        "responses_sha256": "e88da497900dff9f403dc6f3ce6f842d915f7ef5adf50d08a54d503697363104"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "mistralai-ministral-8b-2512",
+      "overall": {
+        "passed": 618,
+        "score": 0.844262295082,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-02T23:42:16.507810Z",
+          "started_at": "2026-09-02T23:33:11.974323Z"
+        },
+        "requested": {
+          "model": "mistralai/ministral-8b-2512",
+          "provider": "mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "mistralai/ministral-8b-2512",
+          "provider": "Mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260901-plicara-v1-full-mistralai-ministral-8b-2512"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "6df945ef566c4161614e6d5e920943d287899b1d879efd52a2977a9865e5e581",
+        "recorded_cost_usd": 0.0195055,
+        "records": 732,
+        "responses_sha256": "b18859347614c8c608ffc9a7f6849b4fdd62ee8a8186a14e181b1697679fa504"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "google-gemma-3-4b-it",
+      "overall": {
+        "passed": 531,
+        "score": 0.725409836066,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:32:28.977103Z",
+          "started_at": "2026-09-03T14:21:24.922184Z"
+        },
+        "requested": {
+          "model": "google/gemma-3-4b-it",
+          "provider": "deepinfra",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "google/gemma-3-4b-it",
+          "provider": "DeepInfra",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r2-full-google-gemma-3-4b-it"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "52bca6e770f1bbf09a7cf7c0fea0af84cfaadad661e42acf28220fd4e52c77f6",
+        "recorded_cost_usd": 0.02345655,
+        "records": 732,
+        "responses_sha256": "e80fea06253c8df54e2b5afbafb2a9b42e15361fbcabaefcd06002dbdf68ea28"
+      },
+      "failures": {
+        "parsing": 9,
+        "transport": 0
+      },
+      "model_slug": "ibm-granite-granite-4-2-8b-20260831",
+      "overall": {
+        "passed": 582,
+        "score": 0.795081967213,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:26:44.641852Z",
+          "started_at": "2026-09-03T14:21:05.167250Z"
+        },
+        "requested": {
+          "model": "ibm-granite/granite-4.2-8b-20260831",
+          "provider": "coreweave",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "ibm-granite/granite-4.2-8b",
+          "provider": "CoreWeave",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r2-full-ibm-granite-granite-4-2-8b-20260831"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "cb1666d4ecc52c2b70b65bcca6f84c0aa790e4a7d881bfff771cce8051e72f19",
+        "recorded_cost_usd": 0.02266395,
+        "records": 732,
+        "responses_sha256": "abea1b43abe9e81f5910009397d58c198825a20cf6eb0c39d1a757bbd4a56057"
+      },
+      "failures": {
+        "parsing": 72,
+        "transport": 0
+      },
+      "model_slug": "meta-llama-llama-3-2-3b-instruct",
+      "overall": {
+        "passed": 504,
+        "score": 0.688524590164,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:29:48.880165Z",
+          "started_at": "2026-09-03T14:21:09.398435Z"
+        },
+        "requested": {
+          "model": "meta-llama/llama-3.2-3b-instruct",
+          "provider": "parasail",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "meta-llama/llama-3.2-3b-instruct",
+          "provider": "Parasail",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r2-full-meta-llama-llama-3-2-3b-instruct"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "2888860eec12b6118c1b05e4a5605c412b72c7133428d73af8c2a7db2ed44b8c",
+        "recorded_cost_usd": 0.04288268,
+        "records": 732,
+        "responses_sha256": "6e23337f15b7edf93568edc915eb54b381d7f588c77a42d42fa3d2bd52032072"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "mistralai-ministral-14b-2512",
+      "overall": {
+        "passed": 633,
+        "score": 0.864754098361,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:32:39.883831Z",
+          "started_at": "2026-09-03T14:21:23.902072Z"
+        },
+        "requested": {
+          "model": "mistralai/ministral-14b-2512",
+          "provider": "mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "mistralai/ministral-14b-2512",
+          "provider": "Mistral",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r2-full-mistralai-ministral-14b-2512"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "fd703e0c4f5bccab86dc9beba3252871aecad4d03d2de41710a7b771bbd294f4",
+        "recorded_cost_usd": 0.03309252,
+        "records": 732,
+        "responses_sha256": "f563fe72bf30254a6d6d0547bdca68914de177ecd634f78495fa8eb6565cf9fe"
+      },
+      "failures": {
+        "parsing": 2,
+        "transport": 0
+      },
+      "model_slug": "nvidia-nemotron-3-5-lightning",
+      "overall": {
+        "passed": 618,
+        "score": 0.844262295082,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:27:13.151720Z",
+          "started_at": "2026-09-03T14:21:07.739206Z"
+        },
+        "requested": {
+          "model": "nvidia/nemotron-3.5-lightning",
+          "provider": "deepinfra",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "nvidia/nemotron-3.5-lightning",
+          "provider": "DeepInfra",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r2-full-nvidia-nemotron-3-5-lightning"
+    },
+    {
+      "evidence": {
+        "manifest_sha256": "e87380875873873b02f10de678f7af605e4e75a6f0bf1717edbcb3631a87a26b",
+        "recorded_cost_usd": 0.01984351,
+        "records": 732,
+        "responses_sha256": "33a60660bbd0a81e3ac1faf63dd7232af69a6c2aabbcdda954487d5805591411"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "meta-llama-llama-3-1-8b-instruct",
+      "overall": {
+        "passed": 539,
+        "score": 0.736338797814,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-03T14:42:54.877103Z",
+          "started_at": "2026-09-03T14:38:41.438287Z"
+        },
+        "requested": {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "provider": "groq",
+          "runtime": "openrouter:chat-completions-v1"
+        },
+        "resolved": {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "provider": "Groq",
+          "runtime": "openrouter:chat-completions-v1"
+        }
+      },
+      "run_id": "20260903-plicara-v1-r3-full-meta-llama-llama-3-1-8b-instruct"
+    }
+  ],
+  "release_id": "20260903-plicara-v1-expanded",
+  "run_ids": [
+    "20260901-plicara-v1-full-z-ai-glm-5-2",
+    "20260901-plicara-v1-full-qwen-qwen3-5-9b",
+    "20260901-plicara-v1-full-mistralai-ministral-3b-2512",
+    "20260901-plicara-v1-full-ibm-granite-granite-4-0-h-micro",
+    "20260901-plicara-v1-full-ibm-granite-granite-4-1-8b",
+    "20260901-plicara-v1-full-mistralai-ministral-8b-2512",
+    "20260903-plicara-v1-r2-full-google-gemma-3-4b-it",
+    "20260903-plicara-v1-r2-full-ibm-granite-granite-4-2-8b-20260831",
+    "20260903-plicara-v1-r2-full-meta-llama-llama-3-2-3b-instruct",
+    "20260903-plicara-v1-r2-full-mistralai-ministral-14b-2512",
+    "20260903-plicara-v1-r2-full-nvidia-nemotron-3-5-lightning",
+    "20260903-plicara-v1-r3-full-meta-llama-llama-3-1-8b-instruct"
+  ],
+  "schema_version": "1.0",
+  "tag_matrix": {
+    "abbreviation": {
+      "google-gemma-3-4b-it": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 21,
+        "score": 0.7,
+        "total": 30
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 24,
+        "score": 0.8,
+        "total": 30
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 13,
+        "score": 0.433333333333,
+        "total": 30
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 24,
+        "score": 0.8,
+        "total": 30
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 21,
+        "score": 0.7,
+        "total": 30
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 21,
+        "score": 0.7,
+        "total": 30
+      },
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      }
+    },
+    "absent-object": {
+      "google-gemma-3-4b-it": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 21,
+        "score": 0.7,
+        "total": 30
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "z-ai-glm-5-2": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "adverb": {
+      "google-gemma-3-4b-it": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 18,
+        "score": 0.857142857143,
+        "total": 21
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      },
+      "z-ai-glm-5-2": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      }
+    },
+    "ambiguity": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 0.3,
+        "total": 30
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 12,
+        "score": 0.4,
+        "total": 30
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 21,
+        "score": 0.7,
+        "total": 30
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 15,
+        "score": 0.5,
+        "total": 30
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 16,
+        "score": 0.533333333333,
+        "total": 30
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 24,
+        "score": 0.8,
+        "total": 30
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "z-ai-glm-5-2": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "classic-command": {
+      "google-gemma-3-4b-it": {
+        "passed": 30,
+        "score": 0.625,
+        "total": 48
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 0.5625,
+        "total": 48
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 21,
+        "score": 0.4375,
+        "total": 48
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 33,
+        "score": 0.6875,
+        "total": 48
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 29,
+        "score": 0.604166666667,
+        "total": 48
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 18,
+        "score": 0.375,
+        "total": 48
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 44,
+        "score": 0.916666666667,
+        "total": 48
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 44,
+        "score": 0.916666666667,
+        "total": 48
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 39,
+        "score": 0.8125,
+        "total": 48
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 40,
+        "score": 0.833333333333,
+        "total": 48
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 39,
+        "score": 0.8125,
+        "total": 48
+      },
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 0.9375,
+        "total": 48
+      }
+    },
+    "compound": {
+      "google-gemma-3-4b-it": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 18,
+        "score": 0.666666666667,
+        "total": 27
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 22,
+        "score": 0.814814814815,
+        "total": 27
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 20,
+        "score": 0.740740740741,
+        "total": 27
+      },
+      "z-ai-glm-5-2": {
+        "passed": 26,
+        "score": 0.962962962963,
+        "total": 27
+      }
+    },
+    "direction-as-place": {
+      "google-gemma-3-4b-it": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      }
+    },
+    "exact-verb": {
+      "google-gemma-3-4b-it": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "z-ai-glm-5-2": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "flavor-noun": {
+      "google-gemma-3-4b-it": {
+        "passed": 6,
+        "score": 0.142857142857,
+        "total": 42
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.214285714286,
+        "total": 42
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 3,
+        "score": 0.071428571429,
+        "total": 42
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 6,
+        "score": 0.142857142857,
+        "total": 42
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 42
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 3,
+        "score": 0.071428571429,
+        "total": 42
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 17,
+        "score": 0.404761904762,
+        "total": 42
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 0.428571428571,
+        "total": 42
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 11,
+        "score": 0.261904761905,
+        "total": 42
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 18,
+        "score": 0.428571428571,
+        "total": 42
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 15,
+        "score": 0.357142857143,
+        "total": 42
+      },
+      "z-ai-glm-5-2": {
+        "passed": 14,
+        "score": 0.333333333333,
+        "total": 42
+      }
+    },
+    "frustration": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "z-ai-glm-5-2": {
+        "passed": 10,
+        "score": 0.833333333333,
+        "total": 12
+      }
+    },
+    "full-sentence": {
+      "google-gemma-3-4b-it": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 21,
+        "score": 0.875,
+        "total": 24
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 21,
+        "score": 0.875,
+        "total": 24
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 21,
+        "score": 0.875,
+        "total": 24
+      },
+      "z-ai-glm-5-2": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      }
+    },
+    "go-to-place": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 11,
+        "score": 0.916666666667,
+        "total": 12
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 7,
+        "score": 0.583333333333,
+        "total": 12
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "z-ai-glm-5-2": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "greeting": {
+      "google-gemma-3-4b-it": {
+        "passed": 3,
+        "score": 0.333333333333,
+        "total": 9
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 9
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 9
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 9
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "z-ai-glm-5-2": {
+        "passed": 8,
+        "score": 0.888888888889,
+        "total": 9
+      }
+    },
+    "guess-the-noun": {
+      "google-gemma-3-4b-it": {
+        "passed": 6,
+        "score": 0.5,
+        "total": 12
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 6,
+        "score": 0.5,
+        "total": 12
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "help-seeking": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 12,
+        "score": 0.8,
+        "total": 15
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 0.8,
+        "total": 15
+      },
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "meta": {
+      "google-gemma-3-4b-it": {
+        "passed": 15,
+        "score": 0.5,
+        "total": 30
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 9,
+        "score": 0.3,
+        "total": 30
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      },
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 0.9,
+        "total": 30
+      }
+    },
+    "missing-preposition": {
+      "google-gemma-3-4b-it": {
+        "passed": 18,
+        "score": 0.666666666667,
+        "total": 27
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      },
+      "z-ai-glm-5-2": {
+        "passed": 27,
+        "score": 1.0,
+        "total": 27
+      }
+    },
+    "multi-object": {
+      "google-gemma-3-4b-it": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 3,
+        "score": 0.2,
+        "total": 15
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 13,
+        "score": 0.866666666667,
+        "total": 15
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 0.8,
+        "total": 15
+      },
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    },
+    "nonsense": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 6,
+        "score": 0.5,
+        "total": 12
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 10,
+        "score": 0.833333333333,
+        "total": 12
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      },
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "out-of-vocab": {
+      "google-gemma-3-4b-it": {
+        "passed": 60,
+        "score": 0.47619047619,
+        "total": 126
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 42,
+        "score": 0.333333333333,
+        "total": 126
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 45,
+        "score": 0.357142857143,
+        "total": 126
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 63,
+        "score": 0.5,
+        "total": 126
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 50,
+        "score": 0.396825396825,
+        "total": 126
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 48,
+        "score": 0.380952380952,
+        "total": 126
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 95,
+        "score": 0.753968253968,
+        "total": 126
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 98,
+        "score": 0.777777777778,
+        "total": 126
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 80,
+        "score": 0.634920634921,
+        "total": 126
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 97,
+        "score": 0.769841269841,
+        "total": 126
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 71,
+        "score": 0.563492063492,
+        "total": 126
+      },
+      "z-ai-glm-5-2": {
+        "passed": 97,
+        "score": 0.769841269841,
+        "total": 126
+      }
+    },
+    "paraphrase": {
+      "google-gemma-3-4b-it": {
+        "passed": 42,
+        "score": 0.823529411765,
+        "total": 51
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 51,
+        "score": 1.0,
+        "total": 51
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 48,
+        "score": 0.941176470588,
+        "total": 51
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 48,
+        "score": 0.941176470588,
+        "total": 51
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 48,
+        "score": 0.941176470588,
+        "total": 51
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 42,
+        "score": 0.823529411765,
+        "total": 51
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 45,
+        "score": 0.882352941176,
+        "total": 51
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 44,
+        "score": 0.862745098039,
+        "total": 51
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 45,
+        "score": 0.882352941176,
+        "total": 51
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 45,
+        "score": 0.882352941176,
+        "total": 51
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 48,
+        "score": 0.941176470588,
+        "total": 51
+      },
+      "z-ai-glm-5-2": {
+        "passed": 51,
+        "score": 1.0,
+        "total": 51
+      }
+    },
+    "politeness": {
+      "google-gemma-3-4b-it": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 15,
+        "score": 0.833333333333,
+        "total": 18
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 15,
+        "score": 0.833333333333,
+        "total": 18
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 15,
+        "score": 0.833333333333,
+        "total": 18
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      },
+      "z-ai-glm-5-2": {
+        "passed": 16,
+        "score": 0.888888888889,
+        "total": 18
+      }
+    },
+    "pronoun": {
+      "google-gemma-3-4b-it": {
+        "passed": 12,
+        "score": 0.444444444444,
+        "total": 27
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 0.555555555556,
+        "total": 27
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 15,
+        "score": 0.555555555556,
+        "total": 27
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 18,
+        "score": 0.666666666667,
+        "total": 27
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 15,
+        "score": 0.555555555556,
+        "total": 27
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 21,
+        "score": 0.777777777778,
+        "total": 27
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 19,
+        "score": 0.703703703704,
+        "total": 27
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      },
+      "z-ai-glm-5-2": {
+        "passed": 25,
+        "score": 0.925925925926,
+        "total": 27
+      }
+    },
+    "question": {
+      "google-gemma-3-4b-it": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 0.8,
+        "total": 45
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 36,
+        "score": 0.8,
+        "total": 45
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 30,
+        "score": 0.666666666667,
+        "total": 45
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 35,
+        "score": 0.777777777778,
+        "total": 45
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 42,
+        "score": 0.933333333333,
+        "total": 45
+      },
+      "z-ai-glm-5-2": {
+        "passed": 45,
+        "score": 1.0,
+        "total": 45
+      }
+    },
+    "relative-direction": {
+      "google-gemma-3-4b-it": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 6,
+        "score": 0.5,
+        "total": 12
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 6,
+        "score": 0.5,
+        "total": 12
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 3,
+        "score": 0.25,
+        "total": 12
+      },
+      "z-ai-glm-5-2": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "story-mode": {
+      "google-gemma-3-4b-it": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 0,
+        "score": 0.0,
+        "total": 9
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 6,
+        "score": 0.666666666667,
+        "total": 9
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      },
+      "z-ai-glm-5-2": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "synonym": {
+      "google-gemma-3-4b-it": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 63,
+        "score": 1.0,
+        "total": 63
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 57,
+        "score": 0.904761904762,
+        "total": 63
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      },
+      "z-ai-glm-5-2": {
+        "passed": 60,
+        "score": 0.952380952381,
+        "total": 63
+      }
+    },
+    "typo": {
+      "google-gemma-3-4b-it": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 33,
+        "score": 0.916666666667,
+        "total": 36
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 33,
+        "score": 0.916666666667,
+        "total": 36
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 30,
+        "score": 0.833333333333,
+        "total": 36
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 31,
+        "score": 0.861111111111,
+        "total": 36
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 34,
+        "score": 0.944444444444,
+        "total": 36
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 33,
+        "score": 0.916666666667,
+        "total": 36
+      },
+      "z-ai-glm-5-2": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "verb-alias": {
+      "google-gemma-3-4b-it": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "ibm-granite-granite-4-0-h-micro": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "ibm-granite-granite-4-1-8b": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "ibm-granite-granite-4-2-8b-20260831": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "meta-llama-llama-3-1-8b-instruct": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "meta-llama-llama-3-2-3b-instruct": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-14b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-3b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "mistralai-ministral-8b-2512": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "nvidia-nemotron-3-5-lightning": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "qwen-qwen3-5-9b": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      },
+      "z-ai-glm-5-2": {
+        "passed": 15,
+        "score": 1.0,
+        "total": 15
+      }
+    }
+  }
+}
