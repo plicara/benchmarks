@@ -113,6 +113,8 @@ class SiteRenderTest(unittest.TestCase):
         self.assertIn("The score&ndash;cost frontier", page)
         self.assertIn("Recorded full-run cost", page)
         self.assertIn('<text class="pareto-label"', page)
+        self.assertIn('<line class="pareto-leader"', page)
+        self.assertLess(page.rindex('class="pareto-point'), page.index('<text class="pareto-label"'))
         self.assertIn("Zebra &lt;unsafe&gt;</text>", page)
         self.assertNotIn("Alpha &amp; &lt;unsafe&gt;</text>", page)
         self.assertIn("exact values for every point appear in the table below", page)
