@@ -228,22 +228,37 @@ def _pareto_section(artifact: dict[str, Any]) -> str:
     frontier_names = {point["name"] for point in frontier}
     frontier_order = {point["name"]: index for index, point in enumerate(frontier)}
     marks = []
+    leaders = []
+    labels = []
     for point in sorted(points, key=lambda item: (item["cost"], item["name"].casefold())):
         on_frontier = point["model_id"] in frontier_names
-        label_x = x(point["cost"]) + (-9 if x(point["cost"]) > left + width * 0.83 else 10)
-        label_anchor = "end" if label_x < x(point["cost"]) else "start"
-        label_y = y(point["score"]) + (-11 if frontier_order.get(point["model_id"], 0) % 2 else 18)
-        label = (
-            f'<text class="pareto-label" x="{label_x:.2f}" y="{label_y:.2f}" '
-            f'text-anchor="{label_anchor}">{_escaped(point["name"])}</text>'
-            if on_frontier else ""
-        )
+        point_x = x(point["cost"])
+        point_y = y(point["score"])
+        if on_frontier:
+            index = frontier_order[point["model_id"]]
+            if index == 0:
+                label_x, label_y, label_anchor = point_x, point_y + 34, "middle"
+            elif index == len(frontier) - 1:
+                label_x, label_y, label_anchor = point_x - 12, point_y + 22, "end"
+            elif index % 2:
+                label_x, label_y, label_anchor = point_x + 10, point_y - 17, "start"
+            else:
+                label_x, label_y, label_anchor = point_x - 10, point_y + 24, "end"
+            leader_x = label_x + ({"start": -4, "middle": 0, "end": 4}[label_anchor])
+            leader_y = label_y + (5 if label_y < point_y else -10)
+            leaders.append(
+                f'<line class="pareto-leader" x1="{point_x:.2f}" y1="{point_y:.2f}" '
+                f'x2="{leader_x:.2f}" y2="{leader_y:.2f}" />'
+            )
+            labels.append(
+                f'<text class="pareto-label" x="{label_x:.2f}" y="{label_y:.2f}" '
+                f'text-anchor="{label_anchor}">{_escaped(point["name"])}</text>'
+            )
         identity = point["model_id"]
         title = point["name"] if identity == point["name"] else f'{point["name"]} ({identity})'
         marks.append(
             f'<g><title>{_escaped(title)}: {_percentage(point["score"])} at ${point["cost"]:.3f}</title>'
-            f'<circle class="pareto-point {"frontier" if on_frontier else "dominated"}" cx="{x(point["cost"]):.2f}" cy="{y(point["score"]):.2f}" r="6.5" />'
-            f'{label}</g>'
+            f'<circle class="pareto-point {"frontier" if on_frontier else "dominated"}" cx="{point_x:.2f}" cy="{point_y:.2f}" r="6.5" /></g>'
         )
     frontier_label = " &rarr; ".join(_escaped(_pareto_name(point["model"])) for point in frontier)
     return f'''      <section class="pareto-section" aria-labelledby="pareto-heading">
@@ -259,7 +274,9 @@ def _pareto_section(artifact: dict[str, Any]) -> str:
             {x_ticks}
             <text class="pareto-axis-title" x="{left + width / 2:.2f}" y="{top + height + 60}" text-anchor="middle">RECORDED FULL-RUN COST (USD)</text><text class="pareto-axis-title" x="19" y="{top + height / 2:.2f}" text-anchor="middle" transform="rotate(-90 19 {top + height / 2:.2f})">ADVENTURE BENCH SCORE</text>
             <path class="pareto-frontier" d="{frontier_path}" />
+            {"".join(leaders)}
             {"".join(marks)}
+            {"".join(labels)}
           </svg>
           <div class="pareto-legend"><span><i class="pareto-swatch frontier"></i>Pareto frontier</span><span><i class="pareto-swatch dominated"></i>Dominated in this release</span></div>
         </div>
@@ -434,11 +451,12 @@ def render_html(artifact: dict[str, Any]) -> str:
       .pareto-point {{ stroke: var(--pl-bg); stroke-width: 2; }}
       .pareto-point.frontier, .pareto-swatch.frontier {{ fill: var(--pl-series-1); background: var(--pl-series-1); }}
       .pareto-point.dominated, .pareto-swatch.dominated {{ fill: var(--pl-series-2); background: var(--pl-series-2); }}
+      .pareto-leader {{ stroke: var(--pl-text-muted); stroke-width: 1; stroke-linecap: round; }}
       .pareto-label {{ fill: var(--pl-text); font: 600 .75rem var(--pl-font-body); }}
       .pareto-legend {{ display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: .9rem; color: var(--pl-text-muted); font-size: .82rem; }}
       .pareto-legend span {{ display: inline-flex; align-items: center; gap: .45rem; }}
       .pareto-swatch {{ display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; }}
-      @media (max-width: 42rem) {{ .pareto-heading {{ display: block; }} .pareto-meta {{ margin-top: .5rem; white-space: normal; }} .pareto-label {{ display: none; }} }}
+      @media (max-width: 42rem) {{ .pareto-heading {{ display: block; }} .pareto-meta {{ margin-top: .5rem; white-space: normal; }} .pareto-label, .pareto-leader {{ display: none; }} }}
     </style>
   </head>
   <body data-scheme="technical">
