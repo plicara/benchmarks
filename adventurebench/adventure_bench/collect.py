@@ -481,10 +481,20 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--repetitions", type=int, default=1)
     parser.add_argument("--out-dir", default="runs")
     parser.add_argument("--run-id")
+    parser.add_argument("--jev", action="store_true",
+                        help="Collect via the TypeSafe Jev runtime (separate prompt spec, not frozen v1)")
+    parser.add_argument("--jev-threshold", type=float, default=None,
+                        help="Jev unclear threshold (publishable runs use the frozen default)")
     options = parser.parse_args(argv)
-    api_key = api_key_from_env()
-    if not api_key:
-        parser.error("set ADVENTURE_BENCH_API_KEY, OPENROUTER_API_KEY, or OPENROUTER_KEY")
+    if options.jev:
+        from . import jev as jev_mod
+        api_key = jev_mod.api_key_from_env()
+        if not api_key:
+            parser.error("set TYPESAFE_API_KEY (console.typesafe.ai)")
+    else:
+        api_key = api_key_from_env()
+        if not api_key:
+            parser.error("set ADVENTURE_BENCH_API_KEY, OPENROUTER_API_KEY, or OPENROUTER_KEY")
     data_path = Path(options.data) if options.data else DATA_PATH
     cases = load_cases(data_path)
     if options.tag:
@@ -493,6 +503,23 @@ def main(argv: list[str] | None = None) -> None:
         cases = cases[:options.limit]
     if not cases:
         parser.error("no cases matched")
+    if options.jev:
+        from . import jev as jev_mod
+        model = options.model or jev_mod.DEFAULT_MODEL
+        client = jev_mod.JevClient(api_key, model=model, timeout=options.timeout)
+        run_id = options.run_id or make_run_id(model)
+        try:
+            manifest = jev_mod.collect_run_jev(
+                cases=cases, model=model, client=client, output_dir=Path(options.out_dir),
+                run_id=run_id, repetitions=options.repetitions,
+                threshold=(options.jev_threshold if options.jev_threshold is not None
+                           else jev_mod.DEFAULT_THRESHOLD),
+                dataset_path=data_path, secrets=(api_key,),
+            )
+        except ValueError as err:
+            parser.error(str(err))
+        print(json.dumps({"run_id": run_id, "valid": manifest["validity"]["valid"], "manifest": f"{options.out_dir}/{run_id}/manifest.json"}))
+        return
     base_url = options.base_url or os.environ.get("ADVENTURE_BENCH_BASE_URL", "https://openrouter.ai/api/v1")
     client = ChatClient(api_key, model=options.model, base_url=base_url, provider=options.provider, timeout=options.timeout, max_output_tokens=options.max_output_tokens)
     run_id = options.run_id or make_run_id(options.model)

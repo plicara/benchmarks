@@ -48,3 +48,14 @@ explicit xorshift32 generator with rejection sampling, and nearest-rank
 percentiles. Paired score-difference intervals use the same bootstrap samples;
 their sign is always `model_a - model_b`. These intervals describe the measured
 release set, not a universal ordering or a winner declaration.
+
+## Runtime revisions
+
+A release may use a different model interface from the frozen chat prompt as an
+explicitly documented revision, provided the dataset, action contract, and
+scoring rules are unchanged. Such a release carries its own prompt SHA-256 and
+can only be compared with runs sharing that hash — never with frozen-prompt
+runs. The first such revision is the TypeSafe System One runtime (Jev): typed
+Choice judgments over the same per-case state, with a calibrated unclear
+threshold frozen in the prompt spec (see `jev-runtime.md`). Its evidence
+replays through the same offline scorer with a runtime-branched parser check.

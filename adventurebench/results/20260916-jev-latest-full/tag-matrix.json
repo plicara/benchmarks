@@ -1,0 +1,218 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "manifest_sha256": "43baa797f318bef71b1a1f88b80612f8361b3ef6d370b4ae32a7d77db025b595"
+  },
+  "kind": "adventure-bench-derived-tag-matrix",
+  "run_id": "20260916-jev-latest-full",
+  "schema_version": "1.0",
+  "tags": {
+    "abbreviation": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.3,
+        "total": 30
+      }
+    },
+    "absent-object": {
+      "jev-latest": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "adverb": {
+      "jev-latest": {
+        "passed": 21,
+        "score": 1.0,
+        "total": 21
+      }
+    },
+    "ambiguity": {
+      "jev-latest": {
+        "passed": 18,
+        "score": 0.6,
+        "total": 30
+      }
+    },
+    "classic-command": {
+      "jev-latest": {
+        "passed": 45,
+        "score": 0.9375,
+        "total": 48
+      }
+    },
+    "compound": {
+      "jev-latest": {
+        "passed": 24,
+        "score": 0.888888888889,
+        "total": 27
+      }
+    },
+    "direction-as-place": {
+      "jev-latest": {
+        "passed": 22,
+        "score": 0.488888888889,
+        "total": 45
+      }
+    },
+    "exact-verb": {
+      "jev-latest": {
+        "passed": 36,
+        "score": 1.0,
+        "total": 36
+      }
+    },
+    "flavor-noun": {
+      "jev-latest": {
+        "passed": 30,
+        "score": 0.714285714286,
+        "total": 42
+      }
+    },
+    "frustration": {
+      "jev-latest": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "full-sentence": {
+      "jev-latest": {
+        "passed": 24,
+        "score": 1.0,
+        "total": 24
+      }
+    },
+    "go-to-place": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "greeting": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "guess-the-noun": {
+      "jev-latest": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "help-seeking": {
+      "jev-latest": {
+        "passed": 14,
+        "score": 0.933333333333,
+        "total": 15
+      }
+    },
+    "meta": {
+      "jev-latest": {
+        "passed": 30,
+        "score": 1.0,
+        "total": 30
+      }
+    },
+    "missing-preposition": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.333333333333,
+        "total": 27
+      }
+    },
+    "multi-object": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.6,
+        "total": 15
+      }
+    },
+    "nonsense": {
+      "jev-latest": {
+        "passed": 12,
+        "score": 1.0,
+        "total": 12
+      }
+    },
+    "out-of-vocab": {
+      "jev-latest": {
+        "passed": 126,
+        "score": 1.0,
+        "total": 126
+      }
+    },
+    "paraphrase": {
+      "jev-latest": {
+        "passed": 38,
+        "score": 0.745098039216,
+        "total": 51
+      }
+    },
+    "politeness": {
+      "jev-latest": {
+        "passed": 18,
+        "score": 1.0,
+        "total": 18
+      }
+    },
+    "pronoun": {
+      "jev-latest": {
+        "passed": 20,
+        "score": 0.740740740741,
+        "total": 27
+      }
+    },
+    "question": {
+      "jev-latest": {
+        "passed": 41,
+        "score": 0.911111111111,
+        "total": 45
+      }
+    },
+    "relative-direction": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.75,
+        "total": 12
+      }
+    },
+    "story-mode": {
+      "jev-latest": {
+        "passed": 9,
+        "score": 1.0,
+        "total": 9
+      }
+    },
+    "synonym": {
+      "jev-latest": {
+        "passed": 59,
+        "score": 0.936507936508,
+        "total": 63
+      }
+    },
+    "typo": {
+      "jev-latest": {
+        "passed": 33,
+        "score": 0.916666666667,
+        "total": 36
+      }
+    },
+    "verb-alias": {
+      "jev-latest": {
+        "passed": 12,
+        "score": 0.8,
+        "total": 15
+      }
+    }
+  }
+}

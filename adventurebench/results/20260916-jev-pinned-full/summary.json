@@ -1,0 +1,86 @@
+{
+  "benchmark": {
+    "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
+    "name": "Adventure Bench",
+    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "repository_commit": "a91aa02300f1d857eedbc3cc6488343fa4c15aac",
+    "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
+    "version": "1.0.0"
+  },
+  "collection_configuration": {
+    "decoding": {
+      "reasoning_enabled": false,
+      "temperature": null
+    },
+    "endpoint_host": "api.typesafe.ai",
+    "jev": {
+      "spec": "adventurebench-systemone-v1",
+      "threshold": 0.9
+    },
+    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "requested": {
+      "model": "jev-1.13.0",
+      "provider": "typesafe",
+      "runtime": "typesafe-systemone:jev-latest"
+    },
+    "resolved": {
+      "model": "jev-1.13.0",
+      "provider": "typesafe",
+      "runtime": "typesafe-systemone:jev-latest"
+    },
+    "retry_policy": {
+      "malformed_output_attempts": 1
+    },
+    "timeout_seconds": 60.0
+  },
+  "evidence": {
+    "manifest_sha256": "83e67d73edf27fcaf6cc1338d32018146f0324db0c0c1e3e5aafe6039ca4e5ac"
+  },
+  "kind": "adventure-bench-derived-summary",
+  "models": [
+    {
+      "evidence": {
+        "manifest_sha256": "83e67d73edf27fcaf6cc1338d32018146f0324db0c0c1e3e5aafe6039ca4e5ac",
+        "recorded_cost_usd": 0.027347418,
+        "records": 732,
+        "responses_sha256": "995be98cac84795bcc3b4ef5b4eb92b1b7bf68c91f9783f9970821996be11b20"
+      },
+      "failures": {
+        "parsing": 0,
+        "transport": 0
+      },
+      "model_slug": "jev-1-13-0",
+      "overall": {
+        "passed": 618,
+        "score": 0.844262295082,
+        "total": 732
+      },
+      "provenance": {
+        "collection_window": {
+          "completed_at": "2026-09-16T22:51:52.772310Z",
+          "started_at": "2026-09-16T22:48:13.879054Z"
+        },
+        "requested": {
+          "model": "jev-1.13.0",
+          "provider": "typesafe",
+          "runtime": "typesafe-systemone:jev-latest"
+        },
+        "resolved": {
+          "model": "jev-1.13.0",
+          "provider": "typesafe",
+          "runtime": "typesafe-systemone:jev-latest"
+        }
+      },
+      "validity": {
+        "invalid_reasons": [],
+        "valid": true
+      }
+    }
+  ],
+  "run_id": "20260916-jev-pinned-full",
+  "schema_version": "1.0",
+  "validity": {
+    "invalid_reasons": [],
+    "valid": true
+  }
+}
