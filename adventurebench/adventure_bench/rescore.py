@@ -17,7 +17,14 @@ from typing import Any
 
 from . import __version__
 from .collect import SCHEMA_VERSION, safe_model_slug, selected_cases_hash, sha256_file, sha256_text, validate_run_id
-from .jev import JEV_SPEC_SHA, replay_jev_outcome
+from .jev import (
+    DEFAULT_MAPPING_THRESHOLD,
+    DEFAULT_THRESHOLD,
+    JEV_SPEC_SHA,
+    JEV_SPEC_SHA_V1,
+    replay_jev_outcome,
+    runtime_label,
+)
 from .runner import DATA_PATH, SYSTEM_PROMPT, extract_json, load_cases, reply_to_outcome
 
 
@@ -89,7 +96,7 @@ def _outcome(value: Any, label: str) -> tuple[str, str | None] | None:
     return action, target
 
 
-def _replay(case: dict[str, Any], record: dict[str, Any], label: str, *, jev: bool = False, jev_threshold: float = 0.0) -> tuple[tuple[str, str | None], bool, int]:
+def _replay(case: dict[str, Any], record: dict[str, Any], label: str, *, jev: bool = False, jev_spec: str = "") -> tuple[tuple[str, str | None], bool, int]:
     """Replay raw attempts and verify all collection-side score claims.
 
     Chat records replay through the frozen v1 parser; Jev records (prompt hash
@@ -123,7 +130,7 @@ def _replay(case: dict[str, Any], record: dict[str, Any], label: str, *, jev: bo
         if not isinstance(raw, str):
             _fail(f"{label}.attempts[{index}].raw_completion must be string or null")
         if jev:
-            replayed = replay_jev_outcome(raw, jev_threshold)
+            replayed = replay_jev_outcome(raw, case, jev_spec)
         else:
             replayed = reply_to_outcome(case, extract_json(raw))
         parsed = _outcome(recorded_parsed, f"{label}.attempts[{index}].parsed")
@@ -204,10 +211,34 @@ def _validate_manifest(manifest: dict[str, Any], run_id: str, dataset_path: Path
         _fail("manifest identifies a different Adventure Bench version")
     if benchmark["dataset_sha256"] != sha256_file(dataset_path):
         _fail("manifest dataset hash does not match the supplied dataset")
-    if benchmark["prompt_sha256"] not in (sha256_text(SYSTEM_PROMPT), JEV_SPEC_SHA):
-        _fail("manifest prompt hash matches neither the frozen v1 prompt nor the Jev spec")
+    if benchmark["prompt_sha256"] not in (sha256_text(SYSTEM_PROMPT), JEV_SPEC_SHA_V1, JEV_SPEC_SHA):
+        _fail("manifest prompt hash matches no known prompt: frozen v1, Jev v1, or Jev v2")
     if not isinstance(manifest["configuration"], dict) or not isinstance(manifest["models"], dict):
         _fail("manifest configuration and models must be objects")
+    configuration = manifest["configuration"]
+    if configuration.get("prompt_sha256") != benchmark["prompt_sha256"]:
+        _fail("manifest benchmark prompt hash does not match collection configuration")
+    if benchmark["prompt_sha256"] in (JEV_SPEC_SHA_V1, JEV_SPEC_SHA):
+        jev = configuration.get("jev")
+        if not isinstance(jev, dict):
+            _fail("Jev collection configuration has an invalid spec")
+        threshold = jev.get("threshold")
+        if (isinstance(threshold, bool) or not isinstance(threshold, (int, float))
+                or float(threshold) != DEFAULT_THRESHOLD):
+            _fail("Jev collection configuration does not use the frozen threshold")
+        if benchmark["prompt_sha256"] == JEV_SPEC_SHA_V1:
+            if jev.get("spec") != "adventurebench-systemone-v1" or "mapping_threshold" in jev:
+                _fail("Jev collection configuration does not match the frozen v1 spec")
+        elif (jev.get("spec") != "adventurebench-systemone-v2"
+              or isinstance(jev.get("mapping_threshold"), bool)
+              or jev.get("mapping_threshold") != DEFAULT_MAPPING_THRESHOLD):
+            _fail("Jev collection configuration does not match the frozen v2 spec")
+        requested, resolved = configuration.get("requested"), configuration.get("resolved")
+        if not isinstance(requested, dict) or not isinstance(resolved, dict):
+            _fail("Jev collection configuration has invalid provenance")
+        model = requested.get("model")
+        if not isinstance(model, str) or not model or requested.get("runtime") != runtime_label(model) or resolved.get("runtime") != runtime_label(model):
+            _fail("Jev collection configuration has invalid runtime provenance")
     if not isinstance(manifest["completed_at"], str) or not manifest["completed_at"]:
         _fail("manifest is incomplete: completed_at is missing")
     started_at = _utc_timestamp(manifest["started_at"], "manifest.started_at")
@@ -291,23 +322,36 @@ def rescore_run(*, runs_dir: Path, results_dir: Path, run_id: str, dataset_path:
             observed_ids.add(case_id)
             if record["request"] != config:
                 _fail(f"{label}.request does not match manifest configuration")
-            if record["request"].get("prompt_sha256") == JEV_SPEC_SHA:
-                jev_mode = True
+            prompt_sha = record["request"].get("prompt_sha256")
+            if prompt_sha == JEV_SPEC_SHA_V1:
+                jev_mode, jev_spec = True, JEV_SPEC_SHA_V1
+            elif prompt_sha == JEV_SPEC_SHA:
+                jev_mode, jev_spec = True, JEV_SPEC_SHA
+            elif prompt_sha == sha256_text(SYSTEM_PROMPT):
+                jev_mode, jev_spec = False, ""
+            else:
+                _fail(f"{label}.request has wrong prompt hash")
+            if jev_mode:
                 jev_cfg = record["request"].get("jev")
                 if not isinstance(jev_cfg, dict):
                     _fail(f"{label}.request.jev is missing")
                 threshold = jev_cfg.get("threshold")
-                if isinstance(threshold, bool) or not isinstance(threshold, (int, float)):
+                if isinstance(threshold, bool) or threshold != DEFAULT_THRESHOLD:
                     _fail(f"{label}.request.jev.threshold is invalid")
-                jev_threshold = float(threshold)
-            elif record["request"].get("prompt_sha256") == sha256_text(SYSTEM_PROMPT):
-                jev_mode, jev_threshold = False, 0.0
-            else:
-                _fail(f"{label}.request has wrong prompt hash")
+                if jev_spec == JEV_SPEC_SHA_V1:
+                    if (jev_cfg.get("spec") != "adventurebench-systemone-v1"
+                            or "mapping_threshold" in jev_cfg):
+                        _fail(f"{label}.request.jev does not match the frozen v1 spec")
+                elif (jev_cfg.get("spec") != "adventurebench-systemone-v2"
+                      or jev_cfg.get("mapping_threshold") != DEFAULT_MAPPING_THRESHOLD):
+                    _fail(f"{label}.request.jev does not match the frozen v2 spec")
+                attempts = record.get("attempts")
+                if not isinstance(attempts, list) or len(attempts) != 1:
+                    _fail(f"{label}.attempts must contain exactly one attempt for Jev")
             expected = case_by_id[case_id]["expect"]
             if record["expected_outcomes"] != expected:
                 _fail(f"{label}.expected_outcomes does not match dataset")
-            outcome, transport, parsed_count = _replay(case_by_id[case_id], record, label, jev=jev_mode, jev_threshold=jev_threshold)
+            outcome, transport, parsed_count = _replay(case_by_id[case_id], record, label, jev=jev_mode, jev_spec=jev_spec)
             if record["transport_error"] is not transport:
                 _fail(f"{label}.transport_error does not match replayed attempts")
             claimed_pass = not transport and [outcome[0], outcome[1]] in expected
@@ -331,6 +375,8 @@ def rescore_run(*, runs_dir: Path, results_dir: Path, run_id: str, dataset_path:
             runtime = resolved["runtime"]
             if runtime is not None and (not isinstance(runtime, str) or not runtime):
                 _fail(f"{label}.resolved.runtime has an invalid value")
+            if jev_mode and runtime != config["resolved"]["runtime"]:
+                _fail(f"{label}.resolved.runtime does not match Jev request provenance")
             resolved_runtimes.add(runtime)
             passed = int(claimed_pass)
             overall[0] += passed

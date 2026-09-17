@@ -505,6 +505,9 @@ def main(argv: list[str] | None = None) -> None:
         parser.error("no cases matched")
     if options.jev:
         from . import jev as jev_mod
+        if options.jev_threshold is not None:
+            parser.error("publishable Jev runs use the frozen threshold pair; "
+                         "use adventure-bench --jev --jev-threshold to explore")
         model = options.model or jev_mod.DEFAULT_MODEL
         client = jev_mod.JevClient(api_key, model=model, timeout=options.timeout)
         run_id = options.run_id or make_run_id(model)
@@ -512,8 +515,6 @@ def main(argv: list[str] | None = None) -> None:
             manifest = jev_mod.collect_run_jev(
                 cases=cases, model=model, client=client, output_dir=Path(options.out_dir),
                 run_id=run_id, repetitions=options.repetitions,
-                threshold=(options.jev_threshold if options.jev_threshold is not None
-                           else jev_mod.DEFAULT_THRESHOLD),
                 dataset_path=data_path, secrets=(api_key,),
             )
         except ValueError as err:

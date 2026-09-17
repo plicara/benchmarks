@@ -60,6 +60,8 @@ an unresolved provider or any transport failure are invalid for publication.
 Credentials, authorization headers, endpoint paths, and query strings are never
 written. See [the evidence schema](docs/evidence-schema.md).
 
+Jev runs use the separate TypeSafe System One interface and are collected with `adventure-bench-collect --jev --model jev-latest`. They require `TYPESAFE_API_KEY`, use exactly one typed call per case/repetition, and record the requested model in the runtime provenance. Jev uses its own frozen prompt hash, so its releases cannot be combined with frozen-chat releases; see [the Jev runtime contract](docs/jev-runtime.md).
+
 To compare completed, valid one-model runs, rescore each first and create a
 release set from the explicit ordered IDs. The release contains per-model and
 per-tag scores plus deterministic case-clustered 95% score and paired

@@ -1,214 +1,214 @@
 {
   "benchmark": {
     "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
     "version": "1.0.0"
   },
   "evidence": {
-    "manifest_sha256": "4516fb4008186c3329808c409a073d6cac777997ab7a8235fbdd541fbd6dfa8a"
+    "manifest_sha256": "b5d8bd609488ba87cc91393d40dda1df1c4fe5093e6f80ba2542bedef65b1f66"
   },
   "kind": "adventure-bench-derived-tag-matrix",
-  "run_id": "20260916-jev-pinned-full",
+  "run_id": "20260917-jev-v2-full",
   "schema_version": "1.0",
   "tags": {
     "abbreviation": {
-      "jev-1-13-0": {
-        "passed": 10,
-        "score": 0.333333333333,
+      "jev-latest": {
+        "passed": 9,
+        "score": 0.3,
         "total": 30
       }
     },
     "absent-object": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 30,
         "score": 1.0,
         "total": 30
       }
     },
     "adverb": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 21,
         "score": 1.0,
         "total": 21
       }
     },
     "ambiguity": {
-      "jev-1-13-0": {
-        "passed": 19,
-        "score": 0.633333333333,
+      "jev-latest": {
+        "passed": 30,
+        "score": 1.0,
         "total": 30
       }
     },
     "classic-command": {
-      "jev-1-13-0": {
-        "passed": 45,
-        "score": 0.9375,
+      "jev-latest": {
+        "passed": 48,
+        "score": 1.0,
         "total": 48
       }
     },
     "compound": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 24,
         "score": 0.888888888889,
         "total": 27
       }
     },
     "direction-as-place": {
-      "jev-1-13-0": {
-        "passed": 22,
-        "score": 0.488888888889,
+      "jev-latest": {
+        "passed": 33,
+        "score": 0.733333333333,
         "total": 45
       }
     },
     "exact-verb": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 36,
         "score": 1.0,
         "total": 36
       }
     },
     "flavor-noun": {
-      "jev-1-13-0": {
-        "passed": 27,
-        "score": 0.642857142857,
+      "jev-latest": {
+        "passed": 34,
+        "score": 0.809523809524,
         "total": 42
       }
     },
     "frustration": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 12,
         "score": 1.0,
         "total": 12
       }
     },
     "full-sentence": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 24,
         "score": 1.0,
         "total": 24
       }
     },
     "go-to-place": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 9,
         "score": 0.75,
         "total": 12
       }
     },
     "greeting": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 9,
         "score": 1.0,
         "total": 9
       }
     },
     "guess-the-noun": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 12,
         "score": 1.0,
         "total": 12
       }
     },
     "help-seeking": {
-      "jev-1-13-0": {
-        "passed": 15,
-        "score": 1.0,
+      "jev-latest": {
+        "passed": 14,
+        "score": 0.933333333333,
         "total": 15
       }
     },
     "meta": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 30,
         "score": 1.0,
         "total": 30
       }
     },
     "missing-preposition": {
-      "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.333333333333,
+      "jev-latest": {
+        "passed": 21,
+        "score": 0.777777777778,
         "total": 27
       }
     },
     "multi-object": {
-      "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.6,
+      "jev-latest": {
+        "passed": 15,
+        "score": 1.0,
         "total": 15
       }
     },
     "nonsense": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 12,
         "score": 1.0,
         "total": 12
       }
     },
     "out-of-vocab": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 126,
         "score": 1.0,
         "total": 126
       }
     },
     "paraphrase": {
-      "jev-1-13-0": {
-        "passed": 40,
-        "score": 0.78431372549,
+      "jev-latest": {
+        "passed": 48,
+        "score": 0.941176470588,
         "total": 51
       }
     },
     "politeness": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 18,
         "score": 1.0,
         "total": 18
       }
     },
     "pronoun": {
-      "jev-1-13-0": {
-        "passed": 20,
-        "score": 0.740740740741,
+      "jev-latest": {
+        "passed": 27,
+        "score": 1.0,
         "total": 27
       }
     },
     "question": {
-      "jev-1-13-0": {
-        "passed": 42,
-        "score": 0.933333333333,
+      "jev-latest": {
+        "passed": 44,
+        "score": 0.977777777778,
         "total": 45
       }
     },
     "relative-direction": {
-      "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.75,
+      "jev-latest": {
+        "passed": 12,
+        "score": 1.0,
         "total": 12
       }
     },
     "story-mode": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 9,
         "score": 1.0,
         "total": 9
       }
     },
     "synonym": {
-      "jev-1-13-0": {
-        "passed": 60,
-        "score": 0.952380952381,
+      "jev-latest": {
+        "passed": 62,
+        "score": 0.984126984127,
         "total": 63
       }
     },
     "typo": {
-      "jev-1-13-0": {
-        "passed": 33,
-        "score": 0.916666666667,
+      "jev-latest": {
+        "passed": 35,
+        "score": 0.972222222222,
         "total": 36
       }
     },
     "verb-alias": {
-      "jev-1-13-0": {
+      "jev-latest": {
         "passed": 12,
         "score": 0.8,
         "total": 15
