@@ -253,17 +253,31 @@ def main(argv: list[str] | None = None) -> None:
     def opt(flag, default=None):
         return args[args.index(flag) + 1] if flag in args else default
 
+    jev_mode = "--jev" in args
     model = opt("--model")
-    if not model:
-        sys.exit("required: --model <id>  (e.g. --model mistralai/ministral-3b-2512)")
-    api_key = api_key_from_env()
-    if not api_key:
-        sys.exit("set ADVENTURE_BENCH_API_KEY, OPENROUTER_API_KEY, or OPENROUTER_KEY")
-    max_output_tokens = opt("--max-output-tokens")
-    client = ChatClient(
-        api_key, model=model, base_url=opt("--base-url"), provider=opt("--provider"),
-        max_output_tokens=int(max_output_tokens) if max_output_tokens is not None else None,
-    )
+    if jev_mode:
+        from . import jev as jev_mod
+        model = model or jev_mod.DEFAULT_MODEL
+        api_key = jev_mod.api_key_from_env()
+        if not api_key:
+            sys.exit("set TYPESAFE_API_KEY (console.typesafe.ai)")
+        client = jev_mod.JevClient(api_key, model=model)
+        raw_threshold = opt("--jev-threshold")
+        try:
+            jev_threshold = None if raw_threshold is None else float(raw_threshold)
+        except ValueError:
+            sys.exit("--jev-threshold must be a number")
+    else:
+        if not model:
+            sys.exit("required: --model <id>  (e.g. --model mistralai/ministral-3b-2512)")
+        api_key = api_key_from_env()
+        if not api_key:
+            sys.exit("set ADVENTURE_BENCH_API_KEY, OPENROUTER_API_KEY, or OPENROUTER_KEY")
+        max_output_tokens = opt("--max-output-tokens")
+        client = ChatClient(
+            api_key, model=model, base_url=opt("--base-url"), provider=opt("--provider"),
+            max_output_tokens=int(max_output_tokens) if max_output_tokens is not None else None,
+        )
     verbose = "--verbose" in args
 
     cases = load_cases(Path(opt("--data")) if opt("--data") else DATA_PATH)
@@ -278,14 +292,21 @@ def main(argv: list[str] | None = None) -> None:
 
     # Preflight: if the endpoint is unreachable, abort loudly instead of
     # scoring a run of silent transport failures as model refusals.
-    _, transport = run_case(cases[0], client.complete)
+    if jev_mode:
+        (_, _), transport, _ = jev_mod.run_case_jev(cases[0], client, jev_threshold)
+    else:
+        _, transport = run_case(cases[0], client.complete)
     if transport:
         sys.exit("endpoint unreachable (auth/network/HTTP error on preflight) — aborting, nothing scored")
 
     by_tag: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     results, passed, transport_failures = [], 0, 0
     for case in cases:
-        got, transport = run_case(case, client.complete)
+        if jev_mode:
+            got, transport, detail = jev_mod.run_case_jev(case, client, jev_threshold)
+        else:
+            got, transport = run_case(case, client.complete)
+            detail = None
         if transport:
             transport_failures += 1
         expected = [tuple(e) for e in case["expect"]]
@@ -294,8 +315,11 @@ def main(argv: list[str] | None = None) -> None:
         for t in case["tags"]:
             by_tag[t][0] += ok
             by_tag[t][1] += 1
-        results.append({"id": case["id"], "ok": ok, "got": list(got),
-                        "transport_error": transport, "tags": case["tags"]})
+        entry = {"id": case["id"], "ok": ok, "got": list(got),
+                 "transport_error": transport, "tags": case["tags"]}
+        if detail is not None:
+            entry["jev"] = detail
+        results.append(entry)
         if not ok:
             note = "TRANSPORT" if transport else "FAIL"
             print(f"  {note:9} {case['id']:36} {case['input']!r:50} -> {got}  wanted {expected}")
@@ -315,6 +339,7 @@ def main(argv: list[str] | None = None) -> None:
             "benchmark": "adventure-bench",
             "version": __import__("adventure_bench").__version__,
             "model": model, "provider": client.provider,
+            "runtime": "typesafe-systemone" if jev_mode else "openai-compatible",
             "overall": {"passed": passed, "total": len(cases)},
             "transport_failures": transport_failures,
             "by_tag": {t: {"passed": v[0], "total": v[1]} for t, v in by_tag.items()},

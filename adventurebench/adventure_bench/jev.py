@@ -37,6 +37,21 @@ DEFAULT_MODEL = "jev-latest"
 # Frozen 2026-09-16 from a synthetic-only sweep (300 cases: raw 0.857 -> 0.903
 # at T=0.9, 32 flips). Do NOT retune on the frozen 244 — that is peeking.
 DEFAULT_THRESHOLD = 0.9
+# Added 2026-09-17 from dev-500 trials (baseline 0.878 -> 0.932 with the pair).
+# Mapping tags (schema's positive mapping ability group) gate lower; everything
+# else keeps the calibration gate. Same frozen-data rule applies.
+DEFAULT_MAPPING_THRESHOLD = 0.75
+MAPPING_TAGS = {"exact-verb", "verb-alias", "abbreviation", "synonym",
+                "missing-preposition", "paraphrase", "direction-as-place",
+                "go-to-place", "relative-direction", "politeness", "full-sentence",
+                "question", "adverb", "typo", "pronoun", "compound", "multi-object"}
+
+
+def threshold_for(case: dict) -> float:
+    """Return the frozen mapping or calibration gate for one case."""
+    if MAPPING_TAGS.intersection(case.get("tags", [])):
+        return DEFAULT_MAPPING_THRESHOLD
+    return DEFAULT_THRESHOLD
 
 ACTION_INSTRUCTIONS = ("Which single game action does the player's input intend? "
                          "Map synonyms and paraphrases to intent; use unclear when the verb "
@@ -49,11 +64,14 @@ TARGET_RULE = ("per-case criteria: one option per exit ('Direction <d>'), one pe
                "item id ('Item: <name>'), plus 'none' (no target / nothing present fits)")
 
 
-def jev_spec(threshold: float = DEFAULT_THRESHOLD) -> dict[str, Any]:
+def jev_spec() -> dict[str, Any]:
     """Canonical prompt spec for a Jev collection. Its hash is the prompt identity."""
     return {
-        "spec": "adventurebench-systemone-v1",
-        "threshold": threshold,
+        "spec": "adventurebench-systemone-v2",
+        "threshold": DEFAULT_THRESHOLD,
+        "mapping_threshold": DEFAULT_MAPPING_THRESHOLD,
+        "mapping_tags": sorted(MAPPING_TAGS),
+        "unclear_on_missing_target": True,
         "action_instructions": ACTION_INSTRUCTIONS,
         "action_criteria": ACTION_CRITERIA,
         "target_instructions": TARGET_INSTRUCTIONS,
@@ -61,10 +79,10 @@ def jev_spec(threshold: float = DEFAULT_THRESHOLD) -> dict[str, Any]:
     }
 
 
-def jev_spec_sha(threshold: float = DEFAULT_THRESHOLD) -> str:
+def jev_spec_sha() -> str:
     """Stable hash of the canonical spec (sort_keys; the release prompt identity)."""
     return hashlib.sha256(
-        json.dumps(jev_spec(threshold), sort_keys=True, ensure_ascii=False).encode()
+        json.dumps(jev_spec(), sort_keys=True, ensure_ascii=False).encode()
     ).hexdigest()
 
 
@@ -84,12 +102,15 @@ ACTION_CRITERIA = {
     "use": "Player explicitly says use/operate/apply a specific present item. Do NOT stretch to open/close/lock/eat/drink/attack/kill/climb/hide — those verbs are unclear",
     "look": "Player wants the surroundings re-described; no specific target",
     "inventory": "Player asks what they carry; no specific target",
-    "unclear": "Closed verb world: intent verb is outside move/take/drop/examine/use/look/inventory (e.g. open, close, eat, drink, attack, talk) OR refers to something not in context. Never invent items/directions",
+    "unclear": "Closed verb world: intent verb is outside move/take/drop/examine/use/look/inventory (e.g. open, close, eat, drink, attack, talk) OR refers to something not in context. Never invent items/directions. Relative directions (left, right, around, back, ahead) are meaningless without facing and are always unclear",
 }
 
 
-# The one frozen spec hash rescore accepts for Jev evidence. A different threshold
-# is a different spec (and an incompatible release) by construction.
+# v1 spec hash (2026-09-16 release): pinned literally so old evidence replays
+# forever even as the live spec advances. NEVER change this string.
+JEV_SPEC_SHA_V1 = "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91"
+
+# The current frozen spec hash rescore accepts alongside v1 and frozen chat.
 JEV_SPEC_SHA = jev_spec_sha()
 
 
@@ -152,12 +173,9 @@ def build_questions(case: dict) -> dict:
     }
 
 
-def answers_outcome(answers: dict, threshold: float) -> tuple[tuple[str, str | None], bool, tuple[str, str | None]] | None:
-    """Map a Jev answers object to (outcome, flipped, raw_outcome).
-
-    None means malformed or unknown (the parsing-error path). Shared by the live
-    runner, the evidence collector, and rescore replay — one mapping everywhere.
-    """
+def _map_outcome(answers: dict, threshold: float, *, unclear_on_missing_target: bool
+                 ) -> tuple[tuple[str, str | None], bool, tuple[str, str | None]] | None:
+    """Map answers under either the frozen v1 or current v2 missing-target rule."""
     try:
         kind = answers["action"]["choice"]
         picked = answers["target"]["choice"]
@@ -168,10 +186,15 @@ def answers_outcome(answers: dict, threshold: float) -> tuple[tuple[str, str | N
         return None
     if kind in NO_TARGET_ACTIONS:
         outcome: tuple[str, str | None] = (kind, None)
+    elif picked is None or picked == "none":
+        if unclear_on_missing_target:
+            outcome = ("unclear", None)
+        elif picked is None:
+            return None
+        else:
+            outcome = (kind, "none")
     elif not isinstance(picked, str):
         return None  # Choice options are strings by construction
-    elif picked == "none":
-        outcome = (kind, "none")
     elif kind == "move":
         outcome = ("move", DIRECTIONS.get(str(picked).lower(), picked))
     else:
@@ -185,20 +208,33 @@ def answers_outcome(answers: dict, threshold: float) -> tuple[tuple[str, str | N
     return outcome, False, raw
 
 
-def replay_jev_outcome(raw: str, threshold: float) -> tuple[str, str | None] | None:
-    """Re-derive an outcome from stored raw evidence. None = malformed (parsing path)."""
+def answers_outcome(answers: dict, threshold: float) -> tuple[tuple[str, str | None], bool, tuple[str, str | None]] | None:
+    """Map answers using the current v2 missing-target rule."""
+    return _map_outcome(answers, threshold, unclear_on_missing_target=True)
+
+
+def answers_outcome_v1(answers: dict, threshold: float) -> tuple[tuple[str, str | None], bool, tuple[str, str | None]] | None:
+    """Map answers using the frozen v1 rule for replaying historic evidence."""
+    return _map_outcome(answers, threshold, unclear_on_missing_target=False)
+
+
+def replay_jev_outcome(raw: str, case: dict, spec_sha: str) -> tuple[str, str | None] | None:
+    """Re-derive raw evidence under its recorded v1 or v2 specification."""
     try:
         payload = json.loads(raw)
     except (json.JSONDecodeError, TypeError):
         return None
     if not isinstance(payload, dict) or not isinstance(payload.get("answers"), dict):
         return None
-    mapped = answers_outcome(payload["answers"], threshold)
+    if spec_sha == JEV_SPEC_SHA_V1:
+        mapped = answers_outcome_v1(payload["answers"], DEFAULT_THRESHOLD)
+    else:
+        mapped = answers_outcome(payload["answers"], threshold_for(case))
     return mapped[0] if mapped else None
 
 
 def run_case_jev(case: dict, client: JevClient,
-                  threshold: float = DEFAULT_THRESHOLD) -> tuple[tuple[str, str | None], bool, dict]:
+                  threshold: float | None = None) -> tuple[tuple[str, str | None], bool, dict]:
     """Evaluate one case. Returns (outcome, transport_error, detail).
 
     Non-unclear answers below threshold flip to unclear (confidence-gated
@@ -209,6 +245,7 @@ def run_case_jev(case: dict, client: JevClient,
     and the resolved model for analysis — the --out file keeps it per case.
     """
     state = json.loads(user_message(case))
+    gate = threshold if threshold is not None else threshold_for(case)
     try:
         payload, seconds = client.evaluate(state, build_questions(case))
     except TransportError as err:
@@ -226,11 +263,11 @@ def run_case_jev(case: dict, client: JevClient,
         }
     except (KeyError, TypeError, AttributeError) as err:
         return ("unclear", None), True, {"error": f"unexpected payload shape: {err}"}
-    mapped = answers_outcome(answers, threshold)
+    mapped = answers_outcome(answers, gate)
     if mapped is None:
         return ("unclear", None), False, {**detail, "warning": "unknown action in answers"}
     outcome, flipped, raw = mapped
-    return outcome, False, {**detail, "applied_threshold": threshold,
+    return outcome, False, {**detail, "applied_threshold": gate,
                              "flipped_to_unclear": flipped,
                              "raw_outcome": list(raw)}
 
@@ -241,7 +278,9 @@ def run_case_jev(case: dict, client: JevClient,
 # different threshold is a different prompt spec (and an incompatible release).
 # ---------------------------------------------------------------------------
 
-JEV_RUNTIME_LABEL = "typesafe-systemone:jev-latest"
+def runtime_label(model: str) -> str:
+    """Return the provenance label for one requested TypeSafe model."""
+    return f"typesafe-systemone:{model}"
 
 
 def record_cost_usd(usage: Any) -> float | None:
@@ -255,9 +294,10 @@ def record_cost_usd(usage: Any) -> float | None:
 
 
 def collect_case_jev(case: dict, repetition: int, client: JevClient, *,
-                     request: dict[str, Any], threshold: float,
+                     request: dict[str, Any],
                      secrets: tuple[str, ...] = ()) -> dict[str, Any]:
     """Collect one Jev evidence record: a single attempt, schema-identical shape."""
+    threshold = threshold_for(case)
     case_started_at = utc_now()
     state = json.loads(user_message(case))
     attempt_started_at = utc_now()
@@ -343,17 +383,17 @@ def collect_case_jev(case: dict, repetition: int, client: JevClient, *,
 @_exclusive_run_collection
 def collect_run_jev(*, cases: list[dict], model: str, client: JevClient,
                     output_dir: Path, run_id: str, repetitions: int = 1,
-                    threshold: float = DEFAULT_THRESHOLD,
-                    runtime: str = JEV_RUNTIME_LABEL,
+                    runtime: str | None = None,
                     dataset_path: Path = DATA_PATH,
                     runner_root: Path | None = None,
                     secrets: tuple[str, ...] = ()) -> dict[str, Any]:
     """Write/continue one Jev model's evidence file; same manifest contract as chat."""
     if repetitions < 1:
         raise ValueError("repetitions must be at least one")
-    if threshold != DEFAULT_THRESHOLD:
-        raise ValueError("publishable Jev runs use the frozen threshold; "
-                         "any other threshold is a different prompt spec")
+    expected_runtime = runtime_label(model)
+    if runtime is not None and runtime != expected_runtime:
+        raise ValueError("Jev runtime provenance must identify the requested model")
+    runtime = expected_runtime
     validate_run_id(run_id)
     slug = safe_model_slug(model)
     root = (runner_root or Path(__file__).resolve().parents[1]).resolve()
@@ -373,7 +413,9 @@ def collect_run_jev(*, cases: list[dict], model: str, client: JevClient,
         "resolved": {"model": model, "provider": "typesafe", "runtime": runtime},
         "endpoint_host": "api.typesafe.ai",
         "decoding": {"temperature": None, "reasoning_enabled": False},
-        "jev": {"threshold": threshold, "spec": "adventurebench-systemone-v1"},
+        "jev": {"threshold": DEFAULT_THRESHOLD,
+                "mapping_threshold": DEFAULT_MAPPING_THRESHOLD,
+                "spec": "adventurebench-systemone-v2"},
         "retry_policy": {"malformed_output_attempts": 1},
         "timeout_seconds": client.timeout,
         "prompt_sha256": JEV_SPEC_SHA,
@@ -423,7 +465,7 @@ def collect_run_jev(*, cases: list[dict], model: str, client: JevClient,
             if key in complete_keys:
                 continue
             record = collect_case_jev(case, repetition, client, request=request,
-                                      threshold=threshold, secrets=secrets)
+                                      secrets=secrets)
             _append_record(responses_path, record)
             existing.append(record)
             complete_keys.add(key)

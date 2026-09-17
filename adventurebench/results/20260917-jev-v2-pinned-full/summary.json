@@ -2,8 +2,8 @@
   "benchmark": {
     "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
     "name": "Adventure Bench",
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
-    "repository_commit": "a91aa02300f1d857eedbc3cc6488343fa4c15aac",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
+    "repository_commit": "9ed2243ab019e688de1b487dc8d813f8cb51737f",
     "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
     "version": "1.0.0"
   },
@@ -14,10 +14,11 @@
     },
     "endpoint_host": "api.typesafe.ai",
     "jev": {
-      "spec": "adventurebench-systemone-v1",
+      "mapping_threshold": 0.75,
+      "spec": "adventurebench-systemone-v2",
       "threshold": 0.9
     },
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
     "requested": {
       "model": "jev-1.13.0",
       "provider": "typesafe",
@@ -34,16 +35,16 @@
     "timeout_seconds": 60.0
   },
   "evidence": {
-    "manifest_sha256": "4516fb4008186c3329808c409a073d6cac777997ab7a8235fbdd541fbd6dfa8a"
+    "manifest_sha256": "21e81d1cfb62ae6ebe4afa82e8d5e9e0ce268ee8004a662dc15f143a8510edf5"
   },
   "kind": "adventure-bench-derived-summary",
   "models": [
     {
       "evidence": {
-        "manifest_sha256": "4516fb4008186c3329808c409a073d6cac777997ab7a8235fbdd541fbd6dfa8a",
-        "recorded_cost_usd": 0.027347418,
+        "manifest_sha256": "21e81d1cfb62ae6ebe4afa82e8d5e9e0ce268ee8004a662dc15f143a8510edf5",
+        "recorded_cost_usd": 0.028023786,
         "records": 732,
-        "responses_sha256": "b915dde3f645432df6248169d9d81f1a1591d58bcf503d17e11971069bd1cf6b"
+        "responses_sha256": "d9aabc0beaaa7b6df464eed084c0a11baed1dbbd723ab65efa04cc0a8d8bf0a1"
       },
       "failures": {
         "parsing": 0,
@@ -51,14 +52,14 @@
       },
       "model_slug": "jev-1-13-0",
       "overall": {
-        "passed": 618,
-        "score": 0.844262295082,
+        "passed": 677,
+        "score": 0.924863387978,
         "total": 732
       },
       "provenance": {
         "collection_window": {
-          "completed_at": "2026-09-16T22:51:52.772310Z",
-          "started_at": "2026-09-16T22:48:13.879054Z"
+          "completed_at": "2026-09-17T14:40:38.436535Z",
+          "started_at": "2026-09-17T14:36:04.724761Z"
         },
         "requested": {
           "model": "jev-1.13.0",
@@ -77,7 +78,7 @@
       }
     }
   ],
-  "run_id": "20260916-jev-pinned-full",
+  "run_id": "20260917-jev-v2-pinned-full",
   "schema_version": "1.0",
   "validity": {
     "invalid_reasons": [],

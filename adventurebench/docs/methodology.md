@@ -51,11 +51,4 @@ release set, not a universal ordering or a winner declaration.
 
 ## Runtime revisions
 
-A release may use a different model interface from the frozen chat prompt as an
-explicitly documented revision, provided the dataset, action contract, and
-scoring rules are unchanged. Such a release carries its own prompt SHA-256 and
-can only be compared with runs sharing that hash — never with frozen-prompt
-runs. The first such revision is the TypeSafe System One runtime (Jev): typed
-Choice judgments over the same per-case state, with a calibrated unclear
-threshold frozen in the prompt spec (see `jev-runtime.md`). Its evidence
-replays through the same offline scorer with a runtime-branched parser check.
+A release may use a different model interface from the frozen chat prompt as an explicitly documented revision, provided the dataset, action contract, and scoring rules are unchanged. Such a release carries its own prompt SHA-256 and can only be compared with runs sharing that hash — never with frozen-prompt runs. The TypeSafe System One runtime (Jev) uses typed Choice judgments over the same per-case state. Its v1 and v2 specifications are separately frozen and replayed by hash; see `jev-runtime.md`.

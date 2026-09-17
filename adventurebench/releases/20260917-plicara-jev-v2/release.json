@@ -2,7 +2,7 @@
   "benchmark": {
     "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
     "name": "Adventure Bench",
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
     "version": "1.0.0"
   },
   "bootstrap": {
@@ -11,10 +11,10 @@
     "confidence_level": 0.95,
     "paired_score_difference_intervals": [
       {
-        "estimate": 0.0,
+        "estimate": -0.001366120218,
         "interval": [
-          -0.015027322405,
-          0.013661202186
+          -0.010928961749,
+          0.00956284153
         ],
         "model_a": "jev-latest",
         "model_b": "jev-1-13-0"
@@ -23,18 +23,18 @@
     "replicates": 10000,
     "score_intervals": [
       {
-        "estimate": 0.844262295082,
+        "estimate": 0.92349726776,
         "interval": [
-          0.799180327869,
-          0.886612021858
+          0.889344262295,
+          0.953551912568
         ],
         "model_slug": "jev-latest"
       },
       {
-        "estimate": 0.844262295082,
+        "estimate": 0.924863387978,
         "interval": [
-          0.799180327869,
-          0.886612021858
+          0.889344262295,
+          0.954918032787
         ],
         "model_slug": "jev-1-13-0"
       }
@@ -42,8 +42,8 @@
     "seed": 20260901
   },
   "collection_window": {
-    "completed_at": "2026-09-16T22:51:52.772310Z",
-    "started_at": "2026-09-16T22:44:34.482170Z"
+    "completed_at": "2026-09-17T14:40:38.436535Z",
+    "started_at": "2026-09-17T14:19:55.811718Z"
   },
   "coverage": {
     "case_count": 244,
@@ -58,10 +58,10 @@
   "models": [
     {
       "evidence": {
-        "manifest_sha256": "43baa797f318bef71b1a1f88b80612f8361b3ef6d370b4ae32a7d77db025b595",
-        "recorded_cost_usd": 0.027347418,
+        "manifest_sha256": "b5d8bd609488ba87cc91393d40dda1df1c4fe5093e6f80ba2542bedef65b1f66",
+        "recorded_cost_usd": 0.028023786,
         "records": 732,
-        "responses_sha256": "24b1c1d8650a88e60c99cb3ec2c29cc359ac14468c78ba8f811c17c071a3bab1"
+        "responses_sha256": "f76f8b000711aa94a1aa0f0b480c2e623edb33452639493c48d9c99e8708cd51"
       },
       "failures": {
         "parsing": 0,
@@ -69,14 +69,14 @@
       },
       "model_slug": "jev-latest",
       "overall": {
-        "passed": 618,
-        "score": 0.844262295082,
+        "passed": 676,
+        "score": 0.92349726776,
         "total": 732
       },
       "provenance": {
         "collection_window": {
-          "completed_at": "2026-09-16T22:48:10.096038Z",
-          "started_at": "2026-09-16T22:44:34.482170Z"
+          "completed_at": "2026-09-17T14:23:51.058084Z",
+          "started_at": "2026-09-17T14:19:55.811718Z"
         },
         "requested": {
           "model": "jev-latest",
@@ -89,14 +89,14 @@
           "runtime": "typesafe-systemone:jev-latest"
         }
       },
-      "run_id": "20260916-jev-latest-full"
+      "run_id": "20260917-jev-v2-full"
     },
     {
       "evidence": {
-        "manifest_sha256": "4516fb4008186c3329808c409a073d6cac777997ab7a8235fbdd541fbd6dfa8a",
-        "recorded_cost_usd": 0.027347418,
+        "manifest_sha256": "21e81d1cfb62ae6ebe4afa82e8d5e9e0ce268ee8004a662dc15f143a8510edf5",
+        "recorded_cost_usd": 0.028023786,
         "records": 732,
-        "responses_sha256": "b915dde3f645432df6248169d9d81f1a1591d58bcf503d17e11971069bd1cf6b"
+        "responses_sha256": "d9aabc0beaaa7b6df464eed084c0a11baed1dbbd723ab65efa04cc0a8d8bf0a1"
       },
       "failures": {
         "parsing": 0,
@@ -104,14 +104,14 @@
       },
       "model_slug": "jev-1-13-0",
       "overall": {
-        "passed": 618,
-        "score": 0.844262295082,
+        "passed": 677,
+        "score": 0.924863387978,
         "total": 732
       },
       "provenance": {
         "collection_window": {
-          "completed_at": "2026-09-16T22:51:52.772310Z",
-          "started_at": "2026-09-16T22:48:13.879054Z"
+          "completed_at": "2026-09-17T14:40:38.436535Z",
+          "started_at": "2026-09-17T14:36:04.724761Z"
         },
         "requested": {
           "model": "jev-1.13.0",
@@ -124,20 +124,20 @@
           "runtime": "typesafe-systemone:jev-1.13.0"
         }
       },
-      "run_id": "20260916-jev-pinned-full"
+      "run_id": "20260917-jev-v2-pinned-full"
     }
   ],
-  "release_id": "20260916-plicara-jev-v1",
+  "release_id": "20260917-plicara-jev-v2",
   "run_ids": [
-    "20260916-jev-latest-full",
-    "20260916-jev-pinned-full"
+    "20260917-jev-v2-full",
+    "20260917-jev-v2-pinned-full"
   ],
   "schema_version": "1.0",
   "tag_matrix": {
     "abbreviation": {
       "jev-1-13-0": {
-        "passed": 10,
-        "score": 0.333333333333,
+        "passed": 12,
+        "score": 0.4,
         "total": 30
       },
       "jev-latest": {
@@ -172,25 +172,25 @@
     },
     "ambiguity": {
       "jev-1-13-0": {
-        "passed": 19,
-        "score": 0.633333333333,
+        "passed": 30,
+        "score": 1.0,
         "total": 30
       },
       "jev-latest": {
-        "passed": 18,
-        "score": 0.6,
+        "passed": 30,
+        "score": 1.0,
         "total": 30
       }
     },
     "classic-command": {
       "jev-1-13-0": {
-        "passed": 45,
-        "score": 0.9375,
+        "passed": 48,
+        "score": 1.0,
         "total": 48
       },
       "jev-latest": {
-        "passed": 45,
-        "score": 0.9375,
+        "passed": 48,
+        "score": 1.0,
         "total": 48
       }
     },
@@ -208,13 +208,13 @@
     },
     "direction-as-place": {
       "jev-1-13-0": {
-        "passed": 22,
-        "score": 0.488888888889,
+        "passed": 33,
+        "score": 0.733333333333,
         "total": 45
       },
       "jev-latest": {
-        "passed": 22,
-        "score": 0.488888888889,
+        "passed": 33,
+        "score": 0.733333333333,
         "total": 45
       }
     },
@@ -232,13 +232,13 @@
     },
     "flavor-noun": {
       "jev-1-13-0": {
-        "passed": 27,
-        "score": 0.642857142857,
+        "passed": 35,
+        "score": 0.833333333333,
         "total": 42
       },
       "jev-latest": {
-        "passed": 30,
-        "score": 0.714285714286,
+        "passed": 34,
+        "score": 0.809523809524,
         "total": 42
       }
     },
@@ -328,25 +328,25 @@
     },
     "missing-preposition": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.333333333333,
+        "passed": 21,
+        "score": 0.777777777778,
         "total": 27
       },
       "jev-latest": {
-        "passed": 9,
-        "score": 0.333333333333,
+        "passed": 21,
+        "score": 0.777777777778,
         "total": 27
       }
     },
     "multi-object": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.6,
+        "passed": 15,
+        "score": 1.0,
         "total": 15
       },
       "jev-latest": {
-        "passed": 9,
-        "score": 0.6,
+        "passed": 15,
+        "score": 1.0,
         "total": 15
       }
     },
@@ -376,13 +376,13 @@
     },
     "paraphrase": {
       "jev-1-13-0": {
-        "passed": 40,
-        "score": 0.78431372549,
+        "passed": 48,
+        "score": 0.941176470588,
         "total": 51
       },
       "jev-latest": {
-        "passed": 38,
-        "score": 0.745098039216,
+        "passed": 48,
+        "score": 0.941176470588,
         "total": 51
       }
     },
@@ -400,37 +400,37 @@
     },
     "pronoun": {
       "jev-1-13-0": {
-        "passed": 20,
-        "score": 0.740740740741,
+        "passed": 27,
+        "score": 1.0,
         "total": 27
       },
       "jev-latest": {
-        "passed": 20,
-        "score": 0.740740740741,
+        "passed": 27,
+        "score": 1.0,
         "total": 27
       }
     },
     "question": {
       "jev-1-13-0": {
-        "passed": 42,
-        "score": 0.933333333333,
+        "passed": 45,
+        "score": 1.0,
         "total": 45
       },
       "jev-latest": {
-        "passed": 41,
-        "score": 0.911111111111,
+        "passed": 44,
+        "score": 0.977777777778,
         "total": 45
       }
     },
     "relative-direction": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.75,
+        "passed": 12,
+        "score": 1.0,
         "total": 12
       },
       "jev-latest": {
-        "passed": 9,
-        "score": 0.75,
+        "passed": 12,
+        "score": 1.0,
         "total": 12
       }
     },
@@ -453,8 +453,8 @@
         "total": 63
       },
       "jev-latest": {
-        "passed": 59,
-        "score": 0.936507936508,
+        "passed": 62,
+        "score": 0.984126984127,
         "total": 63
       }
     },
@@ -465,8 +465,8 @@
         "total": 36
       },
       "jev-latest": {
-        "passed": 33,
-        "score": 0.916666666667,
+        "passed": 35,
+        "score": 0.972222222222,
         "total": 36
       }
     },

@@ -2,13 +2,13 @@
   "benchmark": {
     "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
     "name": "Adventure Bench",
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
-    "repository_commit": "a91aa02300f1d857eedbc3cc6488343fa4c15aac",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
+    "repository_commit": "9ed2243ab019e688de1b487dc8d813f8cb51737f",
     "source_commit": "2e812b24024b02c504daf2bc96d16ed78d93100d",
     "version": "1.0.0"
   },
   "case_count": 244,
-  "completed_at": "2026-09-16T22:51:52.772310Z",
+  "completed_at": "2026-09-17T14:40:38.436535Z",
   "configuration": {
     "decoding": {
       "reasoning_enabled": false,
@@ -16,10 +16,11 @@
     },
     "endpoint_host": "api.typesafe.ai",
     "jev": {
-      "spec": "adventurebench-systemone-v1",
+      "mapping_threshold": 0.75,
+      "spec": "adventurebench-systemone-v2",
       "threshold": 0.9
     },
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
     "requested": {
       "model": "jev-1.13.0",
       "provider": "typesafe",
@@ -54,7 +55,7 @@
     }
   },
   "repetitions": 3,
-  "run_id": "20260916-jev-pinned-full",
+  "run_id": "20260917-jev-v2-pinned-full",
   "runner": {
     "command": "adventure-bench-collect",
     "name": "adventure-bench-collect",
@@ -308,7 +309,7 @@
     "bottles.nonsense.harmonize"
   ],
   "selected_case_ids_sha256": "bfb438e305953d11ced0cd7254719d35cb20f7296179af0e44d7c26490d04ea3",
-  "started_at": "2026-09-16T22:48:13.879054Z",
+  "started_at": "2026-09-17T14:36:04.724761Z",
   "validity": {
     "invalid_reasons": [],
     "valid": true

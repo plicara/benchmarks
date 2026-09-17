@@ -1,20 +1,20 @@
 {
   "benchmark": {
     "dataset_sha256": "f38e4650ecbe833b7f719744be2058f538fef0a27add1183e9d5ab9a96fea715",
-    "prompt_sha256": "7d98e8145c359c2cc13dd87fb116f207820595eaf52fb217a3add67ec8c92a91",
+    "prompt_sha256": "a5df020fbc2445f4d98c8cd4100d4f117832cf3d440861ef3275d79477d14135",
     "version": "1.0.0"
   },
   "evidence": {
-    "manifest_sha256": "4516fb4008186c3329808c409a073d6cac777997ab7a8235fbdd541fbd6dfa8a"
+    "manifest_sha256": "21e81d1cfb62ae6ebe4afa82e8d5e9e0ce268ee8004a662dc15f143a8510edf5"
   },
   "kind": "adventure-bench-derived-tag-matrix",
-  "run_id": "20260916-jev-pinned-full",
+  "run_id": "20260917-jev-v2-pinned-full",
   "schema_version": "1.0",
   "tags": {
     "abbreviation": {
       "jev-1-13-0": {
-        "passed": 10,
-        "score": 0.333333333333,
+        "passed": 12,
+        "score": 0.4,
         "total": 30
       }
     },
@@ -34,15 +34,15 @@
     },
     "ambiguity": {
       "jev-1-13-0": {
-        "passed": 19,
-        "score": 0.633333333333,
+        "passed": 30,
+        "score": 1.0,
         "total": 30
       }
     },
     "classic-command": {
       "jev-1-13-0": {
-        "passed": 45,
-        "score": 0.9375,
+        "passed": 48,
+        "score": 1.0,
         "total": 48
       }
     },
@@ -55,8 +55,8 @@
     },
     "direction-as-place": {
       "jev-1-13-0": {
-        "passed": 22,
-        "score": 0.488888888889,
+        "passed": 33,
+        "score": 0.733333333333,
         "total": 45
       }
     },
@@ -69,8 +69,8 @@
     },
     "flavor-noun": {
       "jev-1-13-0": {
-        "passed": 27,
-        "score": 0.642857142857,
+        "passed": 35,
+        "score": 0.833333333333,
         "total": 42
       }
     },
@@ -125,15 +125,15 @@
     },
     "missing-preposition": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.333333333333,
+        "passed": 21,
+        "score": 0.777777777778,
         "total": 27
       }
     },
     "multi-object": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.6,
+        "passed": 15,
+        "score": 1.0,
         "total": 15
       }
     },
@@ -153,8 +153,8 @@
     },
     "paraphrase": {
       "jev-1-13-0": {
-        "passed": 40,
-        "score": 0.78431372549,
+        "passed": 48,
+        "score": 0.941176470588,
         "total": 51
       }
     },
@@ -167,22 +167,22 @@
     },
     "pronoun": {
       "jev-1-13-0": {
-        "passed": 20,
-        "score": 0.740740740741,
+        "passed": 27,
+        "score": 1.0,
         "total": 27
       }
     },
     "question": {
       "jev-1-13-0": {
-        "passed": 42,
-        "score": 0.933333333333,
+        "passed": 45,
+        "score": 1.0,
         "total": 45
       }
     },
     "relative-direction": {
       "jev-1-13-0": {
-        "passed": 9,
-        "score": 0.75,
+        "passed": 12,
+        "score": 1.0,
         "total": 12
       }
     },
