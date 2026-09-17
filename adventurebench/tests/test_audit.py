@@ -11,7 +11,7 @@ from pathlib import Path
 from adventure_bench.aggregate import aggregate_release
 from adventure_bench.audit import AuditError, audit_repository
 from adventure_bench.collect import collect_run
-from adventure_bench.render_site import render_html
+from adventure_bench.render_site import release_latencies, render_html
 from adventure_bench.rescore import rescore_run
 
 
@@ -69,7 +69,7 @@ class RepositoryAuditTest(unittest.TestCase):
         if site:
             page = self.site / "benchmarks" / "adventurebench" / "index.html"
             page.parent.mkdir(parents=True)
-            page.write_text(render_html(artifact), encoding="utf-8")
+            page.write_text(render_html(artifact, release_latencies(self.runs, artifact)), encoding="utf-8")
 
     def _snapshot(self) -> dict[str, bytes]:
         return {

@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .aggregate import ReleaseError, aggregate_release
 from .collect import validate_run_id
-from .render_site import render_html
+from .render_site import release_latencies, render_html
 from .rescore import EvidenceError, rescore_run
 
 
@@ -237,7 +237,8 @@ def audit_repository(*, runs_dir: Path, results_dir: Path, releases_dir: Path,
     page_path, page = _site_page(checked_site)
     site_release_id = None
     if page is not None:
-        matching = [release_id for release_id, artifact in release_artifacts.items() if render_html(artifact) == page]
+        matching = [release_id for release_id, artifact in release_artifacts.items()
+                    if render_html(artifact, release_latencies(checked_runs, artifact)) == page]
         if len(matching) != 1:
             label = str(page_path) if page_path is not None else str(SITE_PAGE)
             raise AuditError(f"published benchmark page does not match exactly one audited release: {label}")

@@ -111,12 +111,18 @@ class SiteRenderTest(unittest.TestCase):
         self.assertIn("+1 / &minus;0", page)
         self.assertIn("These results are not a ranking.", page)
         self.assertIn("The score&ndash;cost frontier", page)
+        self.assertIn("The score&ndash;latency frontier", page)
         self.assertIn("Recorded full-run cost", page)
         self.assertIn('<text class="pareto-label"', page)
         self.assertIn('<line class="pareto-leader"', page)
-        self.assertLess(page.rindex('class="pareto-point'), page.index('<text class="pareto-label"'))
-        self.assertIn("Zebra &lt;unsafe&gt;</text>", page)
-        self.assertNotIn("Alpha &amp; &lt;unsafe&gt;</text>", page)
+        cost_section, _, latency_section = page.partition('id="pareto-latency-heading"')
+        self.assertLess(cost_section.rindex('class="pareto-point'), cost_section.index('<text class="pareto-label"'))
+        self.assertLess(latency_section.rindex('class="pareto-point'), latency_section.index('<text class="pareto-label"'))
+        self.assertIn("Zebra &lt;unsafe&gt;</text>", cost_section)
+        self.assertNotIn("Alpha &amp; &lt;unsafe&gt;</text>", cost_section)
+        # Latency-frontier membership of the weaker model is timing-dependent
+        # (sub-millisecond fixture latencies); the top scorer is always frontier.
+        self.assertIn("Zebra &lt;unsafe&gt;</text>", latency_section)
         self.assertIn("exact values for every point appear in the table below", page)
         self.assertIn("unresolved comparisons are unresolved.", page)
         hrefs = {attrs["href"] for tag, attrs in parser.tags if tag == "a" and "href" in attrs}

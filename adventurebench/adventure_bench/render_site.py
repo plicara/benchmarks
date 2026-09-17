@@ -16,6 +16,7 @@ from typing import Any
 
 from .aggregate import ReleaseError, aggregate_release
 from .collect import validate_run_id
+from .jev import JEV_SPEC_SHA
 
 
 REPOSITORY_URL = "https://github.com/plicara/benchmarks"
@@ -159,7 +160,7 @@ def _pareto_frontier(models: list[dict[str, Any]]) -> list[dict[str, Any]]:
         name = resolved.get("model") if isinstance(resolved, dict) else None
         if not isinstance(name, str) or not name:
             raise SiteRenderError("release artifact has missing resolved model provenance")
-        points.append({"model": model, "name": name, "cost": cost, "score": score})
+        points.append({"model": model, "name": name, "slug": model.get("model_slug"), "cost": cost, "score": score})
     frontier = [
         point for point in points
         if not any(
@@ -191,7 +192,9 @@ def _pareto_section(artifact: dict[str, Any]) -> str:
             "name": _pareto_name(model),
             "cost": _recorded_cost(model),
             "score": float(model["overall"]["score"]),
+            "slug": model.get("model_slug"),
         })
+    _apply_display_names(points)
     assert all(point["cost"] is not None for point in points)
     costs = [float(point["cost"]) for point in points]
     scores = [point["score"] for point in points]
@@ -225,17 +228,17 @@ def _pareto_section(artifact: dict[str, Any]) -> str:
         f'{"M" if index == 0 else "L"} {x(point["cost"]):.2f} {y(point["score"]):.2f}'
         for index, point in enumerate(frontier)
     )
-    frontier_names = {point["name"] for point in frontier}
-    frontier_order = {point["name"]: index for index, point in enumerate(frontier)}
+    frontier_names = {point["slug"] for point in frontier}
+    frontier_order = {point["slug"]: index for index, point in enumerate(frontier)}
     marks = []
     leaders = []
     labels = []
     for point in sorted(points, key=lambda item: (item["cost"], item["name"].casefold())):
-        on_frontier = point["model_id"] in frontier_names
+        on_frontier = point["slug"] in frontier_names
         point_x = x(point["cost"])
         point_y = y(point["score"])
         if on_frontier:
-            index = frontier_order[point["model_id"]]
+            index = frontier_order[point["slug"]]
             if index == 0:
                 label_x, label_y, label_anchor = point_x, point_y + 34, "middle"
             elif index == len(frontier) - 1:
@@ -252,15 +255,17 @@ def _pareto_section(artifact: dict[str, Any]) -> str:
             )
             labels.append(
                 f'<text class="pareto-label" x="{label_x:.2f}" y="{label_y:.2f}" '
-                f'text-anchor="{label_anchor}">{_escaped(point["name"])}</text>'
+                f'text-anchor="{label_anchor}">{_escaped(point["display"])}</text>'
             )
         identity = point["model_id"]
-        title = point["name"] if identity == point["name"] else f'{point["name"]} ({identity})'
+        title = (point["display"] if point["display"] != point["name"] or identity == point["name"]
+                 else f'{point["display"]} ({identity})')
         marks.append(
             f'<g><title>{_escaped(title)}: {_percentage(point["score"])} at ${point["cost"]:.3f}</title>'
             f'<circle class="pareto-point {"frontier" if on_frontier else "dominated"}" cx="{point_x:.2f}" cy="{point_y:.2f}" r="6.5" /></g>'
         )
-    frontier_label = " &rarr; ".join(_escaped(_pareto_name(point["model"])) for point in frontier)
+    frontier_points_by_slug = {point["slug"]: point for point in points}
+    frontier_label = " &rarr; ".join(_escaped(_display_for(frontier_points_by_slug, point)) for point in frontier)
     return f'''      <section class="pareto-section" aria-labelledby="pareto-heading">
         <div class="pareto-heading"><div><p class="eyebrow">the cost curve</p><h2 id="pareto-heading">The score&ndash;cost frontier</h2></div><p class="pareto-meta">Recorded full-run cost &middot; {_escaped(len(points))} models</p></div>
         <p class="pareto-lede">Every labeled frontier point is a model for which no cheaper tested model scored as well. The other points are dominated on this release; exact values for every point appear in the table below.</p>
@@ -296,8 +301,230 @@ def _pareto_name(model: dict[str, Any]) -> str:
         "mistralai/ministral-8b-2512": "Ministral 8B",
         "mistralai/ministral-14b-2512": "Ministral 14B",
         "z-ai/glm-5.2": "GLM 5.2",
+        "jev-latest": "Jev (latest)",
+        "jev-1.13.0": "Jev 1.13.0",
     }
     return labels.get(name, name)
+
+
+def _median(values: list[float]) -> float:
+    ordered = sorted(values)
+    count = len(ordered)
+    if count == 0:
+        raise SiteRenderError("no latency samples for a release model")
+    middle = count // 2
+    if count % 2:
+        return ordered[middle]
+    return (ordered[middle - 1] + ordered[middle]) / 2
+
+
+def _model_latency_ms(runs_dir: Path, run_id: str, slug: str) -> float:
+    """Median per-case end-to-end latency from a run's response evidence."""
+    validate_run_id(run_id)
+    manifest_path = _inside(runs_dir, runs_dir / run_id / "manifest.json")
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as err:
+        raise SiteRenderError(f"cannot read run manifest: {manifest_path}") from err
+    models = manifest.get("models")
+    if not isinstance(models, dict) or slug not in models:
+        raise SiteRenderError(f"run {run_id} has no model {slug}")
+    responses_file = models[slug].get("responses_file")
+    if not isinstance(responses_file, str) or not responses_file:
+        raise SiteRenderError(f"run {run_id} model {slug} has no responses file")
+    responses_path = _inside(runs_dir, runs_dir / run_id / responses_file)
+    try:
+        lines = responses_path.read_text(encoding="utf-8").splitlines()
+    except OSError as err:
+        raise SiteRenderError(f"cannot read responses: {responses_path}") from err
+    samples = []
+    for line in lines:
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError as err:
+            raise SiteRenderError(f"malformed responses line: {responses_path}") from err
+        latency = record.get("latency_ms")
+        if isinstance(latency, bool) or not isinstance(latency, (int, float)) or latency < 0:
+            raise SiteRenderError(f"run {run_id} model {slug} has invalid latency evidence")
+        samples.append(float(latency))
+    return _median(samples)
+
+
+def _latency_tick(value_ms: float) -> str:
+    if value_ms < 1000:
+        return f"{value_ms:.0f} ms"
+    return f"{value_ms / 1000:.1f} s"
+
+
+def release_latencies(runs_dir: Path, artifact: dict[str, Any]) -> dict[str, float]:
+    """Median per-case latency per release model, read from response evidence."""
+    models = artifact.get("models")
+    if not isinstance(models, list):
+        raise SiteRenderError("release artifact has malformed models")
+    latencies: dict[str, float] = {}
+    for row in models:
+        if not isinstance(row, dict):
+            raise SiteRenderError("release artifact has malformed model rows")
+        run_id, slug = row.get("run_id"), row.get("model_slug")
+        if not isinstance(run_id, str) or not isinstance(slug, str):
+            raise SiteRenderError("release artifact model is missing run linkage")
+        latencies[slug] = _model_latency_ms(runs_dir, run_id, slug)
+    return latencies
+
+
+def _apply_display_names(points: list[dict[str, Any]]) -> None:
+    """Short label per point, suffixed with the slug only on page-local collision."""
+    counts: dict[str, int] = {}
+    for point in points:
+        counts[point["name"]] = counts.get(point["name"], 0) + 1
+    for point in points:
+        point["display"] = (point["name"] if counts[point["name"]] == 1
+                            else f'{point["name"]} ({point.get("slug")})')
+
+
+def _display_for(points_by_slug: dict[str, dict[str, Any]], point: dict[str, Any]) -> str:
+    """Display label for a frontier entry, falling back to its legacy name."""
+    key = point.get("slug")
+    if isinstance(key, str) and key in points_by_slug:
+        display = points_by_slug[key].get("display")
+        if isinstance(display, str):
+            return display
+    name = point.get("name")
+    return name if isinstance(name, str) else "?"
+
+
+def _pareto_latency_frontier(points: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Nondominated models when latency is lower-is-better and score higher-is-better."""
+    frontier = [
+        point for point in points
+        if not any(
+            other["latency_ms"] <= point["latency_ms"] and other["score"] >= point["score"]
+            and (other["latency_ms"] < point["latency_ms"] or other["score"] > point["score"])
+            for other in points
+        )
+    ]
+    return sorted(frontier, key=lambda point: (point["latency_ms"], point["name"].casefold()))
+
+
+def _pareto_latency_section(artifact: dict[str, Any], latencies: dict[str, float]) -> str:
+    models = artifact.get("models")
+    if not isinstance(models, list) or len(models) < 2:
+        raise SiteRenderError("release artifact has malformed models")
+    points = []
+    for model in models:
+        assert isinstance(model, dict)
+        provenance = model.get("provenance")
+        resolved = provenance.get("resolved") if isinstance(provenance, dict) else None
+        model_id = resolved.get("model") if isinstance(resolved, dict) else None
+        if not isinstance(model_id, str) or not model_id:
+            raise SiteRenderError("release artifact has missing resolved model provenance")
+        slug = model.get("model_slug")
+        if slug not in latencies:
+            raise SiteRenderError(f"release model {slug} has no latency evidence")
+        points.append({
+            "model_id": model_id,
+            "name": _pareto_name(model),
+            "latency_ms": latencies[slug],
+            "score": float(model["overall"]["score"]),
+            "slug": slug,
+        })
+    _apply_display_names(points)
+    frontier = _pareto_latency_frontier(points)
+    if not frontier:
+        return ""
+    latencies_only = [point["latency_ms"] for point in points]
+    scores = [point["score"] for point in points]
+    minimum_latency, maximum_latency = min(latencies_only), max(latencies_only)
+    minimum_score, maximum_score = min(scores), max(scores)
+    latency_padding = max((maximum_latency - minimum_latency) * 0.08, 1.0)
+    score_padding = max((maximum_score - minimum_score) * 0.12, 0.01)
+    x_low, x_high = max(0.0, minimum_latency - latency_padding), maximum_latency + latency_padding
+    y_low, y_high = max(0.0, minimum_score - score_padding), min(1.0, maximum_score + score_padding)
+    left, top, width, height = 86, 36, 704, 296
+
+    def x(value: float) -> float:
+        return left + (value - x_low) / (x_high - x_low) * width
+
+    def y(value: float) -> float:
+        return top + height - (value - y_low) / (y_high - y_low) * height
+
+    grid = "\n".join(
+        f'<line class="pareto-grid" x1="{left}" y1="{y(y_low + (y_high - y_low) * index / 4):.2f}" x2="{left + width}" y2="{y(y_low + (y_high - y_low) * index / 4):.2f}" />'
+        for index in range(5)
+    )
+    y_ticks = "\n".join(
+        f'<text class="pareto-tick" x="{left - 12}" y="{y(y_low + (y_high - y_low) * index / 4) + 4:.2f}" text-anchor="end">{_percentage(y_low + (y_high - y_low) * index / 4)}</text>'
+        for index in range(5)
+    )
+    x_ticks = "\n".join(
+        f'<text class="pareto-tick" x="{x(x_low + (x_high - x_low) * index / 4):.2f}" y="{top + height + 23}" text-anchor="middle">{_latency_tick(x_low + (x_high - x_low) * index / 4)}</text>'
+        for index in range(5)
+    )
+    frontier_path = " ".join(
+        f'{"M" if index == 0 else "L"} {x(point["latency_ms"]):.2f} {y(point["score"]):.2f}'
+        for index, point in enumerate(frontier)
+    )
+    frontier_names = {point["slug"] for point in frontier}
+    frontier_order = {point["slug"]: index for index, point in enumerate(frontier)}
+    marks = []
+    leaders = []
+    labels = []
+    for point in sorted(points, key=lambda item: (item["latency_ms"], item["name"].casefold())):
+        on_frontier = point["slug"] in frontier_names
+        point_x = x(point["latency_ms"])
+        point_y = y(point["score"])
+        if on_frontier:
+            index = frontier_order[point["slug"]]
+            if index == 0:
+                label_x, label_y, label_anchor = point_x, point_y + 34, "middle"
+            elif index == len(frontier) - 1:
+                label_x, label_y, label_anchor = point_x - 12, point_y + 22, "end"
+            elif index % 2:
+                label_x, label_y, label_anchor = point_x + 10, point_y - 17, "start"
+            else:
+                label_x, label_y, label_anchor = point_x - 10, point_y + 24, "end"
+            leader_x = label_x + ({"start": -4, "middle": 0, "end": 4}[label_anchor])
+            leader_y = label_y + (5 if label_y < point_y else -10)
+            leaders.append(
+                f'<line class="pareto-leader" x1="{point_x:.2f}" y1="{point_y:.2f}" '
+                f'x2="{leader_x:.2f}" y2="{leader_y:.2f}" />'
+            )
+            labels.append(
+                f'<text class="pareto-label" x="{label_x:.2f}" y="{label_y:.2f}" '
+                f'text-anchor="{label_anchor}">{_escaped(point["display"])}</text>'
+            )
+        identity = point["model_id"]
+        title = (point["display"] if point["display"] != point["name"] or identity == point["name"]
+                 else f'{point["display"]} ({identity})')
+        marks.append(
+            f'<g><title>{_escaped(title)}: {_percentage(point["score"])} at {point["latency_ms"]:.1f} ms median</title>'
+            f'<circle class="pareto-point {"frontier" if on_frontier else "dominated"}" cx="{point_x:.2f}" cy="{point_y:.2f}" r="6.5" /></g>'
+        )
+    frontier_points_by_slug = {point["slug"]: point for point in points}
+    frontier_label = " &rarr; ".join(_escaped(_display_for(frontier_points_by_slug, point)) for point in frontier)
+    return f'''      <section class="pareto-section" aria-labelledby="pareto-latency-heading">
+        <div class="pareto-heading"><div><p class="eyebrow">the speed curve</p><h2 id="pareto-latency-heading">The score&ndash;latency frontier</h2></div><p class="pareto-meta">Median per-case latency from evidence &middot; {_escaped(len(points))} models</p></div>
+        <p class="pareto-lede">Every labeled frontier point is a model for which no faster tested model scored as well. Latencies are medians over all recorded case attempts in this release; hover any point for its exact value.</p>
+        <div class="pareto-figure">
+          <svg viewBox="0 0 840 410" role="img" aria-labelledby="pareto-latency-title pareto-latency-description">
+            <title id="pareto-latency-title">Adventure Bench score versus median per-case latency</title>
+            <desc id="pareto-latency-description">Pareto frontier: {frontier_label}.</desc>
+            {grid}
+            <line class="pareto-axis" x1="{left}" y1="{top + height}" x2="{left + width}" y2="{top + height}" /><line class="pareto-axis" x1="{left}" y1="{top}" x2="{left}" y2="{top + height}" />
+            {y_ticks}
+            {x_ticks}
+            <text class="pareto-axis-title" x="{left + width / 2:.2f}" y="{top + height + 60}" text-anchor="middle">MEDIAN PER-CASE LATENCY</text><text class="pareto-axis-title" x="19" y="{top + height / 2:.2f}" text-anchor="middle" transform="rotate(-90 19 {top + height / 2:.2f})">ADVENTURE BENCH SCORE</text>
+            <path class="pareto-frontier" d="{frontier_path}" />
+            {"".join(leaders)}
+            {"".join(marks)}
+            {"".join(labels)}
+          </svg>
+          <div class="pareto-legend"><span><i class="pareto-swatch frontier"></i>Pareto frontier</span><span><i class="pareto-swatch dominated"></i>Dominated in this release</span></div>
+        </div>
+        <p class="note">The frontier is a speed-efficiency view, not a ranking or a statistical claim. Latencies are medians of provider round-trip times recorded during collection; score uncertainty and paired comparisons remain in the table below.</p>
+      </section>'''
 
 
 def _model_rows(artifact: dict[str, Any]) -> str:
@@ -387,7 +614,7 @@ def _tag_rows(artifact: dict[str, Any]) -> tuple[str, str]:
     return headings, "\n".join(rows)
 
 
-def render_html(artifact: dict[str, Any]) -> str:
+def render_html(artifact: dict[str, Any], latencies: dict[str, float] | None = None) -> str:
     """Return the deterministic publication page for an already checked artifact."""
     benchmark, coverage, window = artifact.get("benchmark"), artifact.get("coverage"), artifact.get("collection_window")
     if not isinstance(benchmark, dict) or not isinstance(coverage, dict) or not isinstance(window, dict):
@@ -410,6 +637,14 @@ def render_html(artifact: dict[str, Any]) -> str:
     raw_evidence_url = f"{REPOSITORY_URL}/tree/main/adventurebench/runs"
     model_rows = _model_rows(artifact)
     pareto_section = _pareto_section(artifact)
+    latency_section = _pareto_latency_section(artifact, latencies) if latencies else ""
+    runtime_note = ""
+    if benchmark.get("prompt_sha256") == JEV_SPEC_SHA:
+        runtime_note = ("      <p class=\"note\">This release runs a different interface from the frozen chat "
+                        "prompt: TypeSafe System One judgments (Jev) over the same frozen dataset, with the "
+                        "synthetic-tuned unclear threshold 0.9. <code>jev-latest</code> is the floating alias and "
+                        "<code>jev-1-13-0</code> the pinned backend it resolved to; their comparison reads as an "
+                        "alias-stability check. Scores here are not comparable to chat-prompt releases.</p>\n")
     tag_headings, tag_rows = _tag_rows(artifact)
     repetitions_label = ", ".join(str(number) for number in repetitions)
     collection_label = _collection_date_label(started_at, completed_at)
@@ -422,7 +657,7 @@ def render_html(artifact: dict[str, Any]) -> str:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adventure Bench &middot; Plicara Labs</title>
+    <title>Adventure Bench &middot; plicara labs</title>
     <meta name="description" content="Audited Adventure Bench release {_escaped(release_id)}: grounded action interpretation results with raw evidence and offline replay." />
     <link rel="canonical" href="https://plicara.ai/benchmarks/adventurebench/" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#082C35" />
@@ -433,7 +668,7 @@ def render_html(artifact: dict[str, Any]) -> str:
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jetbrains-mono-400.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jetbrains-mono-700.woff2" crossorigin />
     <link rel="stylesheet" href="/assets/tokens.css" />
-    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/style.css?v=20260913" />
     <style>
       .pareto-section {{ margin: 3rem 0; }}
       .pareto-heading {{ display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; }}
@@ -463,18 +698,24 @@ def render_html(artifact: dict[str, Any]) -> str:
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Plicara Labs</a>
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>plicara labs</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="/#mission">Mission</a><a href="/#models">Models</a><a href="/#tools">Tools</a><a href="/research/">Research</a><a href="/benchmarks/">Benchmarks</a><a href="/#principles">Principles</a><a href="https://github.com/plicara">GitHub</a>
+          <a href="/research/">Research</a>
+          <a href="/tools/">Tools</a>
+          <a href="/benchmarks/">Benchmarks</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Follow</a>
         </nav>
+      </div>
       </div>
     </header>
     <main class="wrap results" id="main">
       <p class="eyebrow">benchmarks &middot; adventurebench</p>
-      <h1>Can your model play a text adventure?</h1>
+      <h1>Can your model interpret a text-adventure command?</h1>
       <p class="lede">Adventure Bench measures grounded action interpretation: map a player utterance onto the visible scene&rsquo;s small action vocabulary, or refuse when the request is not grounded.</p>
 {pareto_section}
-      <div class="table-wrap">
+{latency_section}
+{runtime_note}      <div class="table-wrap" tabindex="0" role="region" aria-label="Model results">
         <table class="data-table">
           <caption class="visually-hidden">Audited Adventure Bench release {_escaped(release_id)}. Models are alphabetical by their canonical slug; comparison counts show only paired bootstrap intervals that exclude zero.</caption>
           <thead><tr><th scope="col">Model</th><th scope="col" class="num">Score (95% CI)</th><th scope="col" class="num">Passed</th><th scope="col" class="num">Recorded cost</th><th scope="col">Provider / runtime</th><th scope="col" class="num">Parse / transport</th><th scope="col" class="num">Separates</th></tr></thead>
@@ -487,7 +728,7 @@ def render_html(artifact: dict[str, Any]) -> str:
       <p class="note">Release <code>{_escaped(release_id)}</code> covers {_escaped(case_count)} cases &times; {_escaped(len(repetitions))} repetitions ({_escaped(case_repetitions)} case-repetitions; repetition numbers {_escaped(repetitions_label)}), {_escaped(collection_label)}. Benchmark version: <code>{_escaped(version)}</code>. <a href="{release_url}">Open the audited release artifact.</a></p>
       <p class="note">Failure policy: any transport failure invalidates a collection run and prevents it from entering this release. Parsing failures are counted separately after the frozen malformed-output retry and remain visible in the table. See the <a href="{METHODOLOGY_URL}">full methodology</a>.</p>
       <p class="note">Every number above regenerates offline from committed raw responses. The release pins every manifest and response hash plus dataset <code>{_escaped(dataset_hash[:12])}&hellip;</code> and prompt <code>{_escaped(prompt_hash[:12])}&hellip;</code>. Audit it with <code>make site-check RELEASE_ID={_escaped(release_id)}</code>.</p>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Per-tag results">
         <table class="data-table">
           <caption>Per-tag passed/total coverage for the audited release. Columns are models in alphabetical canonical-slug order.</caption>
           <thead><tr><th scope="col">Tag</th>
@@ -508,7 +749,7 @@ def render_html(artifact: dict[str, Any]) -> str:
       </div>
     </main>
     <footer class="site-footer">
-      <div class="wrap"><span>&copy; Plicara Labs</span><div class="footer-links"><a href="mailto:info@plicara.ai">info@plicara.ai</a><a href="https://github.com/plicara">GitHub</a><a href="/">Home</a></div></div>
+      <div class="wrap"><span>&copy; plicara labs</span><div class="footer-links"><a href="mailto:info@plicara.ai">info@plicara.ai</a><a href="https://github.com/plicara">GitHub</a><a href="/">Home</a></div></div>
     </footer>
   </body>
 </html>
@@ -535,13 +776,20 @@ def render_audited_release(*, release_id: str, runs_dir: Path, results_dir: Path
         )
     except (ReleaseError, ValueError) as err:
         raise SiteRenderError(f"release cannot be rendered: {err}") from err
-    return render_html(artifact)
+    models = artifact.get("models")
+    if not isinstance(models, list):
+        raise SiteRenderError("release artifact has malformed models")
+    latencies = release_latencies(runs_dir, artifact)
+    return render_html(artifact, latencies)
 
 
 def render_site(*, release_id: str, runs_dir: Path, results_dir: Path, releases_dir: Path,
-                dataset_path: Path, site_dir: Path, check: bool = False) -> Path:
+                dataset_path: Path, site_dir: Path, output_name: str = "index.html",
+                check: bool = False) -> Path:
     """Revalidate a release and write (or parity-check) its static HTML page."""
-    output_path = _inside(site_dir, site_dir / "benchmarks" / "adventurebench" / "index.html")
+    if "/" in output_name or output_name in {".", ".."} or not output_name.endswith(".html"):
+        raise SiteRenderError("output name must be a plain .html filename")
+    output_path = _inside(site_dir, site_dir / "benchmarks" / "adventurebench" / output_name)
     rendered = render_audited_release(
         release_id=release_id,
         runs_dir=runs_dir,
@@ -570,6 +818,8 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--releases-dir", default="releases")
     parser.add_argument("--data", default="adventure_bench/data/cases.jsonl")
     parser.add_argument("--site-dir", default="site")
+    parser.add_argument("--output-name", default="index.html",
+                        help="page filename under benchmarks/adventurebench (default: index.html)")
     parser.add_argument("--check", action="store_true", help="fail if the checked page differs from the deterministic render")
     args = parser.parse_args(argv)
     try:
@@ -580,6 +830,7 @@ def main(argv: list[str] | None = None) -> None:
             releases_dir=Path(args.releases_dir),
             dataset_path=Path(args.data),
             site_dir=Path(args.site_dir),
+            output_name=args.output_name,
             check=args.check,
         )
     except (SiteRenderError, ValueError) as err:
