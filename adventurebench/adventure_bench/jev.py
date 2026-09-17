@@ -25,7 +25,7 @@ from typing import Any
 
 from . import __version__
 from .collect import (
-    SCHEMA_VERSION, _append_record, _error, _inside, _manifest_path, _read_records,
+    SCHEMA_VERSION, _append_record, _error, _exclusive_run_collection, _inside, _manifest_path, _read_records,
     _write_manifest, git_commit, redact, safe_model_slug, selected_cases_hash,
     sha256_file, utc_now, validate_run_id,
 )
@@ -161,20 +161,24 @@ def answers_outcome(answers: dict, threshold: float) -> tuple[tuple[str, str | N
     try:
         kind = answers["action"]["choice"]
         picked = answers["target"]["choice"]
-        aconf = answers["action"].get("confidence")
+        confidence = answers["action"].get("confidence")
     except (KeyError, TypeError, AttributeError):
         return None
     if kind not in ACTION_CRITERIA:
         return None
     if kind in NO_TARGET_ACTIONS:
         outcome: tuple[str, str | None] = (kind, None)
+    elif not isinstance(picked, str):
+        return None  # Choice options are strings by construction
     elif picked == "none":
         outcome = (kind, "none")
     elif kind == "move":
         outcome = ("move", DIRECTIONS.get(str(picked).lower(), picked))
     else:
         outcome = (kind, picked)
-    gate = 1.0 if kind in NO_TARGET_ACTIONS else (aconf or 0)
+    if isinstance(confidence, bool) or not isinstance(confidence, (int, float)):
+        confidence = 0.0  # non-numeric confidence carries no information; gate it shut
+    gate = 1.0 if kind in NO_TARGET_ACTIONS else confidence
     raw = (outcome[0], outcome[1])
     if outcome[0] != "unclear" and gate < threshold:
         return ("unclear", None), True, raw
@@ -336,6 +340,7 @@ def collect_case_jev(case: dict, repetition: int, client: JevClient, *,
     }, secrets)
 
 
+@_exclusive_run_collection
 def collect_run_jev(*, cases: list[dict], model: str, client: JevClient,
                     output_dir: Path, run_id: str, repetitions: int = 1,
                     threshold: float = DEFAULT_THRESHOLD,
