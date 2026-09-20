@@ -8,3 +8,8 @@ __pycache__/
 build/
 dist/
 coverage/
+
+# Local environments and disposable lab views
+.plicara/generated/
+.venv/
+__pycache__/
