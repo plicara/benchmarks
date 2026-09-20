@@ -1,0 +1,11 @@
+schema_version: 1
+id: adventurebench-release
+name: "Adventure Bench releases"
+description: "Published benchmark definitions and audited release records."
+kind: publication
+status: maintained
+python:
+  - .
+related:
+  - id: adventurebench
+    relationship: published-snapshot-of

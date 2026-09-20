@@ -1,4 +1,4 @@
-PYTHON ?= python3
+PYTHON ?= uv run --locked python
 
 .PHONY: check test validate audit rescore-check aggregate-check render-site site-check
 

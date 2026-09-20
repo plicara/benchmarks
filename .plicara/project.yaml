@@ -1,0 +1,9 @@
+schema_version: 1
+id: published-benchmarks
+name: "Published benchmarks"
+description: "Public benchmark releases with definitions, methodology, and audited evidence."
+kind: collection
+status: maintained
+repository: https://github.com/plicara/benchmarks
+projects:
+  - adventurebench
