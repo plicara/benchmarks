@@ -703,6 +703,7 @@ def render_html(artifact: dict[str, Any], latencies: dict[str, float] | None = N
           <a href="/research/">Research</a>
           <a href="/tools/">Tools</a>
           <a href="/benchmarks/">Benchmarks</a>
+          <a href="/models/">Models</a>
           <a href="/#about">About</a>
           <a href="/#contact">Follow</a>
         </nav>
