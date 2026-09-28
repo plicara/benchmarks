@@ -4,6 +4,8 @@ This repository owns its code, evidence, and lab context. Read `.plicara/README.
 
 ## Boundaries
 
+Keep claims traceable to local evidence. Label exploratory results and limitations explicitly.
+
 Preserve published measurement contracts and evidence. Coordinate corrections through the source benchmark project.
 
 Work stays within the requested project. A sibling checkout is not an implicit dependency or an authorized edit target. Project lifecycle status lives only in `.plicara/project.yaml`; finishing ordinary work never requires updating a central lab board or organization profile.
