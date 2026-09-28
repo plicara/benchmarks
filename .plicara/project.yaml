@@ -5,5 +5,8 @@ description: "Public benchmark releases with definitions, methodology, and audit
 kind: collection
 status: maintained
 repository: https://github.com/plicara/benchmarks
-projects:
+python:
   - adventurebench
+related:
+  - id: adventurebench
+    relationship: published-snapshot-of
