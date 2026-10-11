@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "pollbench",
   "repository": "https://github.com/plicara/benchmarks-workbench.git",
-  "revision": "067caa418dcc05f24347380438eebf8a2dbd773e",
+  "revision": "3039a2e4859917c9cb164de353291102ce31c55a",
   "files": [
     {
       "source": "pollbench/.python-version",
@@ -112,7 +112,7 @@
     {
       "source": "pollbench/pollbench/page.py",
       "destination": "pollbench/page.py",
-      "sha256": "674224517d15715b5249778e9c86424971b40e1b18665a55ba7dae54437f9154"
+      "sha256": "6688cf58314e7050aca1af3b09804741c7f7a2e0d551b4a754797068f1698713"
     },
     {
       "source": "pollbench/pollbench/ratings.py",
@@ -197,7 +197,7 @@
     {
       "source": "pollbench/tests/test_page.py",
       "destination": "tests/test_page.py",
-      "sha256": "e872654ca78f9fbaf84de65dda783e7649ae29dcef25de022026f18004e81ef0"
+      "sha256": "aa782c2a7cec0c22aacc4a781587bfd9896f67b0fb3f909d23aa1544247c56dd"
     },
     {
       "source": "pollbench/tests/test_ratings.py",
