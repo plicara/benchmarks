@@ -24,7 +24,7 @@ class PageTest(unittest.TestCase):
         for term in ("<strong>Reliability</strong>", "<strong>90% credible interval</strong>"):
             self.assertLess(html.index(term), html.index('id="ratings-heading"'))
         self.assertIn("<strong>held-out skill</strong>", html)
-        self.assertIn("1 = all capability &rarr;", html)  # the reliability axis says what its ends mean
+        self.assertIn("RELIABILITY: SHARE OF THE SPREAD BETWEEN MODELS THAT IS CAPABILITY", html)
         self.assertIn('<ul class="legend">', html)
 
     def test_every_reference_is_cited_and_every_citation_resolves(self):

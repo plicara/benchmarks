@@ -30,9 +30,7 @@ def grade_strip(groups: dict[str, list[dict]], order: list[str]) -> str:
 
 def curve_panel(name: str, row: dict, curve: dict, capability: dict, x_range: tuple[float, float], idx: int) -> str:
     """Real scores against fitted capability for one benchmark, with the S-curve and its 90% noise band."""
-    # Drawn at about the width it is shown at (two panels side by side in the page column), so text renders at its CSS size.
-    W, H, left, right, top, bottom = 310, 300, 40, 304, 74, 262
-    head = 0  # the header and split bar span the panel; the plot leaves room for its tick labels
+    W, H, left, right, top, bottom = 400, 300, 44, 388, 74, 262
     lo, hi = x_range
 
     def fx(t):
@@ -50,19 +48,19 @@ def curve_panel(name: str, row: dict, curve: dict, capability: dict, x_range: tu
     band += " " + " ".join(f"{fx(t):.1f},{fy(s):.1f}" for t, s in zip(grid[::-1], q05[::-1]))
     line = " ".join(f"{fx(t):.1f},{fy(s):.1f}" for t, s in zip(grid, p))
     pid = f"curve-{idx}"
-    xm = head + (right - head) * rel
+    xm = left + (right - left) * rel
     out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="{pid}-t">',
            f'<title id="{pid}-t">{escape(name)}: {len(curve["scores"])} model scores against fitted capability; reliability {rel:.2f}</title>',
-           f'<text class="rf-panel" x="{head}" y="16">{escape(name)}</text>',
+           f'<text class="rf-panel" x="{left}" y="16">{escape(name)}</text>',
            f'<text class="rf-hint" x="{right}" y="16" text-anchor="end">grade {row["grade"]} &middot; {row["n_models"]} AI models</text>',
-           f'<rect class="rf-signal" x="{head}" y="28" width="{xm - head - 1:.1f}" height="14" rx="3" />',
+           f'<rect class="rf-signal" x="{left}" y="28" width="{xm - left - 1:.1f}" height="14" rx="3" />',
            f'<rect class="rf-noise" x="{xm + 1:.1f}" y="28" width="{right - xm - 1:.1f}" height="14" rx="3" />',
            ]
     if right - xm > 72:
-        out.append(f'<text class="rf-inbar" x="{head + 6}" y="39">capability {_pct(rel)}</text>')
+        out.append(f'<text class="rf-inbar" x="{left + 6}" y="39">capability {_pct(rel)}</text>')
         out.append(f'<text class="rf-inbar" x="{right - 6}" y="39" text-anchor="end">noise {_pct(1 - rel)}</text>')
     else:  # the noise segment is too thin for its own label
-        out.append(f'<text class="rf-inbar" x="{head + 6}" y="39">capability {_pct(rel)} &middot; noise {_pct(1 - rel)}</text>')
+        out.append(f'<text class="rf-inbar" x="{left + 6}" y="39">capability {_pct(rel)} &middot; noise {_pct(1 - rel)}</text>')
     for s in (0, .5, 1):
         out.append(f'<line class="rf-grid" x1="{left}" y1="{fy(s):.1f}" x2="{right}" y2="{fy(s):.1f}" />')
         out.append(f'<text class="rf-tick" x="{left - 6}" y="{fy(s) + 4:.1f}" text-anchor="end">{_pct(s)}</text>')
@@ -99,7 +97,7 @@ def methods_chart(kf: dict, labels: dict[str, str], *, compact: bool = False) ->
     if compact:
         W, name_w, row_h, gap = 360, 0, 58, 0
     else:
-        W, name_w, row_h, gap = 640, 230, 40, 40
+        W, name_w, row_h, gap = 840, 290, 40, 40
     top = 34
     H = top + row_h * len(methods) + 30
     p1 = (name_w, name_w + (W - name_w - gap) * 0.5) if not compact else (0, 172)
@@ -119,7 +117,7 @@ def methods_chart(kf: dict, labels: dict[str, str], *, compact: bool = False) ->
            + "; ".join(f'{labels[m]} {100 * kf["mean_crps"][m]:.1f} points, {_pct(kf["coverage90"][m])}' for m in methods) + "</title>",
            f'<text class="rf-title" x="{p1[0]}" y="14">TYPICAL ERROR, POINTS</text>',
            f'<text class="rf-hint" x="{p1[0]}" y="27">shorter is better</text>',
-           f'<text class="rf-title" x="{p2[0]}" y="14">90% INTERVAL HOLDS</text>',
+           f'<text class="rf-title" x="{p2[0]}" y="14">{"90% INTERVAL HOLDS" if compact else "90% INTERVAL HOLDS THE TRUTH"}</text>',
            f'<text class="rf-hint" x="{p2[0]}" y="27">closer to 90% is better</text>']
     y_end = top + row_h * len(methods)
     out.append(f'<rect class="rf-target" x="{fc(0.85):.1f}" y="{top}" width="{fc(0.95) - fc(0.85):.1f}" height="{y_end - top}" />')
