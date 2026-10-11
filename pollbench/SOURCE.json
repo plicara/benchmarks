@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "project": "pollbench",
+  "repository": "https://github.com/plicara/benchmarks-workbench.git",
+  "revision": "067caa418dcc05f24347380438eebf8a2dbd773e",
+  "files": [
+    {
+      "source": "pollbench/.python-version",
+      "destination": ".python-version",
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "source": "pollbench/CITATION.cff",
+      "destination": "CITATION.cff",
+      "sha256": "01756894f8b4183a8e5c95cac2f402d06a28fac4e59dd053c63b60e813e1d341"
+    },
+    {
+      "source": "pollbench/LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a33a9f27676c5949c86c6a8a56951c00524b78a2dcc7a2efba60357ed1238ed8"
+    },
+    {
+      "source": "pollbench/Makefile",
+      "destination": "Makefile",
+      "sha256": "ddd1c7e6d87c9db059ef07b9b5ea4327631ab388d117828cc02fc57c04fc1fed"
+    },
+    {
+      "source": "pollbench/README.md",
+      "destination": "README.md",
+      "sha256": "038eb9d9139232528220a6d5b4769029e346140bacd923e93bf0e71d12fcc680"
+    },
+    {
+      "source": "pollbench/docs/methods-review.md",
+      "destination": "docs/methods-review.md",
+      "sha256": "42523d72371714677ff5af71f1280f0503a67f70856abf84d64949a4b53f7630"
+    },
+    {
+      "source": "pollbench/docs/protocol.md",
+      "destination": "docs/protocol.md",
+      "sha256": "9c933cbf8192cee74a6d82d4dac502c8f62b97022e14c48aecc22b54405c78c6"
+    },
+    {
+      "source": "pollbench/docs/results-epoch-2026-10-10.md",
+      "destination": "docs/results-epoch-2026-10-10.md",
+      "sha256": "4b240ce139a8bd2619b24b897cf6836a657eab37cd50e3981189d5dfd938619e"
+    },
+    {
+      "source": "pollbench/docs/simulation-study.md",
+      "destination": "docs/simulation-study.md",
+      "sha256": "1f2ed1939e7532ef69ae4c40f44f59c3d6fd902bd3213434baafc081e8af38be"
+    },
+    {
+      "source": "pollbench/inputs/epoch-2026-10-10/README.md",
+      "destination": "inputs/epoch-2026-10-10/README.md",
+      "sha256": "5f567a31a00ff5c6330fb253f909b3b4f46a708faf1b697bcde9d11e006650e4"
+    },
+    {
+      "source": "pollbench/inputs/epoch-2026-10-10/processed_data_for_eci.csv",
+      "destination": "inputs/epoch-2026-10-10/processed_data_for_eci.csv",
+      "sha256": "84423df0ed6e137365e2d8039f54e16ddb1b4747f8b11793498416b4340c32fe"
+    },
+    {
+      "source": "pollbench/pollbench/__init__.py",
+      "destination": "pollbench/__init__.py",
+      "sha256": "04e589d192d2596ef562025010b1c2396c48bddc768242c3b98eaec21e8d857a"
+    },
+    {
+      "source": "pollbench/pollbench/__main__.py",
+      "destination": "pollbench/__main__.py",
+      "sha256": "9e21718aff7847ee24c728f2e02a67aad63c7a894ef892c4eb9ccf93d335a7a3"
+    },
+    {
+      "source": "pollbench/pollbench/analysis.py",
+      "destination": "pollbench/analysis.py",
+      "sha256": "4f406b316f122be12b7c4c3d51f10842d5299c1eff791ce816b0798bcf3cd901"
+    },
+    {
+      "source": "pollbench/pollbench/calibrate.py",
+      "destination": "pollbench/calibrate.py",
+      "sha256": "15e7b849d6cf0e0de394ff57509627461c872032fcfcbe1c80da11aeb60e2058"
+    },
+    {
+      "source": "pollbench/pollbench/checks.py",
+      "destination": "pollbench/checks.py",
+      "sha256": "e09031b02a357075687cfeeea852bc894d72f27322b92f8470d067c640706657"
+    },
+    {
+      "source": "pollbench/pollbench/curves.py",
+      "destination": "pollbench/curves.py",
+      "sha256": "9fbc46b879ea780b4c3b8f0553aead2ef12f1911deb845e9a8786b79143b6e86"
+    },
+    {
+      "source": "pollbench/pollbench/data.py",
+      "destination": "pollbench/data.py",
+      "sha256": "9385b432723cd9b06ce27a1f93709353445358ddcb0a3df7b87db9cc01b8b32e"
+    },
+    {
+      "source": "pollbench/pollbench/evaluate.py",
+      "destination": "pollbench/evaluate.py",
+      "sha256": "fd53049ffaf26f3bab529bf16441a77cb7f5c60c15503d04a048a3d3fadd21de"
+    },
+    {
+      "source": "pollbench/pollbench/figures.py",
+      "destination": "pollbench/figures.py",
+      "sha256": "08c1e99367e036191d1d57a9c2c80eb72b2af49add3d327c83e4dfc1058a14e6"
+    },
+    {
+      "source": "pollbench/pollbench/models.py",
+      "destination": "pollbench/models.py",
+      "sha256": "5b12f5686258baf1a9973aeda3c6293a695015b43f1fd04cd9132d1578625ea4"
+    },
+    {
+      "source": "pollbench/pollbench/page.py",
+      "destination": "pollbench/page.py",
+      "sha256": "674224517d15715b5249778e9c86424971b40e1b18665a55ba7dae54437f9154"
+    },
+    {
+      "source": "pollbench/pollbench/ratings.py",
+      "destination": "pollbench/ratings.py",
+      "sha256": "5781a8d5ee7c801183be55b59d8685c420edde46d9ec25e04f767c7d7e4b261d"
+    },
+    {
+      "source": "pollbench/pollbench/report.py",
+      "destination": "pollbench/report.py",
+      "sha256": "b92c6a6ac0f0385d84a084ab3b42e32dea25f74ec9ddca6d2e45bbd8027989a6"
+    },
+    {
+      "source": "pollbench/pollbench/scoring.py",
+      "destination": "pollbench/scoring.py",
+      "sha256": "57fd05e811f2ced2e9e215f20b1d106a386e6c217520804f390de182fb18a9c0"
+    },
+    {
+      "source": "pollbench/pollbench/sim.py",
+      "destination": "pollbench/sim.py",
+      "sha256": "0e384dafb39eae8acb363951f7fea92cc8cf8542dce7aa3e6ce1ca21bcbee5d7"
+    },
+    {
+      "source": "pollbench/pollbench/simstudy.py",
+      "destination": "pollbench/simstudy.py",
+      "sha256": "9aa1996501acce97eeaa218f325d49c4e494c45ebb173dd20174b5f41635ca5d"
+    },
+    {
+      "source": "pollbench/pyproject.toml",
+      "destination": "pyproject.toml",
+      "sha256": "e55b378b86b4d3187a041a3673dece7109b86cfd30da7bc35352bc5608dbe0ac"
+    },
+    {
+      "source": "pollbench/results/epoch-2026-10-10-curves.json",
+      "destination": "results/epoch-2026-10-10-curves.json",
+      "sha256": "45f2d60241638039af207ff13d3211cb403a366b91d59d812c8160bc286b887a"
+    },
+    {
+      "source": "pollbench/results/epoch-2026-10-10.json",
+      "destination": "results/epoch-2026-10-10.json",
+      "sha256": "1fe62524ed7cf6113ce62560f25424f2ce6f78837a147d2e0511201cde1a862d"
+    },
+    {
+      "source": "pollbench/results/second-factor-calibration.json",
+      "destination": "results/second-factor-calibration.json",
+      "sha256": "63d99f8376220af6837f59e4013dd933461b6ecc3a1dcb293914b6ad0080053a"
+    },
+    {
+      "source": "pollbench/results/simulation-study.json",
+      "destination": "results/simulation-study.json",
+      "sha256": "cd725aa3e6c3ffe256f3afac1c498ddd8f180c336fba273f85d4ed91ef629d29"
+    },
+    {
+      "source": "pollbench/tests/__init__.py",
+      "destination": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "pollbench/tests/test_analysis.py",
+      "destination": "tests/test_analysis.py",
+      "sha256": "9843319d04a43fc2672169185b4ab86b48b2c725f03ab5816337165ad670e15e"
+    },
+    {
+      "source": "pollbench/tests/test_cli.py",
+      "destination": "tests/test_cli.py",
+      "sha256": "8e37ae30f11ce0d602df8d88f62449d9449868f8699f6ac1f7e2f7fd45c80ba5"
+    },
+    {
+      "source": "pollbench/tests/test_data.py",
+      "destination": "tests/test_data.py",
+      "sha256": "d7b055bde7b68b1b0309b15143df76c4aec7ed891eab61f132dac9c9ab7c1588"
+    },
+    {
+      "source": "pollbench/tests/test_evaluate.py",
+      "destination": "tests/test_evaluate.py",
+      "sha256": "cc3ee5da199d323d7e0803297945554555f76d151a8c86393bb2157cb0d073c7"
+    },
+    {
+      "source": "pollbench/tests/test_models.py",
+      "destination": "tests/test_models.py",
+      "sha256": "02f8ab5f8489a41694b5c5fed01d57dfaa5bb2c56adf0df8f21783dd3d8280ee"
+    },
+    {
+      "source": "pollbench/tests/test_page.py",
+      "destination": "tests/test_page.py",
+      "sha256": "e872654ca78f9fbaf84de65dda783e7649ae29dcef25de022026f18004e81ef0"
+    },
+    {
+      "source": "pollbench/tests/test_ratings.py",
+      "destination": "tests/test_ratings.py",
+      "sha256": "7d416e26fec5d03d5529cf3d85d57c8bd1aad517e6431de0ea673cf5473f92cc"
+    },
+    {
+      "source": "pollbench/tests/test_report.py",
+      "destination": "tests/test_report.py",
+      "sha256": "416cff6a8e64ec0f6eafda73b736e52530a8fd226345a3ab90744d4824282a08"
+    },
+    {
+      "source": "pollbench/tests/test_scoring.py",
+      "destination": "tests/test_scoring.py",
+      "sha256": "15481c6bf89b7747bc6a0cc5e36cdc09ba932707597c203ff75f5eb04a9181e0"
+    },
+    {
+      "source": "pollbench/uv.lock",
+      "destination": "uv.lock",
+      "sha256": "a3e43deefacea82b4ad381a8b8deb420c595506d4be5913acbe288f92cb4ee68"
+    }
+  ]
+}

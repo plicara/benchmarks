@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use pollbench, please cite it as below."
+title: "pollbench: rating AI benchmarks the way pollsters are rated"
+date-released: 2026-10-11
+authors:
+  - family-names: "Tame Jacobo"
+    given-names: "Adrian"
+repository-code: "https://github.com/plicara/benchmarks/tree/main/pollbench"
+url: "https://plicara.ai/benchmarks/pollbench/"
+license: Apache-2.0
+keywords:
+  - benchmark
+  - reliability
+  - item-response-theory
+  - large-language-models
+references:
+  - type: dataset
+    title: "Capabilities & benchmarking"
+    authors:
+      - name: "Epoch AI"
+    url: "https://epoch.ai/benchmarks"
+    year: 2026
+    license: CC-BY-4.0
