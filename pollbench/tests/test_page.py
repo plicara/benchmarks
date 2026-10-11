@@ -41,9 +41,10 @@ class PageTest(unittest.TestCase):
         self.assertEqual(html.count('<svg class="wide"'), html.count('<svg class="compact"'))
         self.assertEqual(html.count('<svg class="wide"'), 4)
 
-    def test_the_wide_ratings_table_can_be_scrolled_from_the_keyboard(self):
+    def test_every_table_can_be_scrolled_from_the_keyboard(self):
         html = render(self.data)
-        self.assertIn('<div class="table-wrap" tabindex="0" role="region" aria-label="Ratings for every benchmark">', html)
+        self.assertEqual(html.count('class="table-wrap"'), 2)
+        self.assertEqual(html.count('class="table-wrap" tabindex="0" role="region" aria-label="'), 2)
         self.assertIn(".grade-table { max-width: var(--pb-measure); min-width: 0; }", html)
 
     def test_real_score_panels_need_the_curves_file(self):

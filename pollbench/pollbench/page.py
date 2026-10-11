@@ -546,7 +546,7 @@ def render(data: dict, *, placeholder: str | None = None, curves: dict | None = 
         <p>We compute it for 1,000 of the 4,000 draws, taken at random. The reported value is the average over draws, and the <strong>90% credible interval</strong> runs from the 5th to the 95th percentile of the draws. It is the Bayesian counterpart of a confidence interval: given the data and the rating model, the true reliability lies inside it with 90% probability. Benchmarks scored on few AI models get wide intervals.</p>
         <h3>Grades</h3>
         <p>A benchmark gets the highest grade whose threshold its reliability exceeds with at least {GRADE_PROB:.0%} probability, counted over the draws:</p>
-        <div class="table-wrap"><table class="data-table grade-table">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Grade rules"><table class="data-table grade-table">
           <thead><tr><th scope="col">Grade</th><th scope="col">Rule</th><th scope="col" class="num">Benchmarks</th></tr></thead>
           <tbody>
             <tr><th scope="row">A</th><td>reliability above {thr_a:.2f} with {GRADE_PROB:.0%} probability</td><td class="num mono">{len(groups["A"])}</td></tr>
