@@ -71,8 +71,8 @@ STYLE = """
       .data-table td.num { white-space: nowrap; }
       .data-table th[scope="col"] { white-space: nowrap; }
       .rating-section { margin: 3.6rem 0 0; }
-      /* One column for the whole page, like the site's research articles: headings, prose, figures and tables share the site measure, so nothing runs wider than the text. */
-      .results { --pb-measure: 43.75rem; width: min(100% - 2.5rem, var(--pb-measure)); }
+      /* One column for the whole page: headings, prose, figures and tables share one width, wide enough that the figures read at their drawn size (56rem less the figure padding is the 840-unit drawing width). */
+      .results { --pb-measure: 56rem; width: min(100% - 2.5rem, var(--pb-measure)); }
       .rating-preview { box-sizing: border-box; }
       .results .note { max-width: none; }  /* notes fill the column like the prose around them */
       .results sup { line-height: 0; font-size: .72em; vertical-align: super; }
@@ -243,7 +243,7 @@ def split_bars(rows: list[dict], *, compact: bool = False) -> str:
     if compact:
         width, left, right, step, top = 360, 4, 356, 62, 22
     else:
-        width, left, right, step, top = 640, 200, 612, 44, 10
+        width, left, right, step, top = 840, 250, 812, 44, 10
     h = top + step * len(rows) + (0 if compact else 16)
     sfx = "-compact" if compact else ""
     out = [f'<svg class="{"compact" if compact else "wide"}" viewBox="0 0 {width} {h}" role="img" aria-labelledby="split-title{sfx} split-desc{sfx}">',
@@ -295,7 +295,7 @@ def forest(groups: dict[str, list[dict]], *, compact: bool = False) -> str:
     if compact:
         width, step, top, left, right, bottom, ticks = 360, 36, 76, 10, 346, 72, (0.0, 1.0)
     else:
-        width, step, top, left, right, bottom, ticks = 640, 22, 76, 300, 616, 64, (0.0, 0.25, 1.0)
+        width, step, top, left, right, bottom, ticks = 840, 22, 76, 300, 812, 64, (0.0, 0.25, 1.0)
     h = top + step * len(rows) + bottom
     x0, x1 = left, right
     y_end = h - bottom + 4
@@ -323,7 +323,7 @@ def forest(groups: dict[str, list[dict]], *, compact: bool = False) -> str:
     if compact:
         out.append(f'<text class="rf-title" x="{(x0 + x1) / 2:.0f}" y="{y_end + 36}" text-anchor="middle">RELIABILITY</text>')
     else:
-        out.append(f'<text class="rf-title" x="{(x0 + x1) / 2:.0f}" y="{y_end + 36}" text-anchor="middle">RELIABILITY</text>')
+        out.append(f'<text class="rf-title" x="{(x0 + x1) / 2:.0f}" y="{y_end + 36}" text-anchor="middle">RELIABILITY: SHARE OF THE SPREAD BETWEEN MODELS THAT IS CAPABILITY</text>')
     out.append(f'<text class="rf-hint" x="{x0}" y="{y_end + 54}">&larr; 0 = all noise</text>')
     out.append(f'<text class="rf-hint" x="{x1}" y="{y_end + 54}" text-anchor="end">1 = all capability &rarr;</text>')
     for i, (g, r) in enumerate(rows):
@@ -369,7 +369,7 @@ def calibration(data: dict, rows: list[dict], *, compact: bool = False) -> tuple
     if compact:
         width, height, left, right, top, bottom = 400, 420, 76, 392, 20, 340
     else:
-        width, height, left, right, top, bottom = 640, 440, 84, 616, 20, 360
+        width, height, left, right, top, bottom = 840, 440, 84, 800, 20, 360
     sfx = "-compact" if compact else ""
 
     def fy(v):
@@ -392,7 +392,7 @@ def calibration(data: dict, rows: list[dict], *, compact: bool = False) -> tuple
             out.append(f'<text class="rf-tick" x="{left - 8}" y="{y + 4:.1f}" text-anchor="end">{v:+.1f}</text>')
         v += step
     out.append(f'<line class="rf-cut" x1="{left}" y1="{fy(0):.1f}" x2="{right}" y2="{fy(0):.1f}" />')
-    out.append(f'<text class="rf-hint" x="{right - 4}" y="{fy(0) + 14:.1f}" text-anchor="end">0 = no better than the average</text>')
+    out.append(f'<text class="rf-hint" x="{right - 4}" y="{fy(0) + 14:.1f}" text-anchor="end">{"0 = no better than the average" if compact else "0 = no better than guessing the benchmark&rsquo;s average"}</text>')
     out.append(f'<line class="rf-axis" x1="{left}" y1="{bottom}" x2="{right}" y2="{bottom}" /><line class="rf-axis" x1="{left}" y1="{top}" x2="{left}" y2="{bottom}" />')
     out.append(f'<text class="rf-title" x="{(left + right) / 2:.0f}" y="{bottom + 44}" text-anchor="middle">{"RELIABILITY &rarr;" if compact else "RELIABILITY, FROM THE FITTED MODEL &rarr;"}</text>')
     out.append(f'<text class="rf-hint" x="{(left + right) / 2:.0f}" y="{bottom + 60}" text-anchor="middle">{"more of the spread is capability" if compact else "more of the spread between models is capability"}</text>')
