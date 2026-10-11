@@ -7,6 +7,9 @@ status: maintained
 repository: https://github.com/plicara/benchmarks
 python:
   - adventurebench
+  - pollbench
 related:
   - id: adventurebench
+    relationship: published-snapshot-of
+  - id: pollbench
     relationship: published-snapshot-of

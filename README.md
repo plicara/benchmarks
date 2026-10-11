@@ -9,6 +9,7 @@ replayed from the committed evidence without calling a model provider.
 | Benchmark | What it measures | Latest release |
 |---|---|---|
 | [`adventurebench/`](adventurebench/) | Grounded action interpretation and calibrated refusal in text-adventure scenes | 12 models, 244 cases, 3 repetitions |
+| [`pollbench/`](pollbench/) | How reliably 60 public AI benchmarks separate models by capability, rated the way pollsters are rated | 60 benchmarks, 274 models, Epoch AI data of 2026-10-10 |
 
 The rendered results are published at
 [`plicara.ai/benchmarks`](https://plicara.ai/benchmarks/). The files in this
