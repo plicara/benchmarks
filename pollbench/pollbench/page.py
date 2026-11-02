@@ -636,24 +636,29 @@ def render(data: dict, *, placeholder: str | None = None, curves: dict | None = 
     <title>{TITLE} &middot; plicara labs</title>
 {robots}    <meta name="description" content="{n_bench} AI benchmarks rated the way pollsters are rated: how much of the difference between models' scores is real capability rather than noise, with uncertainty." />
     <link rel="canonical" href="https://plicara.ai/benchmarks/pollbench/" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#082C35" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" content="#F4EFE4" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/archivo.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jetbrains-mono-400.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jetbrains-mono-700.woff2" crossorigin />
+    <!-- The display serif and the body sans render above the fold on every
+         page; JetBrains Mono only sets figures and code, so it loads late. -->
+    <link rel="preload" as="font" type="font/woff2"
+          href="/assets/fonts/hedvig-letters-serif.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2"
+          href="/assets/fonts/figtree.woff2" crossorigin />
+
     <link rel="stylesheet" href="/assets/tokens.css" />
-    <link rel="stylesheet" href="/assets/style.css?v=20260929" />
+    <link rel="stylesheet" href="/assets/style.css?v=20261102" />
     <style>{STYLE}    </style>
   </head>
-  <body data-scheme="technical">
+  <body>
+    <svg class="paper-defs" aria-hidden="true" focusable="false"><filter id="torn" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter></svg>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>plicara labs</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="/research/">Research</a>
+          <a href="/essays/">Essays</a>
           <a href="/tools/">Tools</a>
           <a href="/benchmarks/">Benchmarks</a>
           <a href="/about/">About</a>
